@@ -1,4 +1,4 @@
-# HyperLedger-on-LinuxONE
+# HyperLedger on LinuxONE
 **WORK IN PROGRESS** Install and Use on Hyperledger Fabric on LinuxONE Community Cloud 
 
 IBM is a part of Hyperledger, a global, collaborative effort to advance blockchain technology, hosted by The Linux Foundation.Hyperledger has several open-source projects including Hyperledger Fabricand Hyperledger Composer.The Hyperledger Fabric project is one of several Hyperledger projects that implement distributed-ledger technology solutions.  Others are Hyperledger Sawtooth Lake, Hyperledger Irohaand Hyperledger Burrow.

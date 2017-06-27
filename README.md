@@ -6,3 +6,7 @@ IBM is a part of Hyperledger, a global, collaborative effort to advance blockcha
 There are several other Hyperledger projects that do not directly implement distributed-ledger technology, but rather offer complementary functionality to enhance the value of a distributed-ledger technology solution.  Hyperledger Composer is one such project.  
 
 Hyperledger Composer is a collaboration tool for building blockchain business networks, accelerating the development of smart contracts and their deployment across a distributed ledger.This lab discusses Hyperledger Composer and Hyperledger Fabric.  For more information on these or any of the other Hyperledger projects please see https://www.hyperledger.org.
+
+# DeveloperWorks Code
+Code:
+Video:

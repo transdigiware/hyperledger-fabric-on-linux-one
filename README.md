@@ -1,28 +1,30 @@
  **Work in progress!**
-# Workshop 3: Blockchain
+# Hyperledger Fabric and Hyperledger Composer on LinuxONE
 
 ## Architecture
-In this lab, we continue building on the existing architecture. In prior labs, you configured your Raspberry Pi with Sens HAT to talk to Watson IoT Foundation running on Bluemix. You grew your interaction by integrating NodeRed and the Watson Conversation service also both running on Bluemix. Your cloud environment will expand to a hybrid cloud by talking with a blockchain network. The Hyperledger V1 Fabric is running on a private server in a secured network. 
+![Flow Diagram](images/FlowDiagram.png)
 
-In this lab, NodeRed will communicate with the Hyperledger Fabric through APIs. NodeRed will also facilitate communication between the ledger and [Weather.com](https://twcservice.mybluemix.net/rest-api/).
+This journey will guide you through the following process.
+
+1. Requesting access to the LinuxONE Community Cloud.
+2. Creating your Linux guest on the LinuxONE Community Cloud.
+3. Setup and verification of your blockchain environment.
+4. Creating a blockchain project in Hyperledger Composer.
+5. Interacting with blockchain and third party APIs through Composer Rest Server and NodeRed.
 
 
-
-**insert picture** 
 
 
 
 ## Application Overview
-The blockchain workshop is intended to give you a basic understanding of how a developer would interact with Hyperledger Fabric. In this workshop you will use a Browser based UI to modify chaincode, test your code and deploy your changes. You will also learn how tooling can take the code and generate API to allow for application integration through a REST-ful interface. 
+The blockchain workshop is intended to give you a basic understanding of how a developer would interact with Hyperledger Fabric using Hyperledger Composer. In this workshop you will use a browser based UI to modify chaincode, test your code and deploy your changes. You will also learn how tooling can take the code and generate API to allow for application integration through a REST-ful interface. 
 
-**edit **This lab will be broken into two parts: creating chaincode and generating API and using NodeRed to test API integration.
+This lab will be broken into three parts: 
 
+1. Creating your guest and environment.
+2. Writing chaincode and generating API.
+3. Using NodeRed to test API integration.
 
-
-## Workshop Setup
-
-To run this workshop you will need the following:
-1. Webbrowser (tested with Firefox and Chrome)
 
 
 ## Workshop Instructions

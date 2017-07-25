@@ -43,6 +43,25 @@ npm install -g composer-rest-server@0.9.2
 echo -e “*** Installing Hyperledger Composer playground. ***\n”
 npm install -g composer-playground@0.9.2
 
+echo -e "*** Clone and install the Coposer Tools repository.***\n"
+git clone https://github.com/hyperledger/composer-tools
+cd composer-tools/
+npm install
+cd packages/fabric-dev-servers/
+npm install
+cd fabric-scripts/hlfv1/composer/
+sed -i s/x86_64/s390x/g docker-compose.yml 
+cd /data/linux1/composer-tools/packages/fabric-dev-servers/fabric-scripts/hlfv1
+mv startFabric.sh originalStartFabric.sh
+wget https://raw.githubusercontent.com/IBM/HyperledgerFabric-on-LinuxOne/master/startFabric.sh
+chmod u+x startFabric.sh
+cd /data/linux1/composer-tools/packages/fabric-dev-servers/
+./createComposerProfile.sh
+mkdir /data/playground/
+nohup composer-playground >/data/playground/playground.stdout 2>/data/playground/playground.stderr & disown
+sudo iptables -I INPUT 1 -p tcp --dport 8080 -j ACCEPT
+
 #Install NodeRed
 echo -e "*** Installing NodeRed. ***\n"
 npm install -g node-red
+

@@ -37,6 +37,99 @@ In this section of the journey you will request access to the LinuxONE Community
 
 #### Request access to LinuxONE Community Cloud.
 
+1. In a browser, go to https://developer.ibm.com/linuxone/ .
+
+   ![LinuxONE Community Cloud Page](images/CommunityCloudPage.png)
+
+2. **Click** *Start your trial now*.
+
+   ![Click Start your trial now.](images/StartNow.png)
+
+3. **Complete** the required fields on the page and **select** *Request your trial*.
+
+   ![Complete application](images/GuestApplication.png)
+
+4. You will come to the following page. **Click** *Sign In*.
+
+   ![Click Sign In.](images/SignIn.png)
+
+5. Check your email for a registration confirmation similar to the following shown. You'll need your User ID and Password from this email for the next step.
+
+   ![Check your email for the registration confirmation email.](images/RegistrationConfirmationEmail.png)
+
+6. Back in your browser, **enter** the *user ID* and *password* from your email. **Click** *Sign in*.
+
+   * Note: Now is a good time to change your password to one you'll remember. This can be done after the initial sign in by selecting your username from the upper right corner of the web page and selecting account settings.
+
+   ![Sign in to LinuxONE Community Cloud.](images/SignInUserIDPW.png)
+
+7. From the Home page of IBM LinuxONE Community Cloud, **select** *Manage Instances* on Virtual Servers under Infrastructure.
+
+   ![Select Virtual Servers.](images/VirtualServers.png)
+
+8. **Click** create.
+
+   ![Click create.](images/Create.png)
+
+9. Complete the following information:
+
+   * Select *General purpose VM* for the type.
+
+   * Enter an instance name — `DJBlockchain`
+
+   * Enter an insance description — `Blockchain guest for Developers Journey.`
+
+   * Select *SLES12 SP2* for the image.
+
+   * Select *LinuxONE-Medium* for the flavor.
+
+     ![Create your LinuxONE guest.](images/LinuxONEFields.png)
+
+10. **Scroll down**. Under *Select a SSH Key Pair* **click** *create*.
+
+ ![Click create.](images/CreateKeyPair.png)
+
+11. In the pop-up dialog, **enter** the key name, `DJBlockchain` and **select** *Create a new key pair*.
+
+    ![Enter a key name and select create.](images/KeyPairName.png)
+
+12. Depending on your computer, you may receive a prompt asking you if you would like to save the new key pair. If so, choose to **Save File**.
+
+    ![Click Save File.](images/SaveFile.png)
+
+13. In the *Select a SSH Key Pair* box, **select** your newly create key pair, *DJBlockchain*.
+
+    ![Select DJBlockchain.](images/SelectDJBlockchain.png)
+
+14. Review the Current Selection information for accuracy and **click** *create* at the bottom of the screen to create your SLES 12 LinuxONE guest.
+
+    ![Click create.](images/CreateGuest.png)
+
+15. ​Watch the status of your newly create guest go through the following phases of start up:  networking :arrow_right: spawning :arrow_right: Active. When your guest shows active, it is ready for use.
+
+    * *Note* — Write down the IP address of your guest. You'll need that for the next steps.
+
+    ![Guest is ready!](images/StartedGuest.png)
+
+16. From a terminal on your computer, navigate to the directory where you saved the SSH Key Pair, *DJBlockchain*. An example location is shown below.
+
+    ![Download location example.](images/DownloadDirectory.png)
+
+
+17. Modify the permissions of your private key by entering `chmod 600 DJBlockchain.pem`.
+
+    ![Modify permissions.](images/SSHKeyPermissions.png)
+
+18. From the location where your *DJBlockchain.pem* SSH key pair is, enter the command `ssh -i DJBlockchain.pem linux1@148.100.5.9`
+
+19. **Type** `yes` to the continue connecting prompt and **hit** the *enter* key.
+
+    ![Type yes.](images/ContinueConnecting.png)
+
+20. You are now connected into your IBM LinuxONE Community Cloud Guest!
+
+    ![Success!](images/CommunityCloudWelcome.png)
+
 
 
 #### Defining your blockchain network

@@ -1,8 +1,5 @@
-#1/bin/bash/
+#!/bin/bash/
 
-#Give the linux1 userid permission to run docker commands
-echo -e “*** modify linux1 groups to allow userid to run docker commands ***”
-sudo usermod -g docker linux1
 
 #Install NodeJS
 echo -e “*** install_nodejs ***”
@@ -22,10 +19,10 @@ echo -e “*** Done with docker-compose. ***\n”
 
 #Pull s390x-1.0.0-rc1 fabric containers from DockerHub
 echo -e “*** Pulling s390x-1.0.0-rc1 images from DockerHub. ***\n”
-sudo docker pull hyperledger/fabric-peer:s390x-1.0.0-rc1
-sudo docker pull hyperledger/fabric-ca:s390x-1.0.0-rc1
-sudo docker pull hyperledger/fabric-orderer:s390x-1.0.0-rc1
-sudo docker pull hyperledger/fabric-couchdb:s390x-1.0.0-rc1
+docker pull hyperledger/fabric-peer:s390x-1.0.0-rc1
+docker pull hyperledger/fabric-ca:s390x-1.0.0-rc1
+docker pull hyperledger/fabric-orderer:s390x-1.0.0-rc1
+docker pull hyperledger/fabric-couchdb:s390x-1.0.0-rc1
 echo -e “*** All fabric containers have been pulled. ***\n”
 
 #Install Hyperledger Composer Components

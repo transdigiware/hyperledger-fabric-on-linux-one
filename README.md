@@ -130,6 +130,22 @@ In this section of the journey you will request access to the LinuxONE Community
 
     ![Success!](images/CommunityCloudWelcome.png)
 
+21. Now it is time to setup your guest! Run the following command, to move the setup script from the Github Repository to your Linux guest.
+
+    `wget https://github.com/IBM/HyperledgerFabric-on-LinuxOne/blob/master/Linux1BlockchainScript.sh`
+
+    ![Import script.](images/WgetSetup.png)
+
+22. Enter `ls` to confirm the file is in your directory. 
+
+    ![View script.](images/Linux1Script.png)
+
+23. To make the file executable, run `chmod u+x Linux1BlockchainScript.sh` and then `ls` to make sure that it is showing as an executable file.
+
+    ![Make the file executable.](images/Linux1ScriptExecutable.png)
+
+24. Before running the script, you'll need to add your user id to the docker group. To do this, enter `usermod 
+
 
 
 #### Defining your blockchain network

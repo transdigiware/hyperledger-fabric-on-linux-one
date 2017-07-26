@@ -7,20 +7,20 @@
 
 
 function onSetSensorTemp(setSensorTemp) {
-    setSensorTemp.sensor.sensorTemp = setSensorTemp.newSensorValue; 
+    setSensorTemp.gauge.sensorTemp = setSensorTemp.newSensorValue; 
     return getAssetRegistry('org.acme.sample.Sensor')
       .then(function (assetRegistry) {
-          return assetRegistry.update(setSensorTemp.sensor);
+          return assetRegistry.update(setSensorTemp.gauge);
       });
 }
 
 function onChangeThermostatTemp(changeThermostat) {
-  var diff = Math.abs(changeThermostat.sensor.sensorTemp - changeThermostat.newThermostatValue);
+  var diff = Math.abs(changeThermostat.thermostat.sensorTemp - changeThermostat.newThermostatValue);
     if (diff < 3) {
-      changeThermostat.sensor.thermostatTemp = changeThermostat.newThermostatValue;
+      changeThermostat.thermostat.thermostatTemp = changeThermostat.newThermostatValue;
       return getAssetRegistry('org.acme.sample.Sensor')
         .then(function (assetRegistry) {
-          return assetRegistry.update(changeThermostat.sensor);
+          return assetRegistry.update(changeThermostat.thermostat);
       });
     } else {
       //reject transaction
@@ -32,7 +32,7 @@ function onCompareWeather(compareWeather) {
   //Make life easier. Put all values for this function in vars.
   var outsideTemp = compareWeather.outsideTemp;
   var feelsLike = compareWeather.feelsLike;
-  var thermostatTemp = compareWeather.sensor.thermostatTemp;
+  var thermostatTemp = compareWeather.recommend.thermostatTemp;
   
   if (outsideTemp == feelsLike){
      //If the temps are the same then create req's
@@ -40,57 +40,57 @@ function onCompareWeather(compareWeather) {
     //It's HOT
     if (outsideTemp >= 26) {
       if (thermostatTemp != 22) {
-        compareWeather.sensor.recommendation = "Boy! It is HOT! The recommended thermostat " +
+        compareWeather.recommend.recommendation = "Boy! It is HOT! The recommended thermostat " +
           "setting is 22 C. The thermostat is being adjusted from " + thermostatTemp + ".";
         compareWeather.sensor.thermostatTemp = 22;
         return getAssetRegistry('org.acme.sample.Sensor')
         .then(function (assetRegistry) {
-          return assetRegistry.update(compareWeather.sensor);
+          return assetRegistry.update(compareWeather.recommend);
       });
       } else {
-        compareWeather.sensor.recommendation = "Boy! It is HOT! The recommended thermostat " +
+        compareWeather.recommend.recommendation = "Boy! It is HOT! The recommended thermostat " +
           "setting is 22 C. Way to go! Your thermostat is already optimally set.";
         return getAssetRegistry('org.acme.sample.Sensor')
         .then(function (assetRegistry) {
-          return assetRegistry.update(compareWeather.sensor);
+          return assetRegistry.update(compareWeather.recommend);
         });
       }
     //Temperate weather  
     } else if (outsideTemp >= 20 && outsideTemp < 26) {
       if (thermostatTemp != 20) {
-        compareWeather.sensor.recommendation = "Nice weather you're having! The recommended" 
+        compareWeather.recommend.recommendation = "Nice weather you're having! The recommended" 
           + " thermostat setting is 20 C. The thermostat is being adjusted from " + thermostatTemp +
           ".";
         compareWeather.sensor.thermostatTemp = 20;
         return getAssetRegistry('org.acme.sample.Sensor')
         .then(function (assetRegistry) {
-          return assetRegistry.update(compareWeather.sensor);
+          return assetRegistry.update(compareWeather.recommend);
       });
       } else {
-        compareWeather.sensor.recommendation = "Great weather! The recommended thermostat " +
+        compareWeather.recomend.recommendation = "Great weather! The recommended thermostat " +
           "setting is 20 C.Way to go! Your thermostat is already optimally set.";
         return getAssetRegistry('org.acme.sample.Sensor')
         .then(function (assetRegistry) {
-          return assetRegistry.update(compareWeather.sensor);
+          return assetRegistry.update(compareWeather.recommend);
         });
       }
     //Cooler temps
     } else {
       if (thermostatTemp != 19) {
-        compareWeather.sensor.recommendation = "Getting chilly! The recommended" 
+        compareWeather.recommend.recommendation = "Getting chilly! The recommended" 
           + " thermostat setting is 19 C. The thermostat is being adjusted from " + thermostatTemp +
           ".";
-        compareWeather.sensor.thermostatTemp = 19;
+        compareWeather.recommend.thermostatTemp = 19;
         return getAssetRegistry('org.acme.sample.Sensor')
         .then(function (assetRegistry) {
-          return assetRegistry.update(compareWeather.sensor);
+          return assetRegistry.update(compareWeather.recommend);
       });
       } else {
-        compareWeather.sensor.recommendation = "It's getting chilly! The recommended thermostat " +
+        compareWeather.recommend.recommendation = "It's getting chilly! The recommended thermostat " +
           "setting is 19 C.Way to go! Your thermostat is already optimally set.";
-        return getAssetRegistry('org.acme.sample.Team')
+        return getAssetRegistry('org.acme.sample.Sensor')
         .then(function (assetRegistry) {
-          return assetRegistry.update(compareWeather.sensor);
+          return assetRegistry.update(compareWeather.recommend);
         });
       }
     }
@@ -101,57 +101,57 @@ function onCompareWeather(compareWeather) {
     //It's HOT
     if (feelsLike >= 26) {
       if (thermostatTemp != 22) {
-        compareWeather.sensor.recommendation = "Boy! It feels HOT! The recommended thermostat " +
+        compareWeather.recommend.recommendation = "Boy! It feels HOT! The recommended thermostat " +
           "setting is 22 C. The thermostat is being adjusted from " + thermostatTemp + ".";
-        compareWeather.asset.thermostatTemp = 22;
+        compareWeather.recommend.thermostatTemp = 22;
         return getAssetRegistry('org.acme.sample.Sensor')
         .then(function (assetRegistry) {
-          return assetRegistry.update(compareWeather.sensor);
+          return assetRegistry.update(compareWeather.recommend);
       });
       } else {
-        compareWeather.sensor.recommendation = "Boy! It feels HOT! The recommended thermostat " +
+        compareWeather.recommend.recommendation = "Boy! It feels HOT! The recommended thermostat " +
           "setting is 22 C. Way to go! Your thermostat is already optimally set.";
         return getAssetRegistry('org.acme.sample.Sensor')
         .then(function (assetRegistry) {
-          return assetRegistry.update(compareWeather.sensor);
+          return assetRegistry.update(compareWeather.recommend);
         });
       }
     //Temperate weather  
     } else if (feelsLike >= 20 && feelsLike < 26) {
       if (thermostatTemp != 20) {
-        compareWeather.sensor.recommendation = "It feels quite nice! The recommended" 
+        compareWeather.recommend.recommendation = "It feels quite nice! The recommended" 
           + " thermostat setting is 20 C. The thermostat is being adjusted from " + thermostatTemp +
           ".";
-        compareWeather.sensor.thermostatTemp = 20;
+        compareWeather.recommend.thermostatTemp = 20;
         return getAssetRegistry('org.acme.sample.Sensor')
         .then(function (assetRegistry) {
-          return assetRegistry.update(compareWeather.sensor);
+          return assetRegistry.update(compareWeather.recommend);
       });
       } else {
-        compareWeather.sensor.recommendation = "It feels nice out! The recommended thermostat " +
+        compareWeather.recommend.recommendation = "It feels nice out! The recommended thermostat " +
           "setting is 20 C.Way to go! Your thermostat is already optimally set.";
         return getAssetRegistry('org.acme.sample.Sensor')
         .then(function (assetRegistry) {
-          return assetRegistry.update(compareWeather.sensor);
+          return assetRegistry.update(compareWeather.recommend);
         });
       }
     //Cooler temps
     } else {
       if (feelsLike != 19) {
-        compareWeather.sensor.recommendation = "Brr! Where is my jacket? The recommended" 
+        compareWeather.recommend.recommendation = "Brr! Where is my jacket? The recommended" 
           + " thermostat setting is 19 C. The thermostat is being adjusted from " + thermostatTemp +
           ".";
-        compareWeather.sensor.thermostatTemp = 19;
+        compareWeather.recommend.thermostatTemp = 19;
         return getAssetRegistry('org.acme.sample.Sensor')
         .then(function (assetRegistry) {
-          return assetRegistry.update(compareWeather.sensor);
+          return assetRegistry.update(compareWeather.recommend);
       });
       } else {
-        compareWeather.sensor.recommendation = "Brr! Where is the heat? The recommended thermostat "
+        compareWeather.recommend.recommendation = "Brr! Where is the heat? The recommended thermostat "
           + "setting is 19 C.Way to go! Your thermostat is already optimally set.";
         return getAssetRegistry('org.acme.sample.Sensor')
         .then(function (assetRegistry) {
-          return assetRegistry.update(compareWeather.sensor);
+          return assetRegistry.update(compareWeather.recommend);
         });
       }
     }

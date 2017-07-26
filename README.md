@@ -225,214 +225,136 @@ In this section of the journey you will request access to the LinuxONE Community
 
 #### Importing the components of your blockchain application
 
-1. Open the GitHub [repository for this lab](https://github.com/IBM/HyperledgerFabric-on-LinuxOne).
-   ![GitHub Repository](images/GitHubRepo.png)
+1. In a terminal on your computer, move to the home directory. `cd $HOME`
 
+2. If not already installed, [install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git_) for your computer. 
 
+3. Once Git is installed, run the following command to clone the needed materials for this exercise. `git clone https://github.com/IBM/HyperledgerFabric-on-LinuxOne.git`
 
+   ![Clone GitHub repository](images/CloneGitHubRepo.png)
 
+4. To find the files you'll need for this, `cd HyperledgerFabric-on-LinuxOne/code/` and then run `ls` to see what is in the directory.
 
+   ![Move to code directory.](images/MoveToCodeDir.png)
 
-2. Select **stsa-temp-part1.bna**.
-   ![Select stsa-temp-part1.bna](images/Part1_Step2.png)
+5. Enter `pwd` to see where you are on your system. Save this information. You'll need it in a few steps.
 
+   ![Enter pwd.](images/pwd.png)
 
+6. Go back to your browser that has Composer Playground open. If you've closed it, you can open it in your browser by entering `xxx.xxx.x.x:8080` into the address bar where the x's correspond to your Linux guest's IP address.
 
+   * **Note:** You will need to view the browser in Full Screen (fully expanded) mode to be able to access everything and prevent issues with inability to scroll on certain screens.
 
+   ![View Composer Playground.](images/ComposerPlaygroundUI2.png)
 
+7. Scroll down on the left side of the Composer Playground to select **Import/Replace**.
 
-3. Click **Download**.
-   ![Select Download](images/Part1_Step3.png)
 
+![Select Import/Replace](images/SelectImportReplace.png)
 
 
 
 
+6. Select **Empty Business Network** and click **Deploy**.
+   ![Click browse](images/EmptyBusinessNetwork.png)
+7. From the _Import/Replace dialog window_, select **Replace & Import**.
+   * **Note for Hyperledger Composer V0.7 - 0.9:** When you deploy your business network to Hyperledger Fabric, the business network name is used as the chaincode ID. If the business network name is changed then a new chaincode ID will be issued and used on deploy. All existing data in blockchain will be lost due to the change. We don't have to worry about that right now.
 
-4. In a browser, go to the Composer Playground running on Bluemix. [https://composer-playground.mybluemix.net/editor](https://composer-playground.mybluemix.net/editor)
 
-   * <u>Note:</u> You will need to view the browser in Full Screen (fully expanded) mode to be able to access everything and prevent issues with inability to scroll on certain screens.
+![Deploy bna file.](images/ReplaceImport.png)
 
-   ![Open Composer Playground in a browser](images/Part1_Step4.png)
 
-   ​
 
-   * Explore Composer Playground.
 
-     * Click **About** *(README.md)*: This is a text file designed to tell you about the code you are going to work with.
+9. Name your blockchain application. Select the **pencil** to edit the name and version. 
 
-       ​
+   ![Click the pencil icon.](images/ClickPencil.png)
 
-     * Select **Model File** *(models/org.acme.sample.cto)*: This is where you create your *model* `participants`, `assets` and `transactions`.
+10. Change the name and version to `blockchain-journey` and `1.0`.
 
-     ![Model File Samples](images/Part1_Step4ModelFile.png)
+ ![Name your blockchain application.](images/EditName.png)
 
-     ​
+11. Select **Add a File**.
 
-     * Select **Script File** *(lib/sample.js)*: This is where you write JavaScript to give functionality (logic) to your model. All of this together creates your chaincode.
+    ![Select Add a File.](images/AddFile.png)
 
-       ![Script File example](images/Part1_Step4ScriptFile.png)
+12. From the *Add a file* pop-up dialog, select **browse**.
 
-       ​
+    ![Select browse.](images/SelectBrowse.png)
 
-     * Select **Access Control** *(permissions.acl)*: This allows you to control what permissions participants in the network have.
+13. In the file explorer window, navigate to where you downloaded the files. Refer to step 5 if you need help finding this location. **Select** *README.md* and **Click** *Open*.
 
-       ![ACL example](images/Part1_Step4ACLFile.png)
+    ![Select README.md](images/SelectREADME.png)
 
-       ​
+14. **Select** *Add*.
 
-     * **Note:** All of these files together become part of your **.bna** (business network archive) once you deploy them. Business Network Archive is a file type created by Hyperledger Composer. You may also hear this refered to as business network definition.
+    ![Select Add.](images/AddREADME.png)
 
-       ​
+15. On the *Current definition will be replaced* dialog, **select** *Replace & Import*.
 
-     * Select **Add File**: This would allow you to add another file to the web UI. Click **Cancel**
+    ![Select Replace & Import.](images/READMEReplace.png)
 
-       ![Add File example](images/Part1_Step4AddFile.png)
+16. Let's keep adding the files to the Composer Playground. **Select** *Add a file*.
 
-       ​
+    ![Select Add a file.](images/AddAFileREADME.png)
 
-     * At the top of the page, select **Test**.
+17. From the *Add a file* pop-up dialog, select **browse**.
 
-       ![Select Test](images/Part1_Step4Test.png)
+    ![Select browse.](images/SelectBrowse.png)
 
-       ​
+18. In the file explorer window, navigate to where you downloaded the files. Refer to step 5 if you need help finding this location. Go into the *models* folder.  **Select** *org.acme.sample.cto* and **Click** *Open*. This is your model file that defines the assets, participants and transactions you'll use your in blockchain application.
 
-     * <u>Note:</u> Under the Test tab, you will be able to interact with your code after you've selected **Deploy** on the Define tab. As shown below, you see that you can create a participant based on specifications from your model file. We won't explore through more of these right now because we will be working with them closely later in the lab.
+    ![Select org.acme.sample.cto.](images/SelectModel.png)
 
-       ![Example of Testing code](images/Part1_Step4SampleParticipant.png)
+19. Click **Add**. 
 
-       ​
+    ![Click Add.](images/AddModel.png)
 
-     * At the top of the page, select **Admin**.
+20. **Select** *Add a file*.
 
-       ![Select Admin](images/Part1_Step4Admin.png)
+    ![Select Add a file.](images/AddAFileREADME.png)
 
-       ​
+21. From the *Add a file* pop-up dialog, select **browse**.
 
-     * <u>Note:</u> The credentials that Composer Playground is using to access blockchain are stored here. From here you can also issue new credentials if you have authority.
+    ![Select browse.](images/SelectBrowse.png)
 
-       ![Admin Sample](images/Part1_Step4AdminSample.png)
+22. In the file explorer window, navigate to where you downloaded the files. Refer to step 5 if you need help finding this location. **Select** *permissions.acl* and **Click** *Open*.
 
-       ​
+    ![Select permissions.acl.](images/SelectPermissions.png)
 
-     * <u>Note:</u> The Composer Playground running on Bluemix is not currently connected to a blockchain environment. That's okay! The browser will simulate how things would work if connected to blockchain. In a Composer Playground connected to a blockchain, there will be a **globe** icon instead of **Get local version**. In that tab, you can create a connection profile with issued credentials to access specific blockchain networks where you would deploy your business network definition and interact with it.
+23. **Select** *Add*.
 
-       ![Connection example](images/Part1_Step4Globe.png)
+    ![Select Add.](images/AddPermissions.png)
 
-     ​
+24. **Select** *Add a file*.
 
+    ![Select Add a file.](images/AddAFileREADME.png)
 
+25. In the file explorer window, navigate to where you downloaded the files. Refer to step 5 if you need help finding this location. Go into the *lib* folder.  **Select** *logic.js* and **Click** *Open*. This is your JavaScript file that contains the logic for your model.
 
+    ![Select logic.js.](images/SelectLogic.png)
 
+26. **Select** *Add*.
 
-5. Click back to the **Define** tab and scroll down on the left side of the Composer Playground to select **Import/Replace**.
-   ![Select Import/Replace](images/Part1_Step5.png)
+    ![Select Add.](images/AddLogic.png)
 
+27. Your files are all now loaded into Composer Playground. **Click** *Deploy* on the left side of the browser. 
 
+    ![Click Deploy.](images/InitialDeploy.png)
 
+    #### Creating your blockchain application
 
+28. Click on **Model File**.
 
-6. Click the **browse** link.
-   ![Click browse](images/Part1_Step6.png)
+    ![Click Model File](images/SelectModelFile.png)
 
+29. Click in the **editor** on the right to begin writing your models. 
 
+    * NOTE: **DO** **NOT** modify the namespace during the lab.
 
+      ![Click in the editor](images/ClickEditor.png)
 
-
-7. Navigate to where you downloaded the **stsa-temp-part1.bna** file, select the file and click **Open**.
-   ![Select stsa-temp-part1.bna](images/Part1_Step7.png)
-
-
-
-
-
-8. From the _Import/Replace dialog window_, verify that your file shows it contains 1 asset, 0 participants and 3 transactions. Click **Deploy**.
-   ![Deploy bna file.](images/Part1_Step8.png)
-
-
-
-
-
-9. On the warning box, _Current definition will be replaced_, accept the warning by clicking **Replace & Import**.
-   * <u>Note for Hyperledger Composer V0.7 - 0.9</u>: When you deploy your business network to Hyperledger Fabric, the business network name is used as the chaincode ID. If the business network name is changed then a new chaincode ID will be issued and used on deploy. All existing data in blockchain will be lost due to the change. 
-     ![Click Replace & Import](images/Part1_Step9.png)
-
-
-
-
-10. You should now see the README and project named for stsa-temperature-part1. **Read through the README.**![stsa-temperature-part1](images/Part1_Step10.png)
-
-
-
-
-
-
-
-
-
-
-
-11. Clilck on **Model File**.
-
-![Click Model File](images/Part1_Step11.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-12. Click in the **editor** on the right to begin writing your models. 
-
-    * <u>NOTE:</u> **DO** **NOT** modify the namespace during the lab.
-
-      ![Click in the editor](images/Part1_Step12.png)
-
-
-
-
-
-
-
-
-
-13. On a new line, give your asset `Team` the following attributes.
-
-    * ​Explanation:  In this lab, the asset type is "Team". The attribute name of the Team asset for transactions is "asset". You could actually change the attribute name to be something else such as ​:star:​ "DallasCowboys" ​:star:​ when you create your own code. In that case it would look something like:
-
-      ```
-      /**This remains unchanged.*/
-      asset Team identified by teamID{
-      //create your Team asset model
-        o String teamID
-        o String teamName
-        o Double sensorTemp
-        o Double thermostatTemp
-        o String recommendation
-      }
-
-      /**In this case --> Team asset becomes --> Team DallasCowboys.*/
-      transaction SetSensorTemp {
-        //create your SetSensorTemp transaction model
-        --> Team DallasCowboys
-        o Double newSensorValue
-      }
-
-      /**In our corresponding transaction function we would need to replace the word 'asset' with 'DallasCowboys' to match our model from above.*/
-      function onSetSensorTemp(setSensorTemp){
-        setSensorTemp.DallasCowboys.sensorTemp = setSensorTemp.newSensorValue;
-        return getAssetRegistry('org.acme.sample.Team')
-          .then(function(assetRegistry){
-            return assetRegistry.update(setSensorTemp.DallasCowboys);
-          });
-      }
-      ```
+30. On a new line, give your asset `Sensor` the following attributes.
 
     * Note: a small "o" is used as a bullet in the model.
 
@@ -446,510 +368,280 @@ In this section of the journey you will request access to the LinuxONE Community
 
     * `o String recommendation`— this will be populated based on the `CompareWeather` transaction.
 
-      ![Team model](images/Part1_Step13.png)
+    * **Click** *Deploy* to save changes.
 
+      ![Sensor model](images/SensorModel.png)
 
+31. Now create your first transaction model for `SetSensorTemp`. Enter the following attributes:
 
+    * `--> Sensor gauge` — The transaction will need to put data into the `Sensor` asset. This passes a reference to the asset so we can work with the asset in the logic for the transaction.
 
+    * `o Double newSensorValue` — This is the variable that will be set by the temperature passed into the transaction from the NodeRed Sensor for picking up temperature.
 
+    * *Click** *Deploy* to save changes.
 
+      ![Create SetSensorTemp model](images/SetSensorTempModel.png)
 
+32. Build your `ChangeThermostatTemp` transaction model. Add the following:
 
+    * `--> Sensor thermostat` — The transaction will need to put data into the `Sensor` asset for the thermostat. This passes a reference to the asset so we can work with the asset in the logic for the transaction.
 
+    * `o Double newThermostatValue` — This allows for a new, proposed value to be sent into the transaction. In the logic tab, we will use this value to compare to what the gauge says and decide if the thermostat value should be adjusted.
 
+    * *Click** *Deploy* to save changes.
 
-14. Now create your first transaction model for `SetSensorTemp`. Enter the following attributes:
+      ![Create ChangeThermostatTemp model](images/ChangeThermostatModel.png)
 
-    * `--> Team asset` — The transaction will need to put data into the `Team` asset. This passes a reference to the asset so we can work with the asset in the logic for the transaction.
+33. Enter the following values to build your `CompareWeather` transaction model:
 
-    * `o Double newSensorValue` — This is the variable that will be set by the temperature passed into the transaction from the Raspberry Pi Sens Hat.
+    * `--> Sensor recommend` — The transaction will need to put data into the `Sensor` asset. This passes a reference to the asset so we can work with the asset in the logic for the transaction.
+    * `o Double outsideTemp` — Looking at the [Weather.com API](https://twcservice.eu-gb.mybluemix.net/rest-api/#!/Current_Conditions/v1locobscurrent) for Current Conditions, you can see all of the possible data that the call could return. Based on the data, it was decided to take the actual outside temperature and the feels like temperature to give a recommendation on thermostat settings. This variable stores the value passed into it via NodeRed from Weather.com for the outside temperature.  The model on the API page shows up whether the data is returned in Celsius or Fahrenheit and its variable type. In this exercise we will use Celsius.
 
-      ![Create SetSensorTemp model](images/Part1_Step14.png)
-
-
-
-
-
-
-
-
-
-
-
-15. Build your `ChangeThermostatTemp` transaction model. Add the following:
-
-    * `--> Team asset` — The transaction will need to put data into the `Team` asset. This passes a reference to the asset so we can work with the asset in the logic for the transaction.
-    * `o Double newThermostatValue` — This allows for a new, proposed value to be sent into the transaction. In the logic tab, we will use this value to compare to what the sensor says and decide if the thermostat value should be adjusted.
-
-    ![Create ChangeThermostatTemp model](images/Part1_Step15.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-16. Enter the following values to build your `CompareWeather` transaction model:
-
-    * `--> Team asset` — The transaction will need to put data into the `Team` asset. This passes a reference to the asset so we can work with the asset in the logic for the transaction.
-
-    * `o Double outsideTemp` — Looking at the [Weather.com API](https://twcservice.eu-gb.mybluemix.net/rest-api/#!/Current_Conditions/v1locobscurrent) for Current Conditions, you can see all of the possible data that the call could return. 
-
-      ![Weater.com API temps](images/Part1_Step16Temps.png)
-
-      Based on the data, it was decided to take the actual outside temperature and the feels like temperature to give a recommendation on thermostat settings. This variable stores the value passed into it via NodeRed from Weather.com for the outside temperature.  The model on the API page shows up whether the data is returned in Celsius or Fahrenheit and its variable type. For this lab, we are working with Celsius as this is the measure of temperature that the Raspberry Pi Sens Hat uses.
+    ![Weater.com API temps](images/Part1_Step16Temps.png)
 
     * `o Double feelsLike`— the variable to store the feels_like value from Weather.com.
 
-    ![create CompareWeather model](images/Part1_Step16.png)
+    * **Click** *Deploy* to save changes.
+
+      ![create CompareWeather model](images/CompareWeatherModel.png)
+
+34. Click on the **Script File** tab.
+
+
+![Click Script File](images/ClickScriptFile.png)
 
 
 
-
-
-
-
-
-
-
-
-
-
-17. Click on the **Script File** tab.
-
-    ![Click Script File](images/Part1_Step17.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-18. Review the code in the editor. ******Verify that your variable names match the variable names here.****  Capitalization does matter! If names don't match, you'll have errors. 
+35. **Review the code in the editor. **Verify that your variable names match the variable names here.  Capitalization does matter! If names don't match, you'll have errors. 
 
     * Any guesses what the code is doing for each transaction?
 
-    ![Review code](images/Part1_Step18.png)
+      ![Review code](images/ReviewScriptFile.png)
 
+    #### Test application code
 
+36. Click on the **Test** tab at the top to try out your code.
 
+![Click Test](images/ClickTest.png)
 
-
-
-
-
-
-
-
-
-
-19. Click **Deploy**.
-    * <u>Note:</u> When connected to an actual blockchain this would create a new contract on the ledger. If you ever modify the project name for any reason, this will create a new contract. The project name is currently used as the chaincode ID for Composer V0.7.3. The project name is viewable and editable on the **About** page.
-
-![Click Deploy](images/Part1_Step19.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-20. You should see a *Deploy Successful* message appear in the upper right corner of the browser.
-
-    ![Deploy Successful message](images/Part1_Step20.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-21. Click on the **Test** tab at the top to try out your code.
-
-![Click Test](images/Part1_Step21.png)
-
-
-
-
-
-
-
-
-
-
-
-22. Notice that in this particular case because we have no participants, the **Test** tab has opened to the **Asset** menu on the left. You must have an asset to be able to run any of the transactions.
+37. Notice that in this particular case because we have no participants, the **Test** tab has opened to the **Asset** menu on the left. You must have an asset to be able to run any of the transactions.
 
     * Click **Create New Asset**.
 
-    ![Click Create New Asset](images/Part1_Step22.png)
+      ![Click Create New Asset](images/CreateNewAsset.png)
 
+38. Create an example asset to test your code by filling in the following information:
 
+   * `"teamID": "teamID:**xxx**"` where ** **xxx** ** is any team number you'd like.
 
+   * `"teamName":""` — this could be any name you'd like. Be clever! :bowtie:
 
+   * `"sensorTemp": **0**` — Set ** **0** ** to any value. When you work with NodeRed, temperatures will be in Celsius.
 
+   * `"thermostatTemp": **0** `— Set ** **0** ** to any value. This is initializing your thermostat so pick a value you want to work with.
 
+   * `"recommendation": "" `— Leave this as is.
 
+   * *Make a note somewhere** of the values you used for `sensorTemp` and `thermostatTemp`.
 
+     ![Create asset](images/NewAssetValues.png)
 
+39. Click **Create New**.
 
+   ![Click Create New](images/ClickCreateNew.png)
 
-23. Create an example asset to test your code by filling in the following information:
+40. Once your **Team** asset is created it should show in the registry as shown below.
 
-* `"teamID": "teamID:**xxx**"` where ** **xxx** ** is the team number given to you at STSA.
-* `"teamName":""` — this could be any name you'd like. Be clever! :bowtie:
-* `"sensorTemp": **0**` — Set ** **0** ** to any value. When you work with NodeRed, temperatures will be in Celsius, but for this it doesn't matter. Just be consistent either way with Fahrenheit or Celsius.
-* `"thermostatTemp": **0** `— Set ** **0** ** to any value. This is initializing your thermostat so pick a value you want to work with.
-* `"recommendation": "" `— Leave this as is.
-* **Make a note somewhere** of the values you used for `sensorTemp` and `thermostatTemp`.
+    ![Asset registry](images/Team01Asset.png)
 
-![Create asset](images/Part1_Step23.png)
+41. You're ready to run your first transaction. **Click** on *Submit Transaction*.
 
+    ![Click Submit Transaction](images/ClickSubmitTransaction.png)
 
+42. The **Submit Transaction** dialog will open a new window. 
 
+    * Make sure that the **Transaction Type** is set to `SetSensorTemp`.
 
+    * Modify the JSON data`"asset": "resource:org.acme.sample.Team#teamID:xxx"`  — enter your team's identifier in place of the value where **xxx** is in the sample JSON data.
 
+    * Modify the JSON data`"newSensorValue": 0` — enter a value your sensor could have.
 
+    * Click **Submit**.
 
+      ![Submit SetSensorTemp](images/SetSensorTempTran.png)
 
+43. If you submitted the transaction with your correct team ID, then you should have a transaction showing in your registry with the data you entered in the prior step. Congratulations! You've now completed a transaction. :thumbsup:
 
+    ![Transaction Registry](images/TransactionRegistry.png)
 
+44. Verify that `SetSensorTemp` updated the `sensorTemp`value in your asset. Click **Sensor**.
 
-24. Click **Create New**.
+    ![Click Team](images/ClickSensor.png)
 
-![Click Create New](images/Part1_Step24.png)
+45. Check the `sensorTemp` value. Does it have the new value from the `SetSensorTemp` transaction?
 
+    ![Check sensorTemp value](images/VerifySensorTemp.png)
 
+46. Let's do another transaction. Select **Submit Transaction**.
 
+    ![Select Submit Transaction](images/SubmitTransaction2.png)
 
+47. This time let's run, `ChangeThermostatTemp`. 
 
+   * In the **Transaction Type** drop down, select `ChangeThermostatTemp`.
+     ![Select ChangeThermostatTemp](images/SelectChangeThermostat.png)
 
+   * Edit the sample JSON for the transaction`"asset": "resource:org.acme.sample.Team#teamID:xxx"`— change **xxx** to your team ID value.
 
+   * Edit the sample JSON for the transaction`"newThermostatValue": 0` — Replace **0** with a value to which you would like to see if you can adjust the thermostat.
 
+   * Click **Submit**.
 
+     ![Submit ChangeThermostatTemp](images/ChangeThermostatTran.png)
 
+   * If you select a temperature for the thermostat that is not within 3 degrees of the `sensorTemp` value, then you will get an error message like the one below. If you get this message, enter another value and click submit.
 
+     ![ChangeThermostatTemp Error Message](images/Errormsg.png)
 
+   * If you do have permission to adjust the thermostat, you will be returned back to the transaction registry where you can see the data you just submitted.
 
-25. Once your **Team** asset is created it should show in the registry as shown below.
+     ![Successful Transaction](images/TransactionRegistry2.png)
 
-    ![Asset registry](images/Part1_Step25.png)
+   * If for some reason you forget to modify your teamID value or update it to the wrong value, you will see an error like the one shown below. Check your value for teamID and try again.
 
+     ![Asset does not exist error message](images/TeamIDError.png)
 
+48. Verify that the last transaction updated your asset. Click **Sensor**.
 
+    ![Click Sensor](images/ClickSensor2.png)
 
+49. Verify that the `thermostatTemp` attribute for your Team has been updated to the value you gave successsfully in the `ChangeThermostatTemp` transaction.
 
+    * **Note**: In step 40, you can verify that the thermostat was originally set to 20 and is now set to 16.
 
+      ![Verify thermostatTemp value](images/VerifyThermostatTemp.png)
 
+50. Time to work with the `CompareWeather` transaction. Click **Submit Transaction**.
 
+    ![Click Submit Transaction](images/SubmitTransaction3.png)
 
+51. Select **CompareWeather** from the *Transaction Type* drop down.
 
+    ![Select CompareWeather](images/Part1_Step36.png)
 
-26. You're ready to run your first transaction. Click on **Submit Transaction**.
+52. Complete the **CompareWeather** transaction.
 
-    ![Click Submit Transaction](images/Part1_Step26.png)
+    * Modify the JSON, `"asset": "resource:org.acme.sample.Team#teamID:xxx"`— Replace **xxx** with your team ID.
 
+    * Modify the JSON for`"outsideTemp": 0`— Enter a value for an outside temperature.
 
+    * Edit the JSON for`"feelsLike": 0` — Enter a value for what temperature it could feel like outside.
 
+    * Click **Submit**.
 
+      ![Complete CompareWeather](images/CompareWeatherTran.png)
 
+53. Verify that your transaction is showing in the Transaction Registry.
 
+    ![Transaction Registry](images/TransactionRegistry3.png)
 
+54. Click on **Sensor**. 
 
+    ![Click Sensor](images/ClickSensor3.png)
 
+55. Verify there is now a message in the `recommendation`variable in your Team asset and that the `thermostatValue` has been updated to the recommended value.
 
+    ![Team asset recommendation value](images/VerifyRecommendation.png)
 
-27. The **Submit Transaction** dialog will open a new window. 
+56. Continue testing your code for all scenarios to understand what your contract(s) can do. The hints to the remaining scenarios are as follows: (Yes, you'll have to look at the Script File under the Define Tab to figure out the criteria.)
 
-    a.  Make sure that the **Transaction Type** is set to `SetSensorTemp`.
+    * ChangeThemostatTemp:
+      - [ ] A successful transaction where the `thermostatValue` is updated in the Sensor asset.
+      - [ ] An error message in the *Submit Transaction* window advising you do not have permission to adjust the thermostat.
+    * CompareWeather:
+      - [ ] A transaction based on `outsideTemp` values where it is really hot.
+      - [ ] A transaction based on `outsideTemp` values where it is quite nice.
+      - [ ] A transaction based on `outsideTemp` values where it is cold.
+      - [ ] A transaction based on `feelsLike` values where it hot.
+      - [ ] A transaction based on `feelsLike` values where it is quite nice.
+      - [ ] A transaction based on `feelsLike` values where it is cold.
 
-    b.  Modify the JSON data.
+    * **Note:** You should verify that your asset values have been updated appropriately after each transaction like you did in prior steps.
 
-    * `"asset": "resource:org.acme.sample.Team#teamID:xxx"`  — enter your team's identifier in 		place of the value where **xxx** is in the sample JSON data.
 
+#### Deploy application to Hyperledger Fabric
 
-    * `"newSensorValue": 0` — enter a value your sensor could have.
+57. In your terminal connected to your Linux guest, enter the command `cd ~/.composer-connection-profiles/`. Enter `ls` to see the profiles in the directory. The profile was created during the setup script. You'll need the information in it to connect Hyperledger Composer to Hyperledger Fabric.
 
-    c.  Click **Submit**.
+    ![View your connection profiles.](images/ComposerConnectionProfile.png)
 
-![Submit SetSensorTemp](images/Part1_Step27.png)
+58. Move into the profile directory, `cd hlfv1` and view the file in it by doing `cat connection.json`. Keep the terminal available, you'll need to view this information in just a second.
 
+    ![View connection.json](images/ConnectionJSON.png)
 
+59. Back in your browser where Hyperledger Composer Playground is running, **click** the *Define* tab and then **click** *Export* to save your code to your desktop. This is a safety measure. Export saves all of the indivudual files we imported at the beginning of Part 2 into a compressed file called a business network archive (.bna).
 
+    ![Click Export](images/ClickExport.png)
 
+60. In the pop-up dialog, **click** *Save File*.
 
+    ![Click Save File.](images/SaveFile2.png)
 
+61. In the upper right corner of your browser, **select** the *globe icon*.
 
+    ![Select the globe icon.](images/globe.png)
 
+62. **Select** *Import or Create a Profile*.
 
+    ![Select Import or Create a Profile.](images/ImportProfile.png)
 
-28. If you submitted the transaction with your correct team ID, then you should have a transaction showing in your registry with the data you entered in the prior step. Congratulations! You've now completed a transaction. :thumbsup:
+63. On the *Import/Create a Connection Profile* dialog, **select** *Hyperledger Fabric v1.0* and **click** *Add*.
 
-![Transaction Registry](images/Part1_Step28.png)
+    ![Select Hyperledger Fabric v1.0.](images/SelectHFv1.png)
 
+64. Complete the following fields according to the information in your connection.json on the Linux guest. This is in your terminal as found in step 58.**Information for Orderer, Channel, MSP ID, CA, Peers and Key Value Store must be exact.**
 
+    * Connection Profile — LinuxONECC
 
+    * Orderer(s) — `grpc://localhost:7050`
 
+    * Channel — `composerchannel`
 
+    * MSP ID — `Org1MSP`
 
+    * CA — `http://localhost:7054`
 
+    * Peer(s) — `grpc://localhost:7051`, `grpc://localhost:7053`
 
+    * Key Value Store — `/home/linux1/.composer-credentials`
 
+    * **Click** *Save*.
 
+      ![Enter the information in the Composer Playground Profile.](images/PlaygroundConnectionProfile.png)
 
-29. Verify that `SetSensorTemp` updated the `sensorTemp`value in your asset. Click **Team**.
+65. **Click** *Use this profile*.
 
-    ![Click Team](images/Part1_Step29.png)
+    ![Click Use this profile.](images/UseThisProfile.png)
 
+66. In the *Connect with an identity* window, **click** *Add identity*.
 
+    ![Click Add identity.](images/AddIdentity.png)
 
+67. Create a User ID of `PeerAdmin` and a User Secret of `linux`. The User ID must be PeerAdmin but the User Secret could be anything.**Click** *Connect*.
 
+    ![Fill in the identity values.](images/PeerAdmin.png)
 
+68. ​
 
+    ​
 
 
 
-30. Check the `sensorTemp` value. Does it have the new value from the `SetSensorTemp` transaction?
+### End of Part 2
 
-![Check sensorTemp value](images/Part1_Step30.png)
 
 
-
-
-
-
-
-
-
-
-
-
-
-31. Let's do another transaction. Select **Submit Transaction**.
-
-![Select Submit Transaction](images/Part1_Step21.png)
-
-
-
-
-
-
-
-
-
-
-
-32. This time let's run, `ChangeThermostatTemp`. 
-
-
-1. In the **Transaction Type** drop down, select `ChangeThermostatTemp`.
-
-   ![Select ChangeThermostatTemp](images/Part1_Step32_1.png)
-
-2. Edit the sample JSON for the transaction.
-
-   * `"asset": "resource:org.acme.sample.Team#teamID:xxx"`— change **xxx** to your team ID value.
-   * `"newThermostatValue": 68` — Replace **68** with a value to which you would like to see if you can adjust the thermostat.
-
-3. Click **Submit**.
-
-![Submit ChangeThermostatTemp](images/Part1_Step32.png)
-
-
-
-
-
-
-
-* If you select a temperature for the thermostat that is not within 3 degrees of the `sensorTemp` value, then you will get an error message like the one below. If you get this message, enter another value and click submit.
-
-  ![ChangeThermostatTemp Error Message](images/Part1_Step32_errormsg.png)
-
-* If you do have permission to adjust the thermostat, you will be returned back to the transaction registry where you can see the data you just submitted.
-
-![Successful Transaction](images/Part1_Step32_success.png)
-
-* If for some reason you forget to modify your teamID value or update it to the wrong value, you will see an error like the one shown below. Check your value for teamID and try again.
-
-![Asset does not exist error message](images/Part1_Step33AssetError.png)
-
-
-
-
-
-
-
-
-
-
-
-33. Verify that the last transaction updated your asset. Click **Team**.
-
-![Click Team](images/Part1_Step33.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-34. Verify that the `thermostatTemp` attribute for your Team has been updated to the value you gave successsfully in the `ChangeThermostatTemp` transaction.
-
-* <u>Note:</u> Look back at step 25 and see that the `thermostatTemp` value was 71 before.
-
-![Verify thermostatTemp value](images/Part1_Step34.png)
-
-
-
-
-
-
-
-
-
-
-
-35. Time to work with the `CompareWeather` transaction. Click **Submit Transaction**.
-
-![Click Submit Transaction](images/Part1_Step35.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-36. Select **CompareWeather** from the *Transaction Type* drop down.
-
-![Select CompareWeather](images/Part1_Step36.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-37. Complete the **CompareWeather** transaction.
-
-    a. Fill in the following fields in the JSON for **CompareWeather**:
-
-    * `"asset": "resource:org.acme.sample.Team#teamID:xxx"`— Replace **xxx** with your team ID.
-    * `"outsideTemp": 0`— Enter a value for an outside temperature.
-    * `"feelsLike": 0` — Enter a value for what temperature it could feel like outside.
-
-    b. Click **Submit**.
-
-    ![Complete CompareWeather](images/Part1_Step37.png)
-
-
-
-
-
-
-
-
-
-38. Verify that your transaction is showing in the Transaction Registry.
-
-![Transaction Registry](images/Part1_Step38.png)
-
-
-
-
-
-39. Click on **Team**. 
-
-![Click Team](images/Part1_Step39.png)
-
-
-
-
-
-
-
-
-
-40. Verify there is now a message in the `recommendation`variable in your Team asset and that the `thermostatValue` has been updated to the recommended value.
-    * <u>Note:</u> This application was developed for temperatures in Celsius. The CompareWeather transaction and recommendation result are based on Celsius. If you use Fahrenheit, you'll see results like below.
-
-![Team asset recommendationv value](images/Part1_Step40.png)
-
-
-
-
-
-
-
-
-
-
-
-41. Continue testing your code for all scenarios to understand what your contract(s) can do. The hints to the remaining scenarios are as follows: (Yes, you'll have to look at the Script File under the Define Tab to figure out the criteria.)
-
-    1. ChangeThemostatTemp:
-       - [ ] A successful transaction where the `thermostatValue` is updated in the Team asset.
-       - [ ] An error message in the *Submit Transaction* window advising you do not have permission to adjust the thermostat.
-    2. CompareWeather:
-       - [ ] A transaction based on `outsideTemp` values where it is really hot.
-       - [ ] A transaction based on `outsideTemp` values where it is quite nice.
-       - [ ] A transaction based on `outsideTemp` values where it is cold.
-       - [ ] A transaction based on `feelsLike` values where it hot.
-       - [ ] A transaction based on `feelsLike` values where it is quite nice.
-       - [ ] A transaction based on `feelsLike` values where it is cold.
-
-    * <u>Note:</u> You should verify that your asset values have been updated appropriately after each transaction like you did in prior steps.
-
-
-
-
-
-
-
-### End of Part 1
-
-## Part 2
+## Part 3 — 
 
 Okay we are going to take the work from the prior 3 labs and connect them to communicate with Blockchain. To do this we are going to have you follow the simple steps.
 

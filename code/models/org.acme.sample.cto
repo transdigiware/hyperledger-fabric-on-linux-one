@@ -1,0 +1,36 @@
+/**
+ * STSA business network definition.
+ */
+namespace org.acme.sample
+
+asset Sensor identified by teamID {
+  //create your Team asset model
+  o String teamID
+  o String teamName
+  o Double sensorTemp
+  o Double thermostatTemp
+  o String recommendation
+}
+
+transaction SetSensorTemp identified by transactionId {
+  //create your SetSensorTemp transaction model
+  o String transactionId
+  --> Sensor sensor
+  o Double newSensorValue
+}
+
+transaction ChangeThermostatTemp identified by transactionId {
+  //create your ChangeThermostatTemp transaction model
+  o String transactionId
+  --> Sensor sensor
+  o Double newThermostatValue
+}
+
+transaction CompareWeather identified by transactionId{
+  //create your CompareWeather transaction model
+  o String transactionId
+  --> Sensor sensor
+  o Double outsideTemp
+  o Double feelsLike
+}
+

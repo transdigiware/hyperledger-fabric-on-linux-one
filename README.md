@@ -225,8 +225,8 @@ In this section of the journey you will request access to the LinuxONE Community
 
 #### Importing the components of your blockchain application
 
-1. Open the GitHub [repository for this lab](https://github.com/SweetJenn23/BlockchainLab).
-   ![GitHub Repository](images/Part1_Step1.png)
+1. Open the GitHub [repository for this lab](https://github.com/IBM/HyperledgerFabric-on-LinuxOne).
+   ![GitHub Repository](images/GitHubRepo.png)
 
 
 

@@ -136,7 +136,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
 21. Now it is time to setup your guest! Run the following command, to move the setup script from the Github Repository to your Linux guest.
 
-    `wget https://raw.githubusercontent.com/IBM/HyperledgerFabric-on-LinuxOne/master/Linux1BlockchainScript.sh`
+    `wget https://raw.githubusercontent.com/IBM/HyperledgerFabric-on-LinuxOne/master/Linux1BlockchainScript.shW`
 
     ![Import script.](images/WgetSetup.png)
 
@@ -631,7 +631,59 @@ In this section of the journey you will request access to the LinuxONE Community
 
     ![Fill in the identity values.](images/PeerAdmin.png)
 
-68. ​
+68. When the Composer Playground has successfully connected to your Hyperledger Fabric, you will see the following in your browser.
+
+    ![Connected to Hyperledger Fabric.](images/ConnectedToFabric.png)
+
+69. Back in your terminal, enter `docker ps -a` . You can see there is now a new container running where Composer Playground has deployed code to the Hyperledger Fabric.
+
+    ![View Hyperledger Composer Playground container.](images/PlaygroundContainer.png)
+
+70. Switch back to your Hyperledger Composer Playground browser, **click** *Define* and then **select** *About*.
+
+    ![Click Define and About.](images/DefineConnectedPlayground.png)
+
+71. Notice that there is now a basic-sample-network application showing and not your blockchain-journey. We will need to import it to deploy it to the Hyperledger Fabric. **Select** *Import/Replace*.
+
+    ![Select Import/Replace.](images/SelectImport.png)
+
+72. In the *Import/Replace Business Network* window, **select** *browse.*
+
+    ![Select browse.](images/SelectBrowse2.png)
+
+73. In the file explorer window, **navigate** to where you downloaded `blockchain-journey.bna`. **Select** *blockchain-journey.bna* and **click** *Open*.
+
+    ![Select your bna file and click open.](images/ImportBNA.png)
+
+74. **Click** *Deploy* in the *Import/Replace Business Network* dialog to deploy your blockchain application to Hyperledger Fabric.
+
+    ![Click Deploy.](images/DeployBNA.png)
+
+75. In the warning window, *Current definition will be replaced*, **click** *Replace & Import*.
+
+    ![Click Replace & Import.](images/ReplaceImportBNA.png)
+
+76. You should see your blockchain-journey in the Hyperledger Composer Playground when it is successfully deployed. Congratulations! You've deployed your first blockchain application to Hyperledger Fabric.
+
+    * **Note:** As a safety measure, check the Model File and Script File to make sure your code is there. It is also good practice to run some transaction in the test tab.
+
+    ![Successful deployment.](images/SuccessfulDeployBNA.png)
+
+    #### Generating API
+
+77. In your terminal, issue the following commands to start the API rest server:
+
+    *  `mkdir /data/linux1/playground`
+
+    * `nohup composer-rest-server -p hlfv1 -n org-acme-biznet -i PeerAdmin -s whatever -N always >/data/linux1/playground/rest.stdout 2>/data/linux1/playground/rest.stderr & disown`
+
+      ![Start your API rest server.](images/StartRestServer.png)
+
+78. Verify the rest server process is running. `ps -ef|grep rest`
+
+    ![Verify the rest server is running.](images/VerifyRestServer.png)
+
+79. ​
 
     ​
 

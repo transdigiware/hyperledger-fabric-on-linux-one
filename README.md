@@ -148,7 +148,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
     ![Make the file executable.](images/Linux1ScriptExecutable.png)
 
-24. Before running the script, you'll need to add your user id to the docker group. To do this, enter `sudo user mod -aG docker linux1` . To verify that the command worked, enter `docker` . Your output should look like the image below.
+24. Before running the script, you'll need to add your user id to the docker group. To do this, enter `sudo usermod -aG docker linux1` . To verify that the command worked, enter `docker` . Your output should look like the image below.
 
     ![Add user id to docker group.](images/AddIDtoDocker.png)
 
@@ -184,11 +184,11 @@ In this section of the journey you will request access to the LinuxONE Community
 
     * Hit **enter** twice to create two new lines.
 
-    * Enter the following, `export PATH=/data/npm/bin:$PATH
+    * Enter the following, `export PATH=/data/npm/bin:$PATH`
 
     * Hit **escape**.
 
-    * Enter `wq` and hit **enter** to save your changes.
+    * Enter `:wq` and hit **enter** to save your changes.
 
       ![Edit your .profile.](images/ExportPathProfile.png)
 

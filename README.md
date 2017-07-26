@@ -57,6 +57,8 @@ In this section of the journey you will request access to the LinuxONE Community
 
    ![Check your email for the registration confirmation email.](images/RegistrationConfirmationEmail.png)
 
+   #### Create your LinuxONE guest
+
 6. Back in your browser, **enter** the *user ID* and *password* from your email. **Click** *Sign in*.
 
    * Note: Now is a good time to change your password to one you'll remember. This can be done after the initial sign in by selecting your username from the upper right corner of the web page and selecting account settings.
@@ -130,9 +132,11 @@ In this section of the journey you will request access to the LinuxONE Community
 
     ![Success!](images/CommunityCloudWelcome.png)
 
+    #### Setup your Linux guest for Hyperledger Fabric and Hyperledger Composer
+
 21. Now it is time to setup your guest! Run the following command, to move the setup script from the Github Repository to your Linux guest.
 
-    `wget https://github.com/IBM/HyperledgerFabric-on-LinuxOne/blob/master/Linux1BlockchainScript.sh`
+    `wget https://raw.githubusercontent.com/IBM/HyperledgerFabric-on-LinuxOne/master/Linux1BlockchainScript.sh`
 
     ![Import script.](images/WgetSetup.png)
 
@@ -144,11 +148,83 @@ In this section of the journey you will request access to the LinuxONE Community
 
     ![Make the file executable.](images/Linux1ScriptExecutable.png)
 
-24. Before running the script, you'll need to add your user id to the docker group. To do this, enter `usermod 
+24. Before running the script, you'll need to add your user id to the docker group. To do this, enter `sudo user mod -aG docker linux1` . To verify that the command worked, enter `docker` . Your output should look like the image below.
+
+    ![Add user id to docker group.](images/AddIDtoDocker.png)
+
+25. For this changes to take effect for the script, exit the ssh session by typing `exit`.
+
+    ![Exit session.](images/ExitSession.png)
+
+26. Log back in to your guest. `ssh -i DJBlockchain.pem linux1@xxx.xxx.x.x`where x is the values for your guest's IP address. (Refer to step 15 if you need help finding it.)
+
+    ![Log back in to your guest.](images/ReLogin.png)
+
+27. You're ready to run the setup script! Run the script using the following command, `./Linux1BlockchainScript.sh`. Be patient. It takes awhile!
+
+    ![Run setup script.](images/RunSetupScript.png)
+
+28. It's completed when the command line returns. It will look similar to the following image.
+
+    ![Setup script is finished.](images/SetupScriptDone.png)
+
+    #### Verify the installation of Hyperledger Fabric and Hyperledger Composer
+
+29. To verify the installation, we will need to modify your .profile to be able to call newly installed packages. To do this type, `vi .profile`.
+
+    ![Edit .profile](images/Editprofile.png)
+
+30. To edit the .profile take the following actions:
+
+    * Use the **arrow down key** to move the cursor to the last line of the file.
+
+    * Use the **right arrow key** to move the cursor to the last letter of the file.
+
+    * Type `i` to go into insert mode.
+
+    * Hit **enter** twice to create two new lines.
+
+    * Enter the following, `export PATH=/data/npm/bin:$PATH
+
+    * Hit **escape**.
+
+    * Enter `wq` and hit **enter** to save your changes.
+
+      ![Edit your .profile.](images/ExportPathProfile.png)
+
+31. For the changes to take place, exit your ssh session by typing `exit`.
+
+    ![Exit session.](images/ExitSession.png)
+
+32. Log back in to your guest. `ssh -i DJBlockchain.pem linux1@xxx.xxx.x.x`where x is the values for your guest's IP address. (Refer to step 15 if you need help finding it.)
+
+    ![Log back in to your guest.](images/ReLogin.png)
+
+33. To see if your blockchain network is up and running, use the command `docker ps -a`. You should see 4 containers with image names like the ones shown below.
+
+    ![Running fabric containers.](images/RunningFabricContainers.png)
+
+34. Verify that the composer command line interface and other tools were installed by entering `composer -v`.
+
+    ![Verify Composer tools installation.](images/VerifyComposerCLI.png)
+
+35. Verify Composer Playground is running by looking for its process using the command, `ps -ef|grep playground`. 
+
+    ![Verify Composer Playground is running.](images/VerifyComposerPlaygroundRunning.png)
+
+36. Open a browser and enter `xxx.xxx.x.x:8080` into the address bar where the x's correspond to your Linux guest's IP address. You should see the following:
+
+    ![Loading Composer Playground.](images/ComposerPlaygroundUI1.png)
+
+    ![Loaded Composer Playground.](images/ComposerPlaygroundUI2.png)
+
+37. Congratulations! Part 1 is now complete! Lets get to work on the fun part. :smiley:
 
 
+### Part 2 — Creating a blockchain application and generating API
 
-#### Defining your blockchain network
+#### Importing the components of your blockchain application
+
 1. Open the GitHub [repository for this lab](https://github.com/SweetJenn23/BlockchainLab).
    ![GitHub Repository](images/Part1_Step1.png)
 

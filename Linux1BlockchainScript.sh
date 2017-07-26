@@ -1,4 +1,4 @@
-#!/bin/bash/
+#!/bin/bash
 
 
 #Install NodeJS
@@ -52,6 +52,7 @@ cd /data/linux1/composer-tools/packages/fabric-dev-servers/fabric-scripts/hlfv1
 mv startFabric.sh originalStartFabric.sh
 wget https://raw.githubusercontent.com/IBM/HyperledgerFabric-on-LinuxOne/master/startFabric.sh
 chmod u+x startFabric.sh
+./startFabric.sh
 cd /data/linux1/composer-tools/packages/fabric-dev-servers/
 ./createComposerProfile.sh
 mkdir /data/playground/

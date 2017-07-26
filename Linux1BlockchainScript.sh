@@ -52,8 +52,8 @@ cd /data/linux1/composer-tools/packages/fabric-dev-servers/fabric-scripts/hlfv1
 mv startFabric.sh originalStartFabric.sh
 wget https://raw.githubusercontent.com/IBM/HyperledgerFabric-on-LinuxOne/master/startFabric.sh
 chmod u+x startFabric.sh
-./startFabric.sh
 cd /data/linux1/composer-tools/packages/fabric-dev-servers/
+./startFabric.sh
 ./createComposerProfile.sh
 mkdir /data/playground/
 nohup composer-playground >/data/playground/playground.stdout 2>/data/playground/playground.stderr & disown

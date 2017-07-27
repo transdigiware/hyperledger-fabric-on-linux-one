@@ -681,7 +681,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
     * Press `Enter` to start a new line.
 
-    * On the new line, type in `127.0.0.1     djblockchain`.
+    * On the new line, type in `xxx.xxx.x.x     djblockchain` where the x's is the IP address for your Linux guest.
 
     * Press `Esc` to leave insert mode.
 
@@ -701,7 +701,15 @@ In this section of the journey you will request access to the LinuxONE Community
 
     ![Verify the rest server is running.](images/VerifyRestServer.png)
 
-80. To see your API, go back to your browser and open a new tab or window. In the address bar, enter `http://xxx.xxx.x.x:3000/explorer` where the x's are the IP address for your Linux guest.
+80. To see your API, go back to your browser and open a new tab or window. In the address bar, enter `http://xxx.xxx.x.x:3000/explorer` where the x's are the IP address for your Linux guest. You should see a page like the one shown.
+
+    ![View your REST APIs.](images/RestAPI.png)
+
+81. Expand the different methods to see the various calls and parameters you can make through REST API. You can also test the API in this browser to learn how to form the API and see the responses.
+
+    ![Test your API.](images/TestAPI.png)
+
+82. Congratulations! You now have a working blockchain application and have created APIs to call your blockchain application.
 
     ​
 

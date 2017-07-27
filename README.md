@@ -671,19 +671,37 @@ In this section of the journey you will request access to the LinuxONE Community
 
     #### Generating API
 
-77. In your terminal, issue the following commands to start the API rest server:
+77. In your terminal, you'll need to edit your hosts file. 
+
+    * `sudo vi /etc/hosts`
+
+    * Enter `i` to begin insert mode.
+
+    * Use your arrow keys to move to the end of the line that has `127.0.0.1       localhost`
+
+    * Press `Enter` to start a new line.
+
+    * On the new line, type in `127.0.0.1     djblockchain`.
+
+    * Press `Esc` to leave insert mode.
+
+    * Enter `:wq` to save your changes.
+
+      ![Edit your hosts file.](images/Hosts.png)
+
+78. In your terminal, issue the following commands to start the API rest server:
 
     *  `mkdir /data/linux1/playground`
 
-    * `nohup composer-rest-server -p hlfv1 -n org-acme-biznet -i PeerAdmin -s whatever -N always >/data/linux1/playground/rest.stdout 2>/data/linux1/playground/rest.stderr & disown`
+    * `nohup composer-rest-server -p hlfv1 -n org-acme-biznet -i PeerAdmin -s linux -N always >/data/linux1/playground/rest.stdout 2>/data/linux1/playground/rest.stderr & disown`
 
       ![Start your API rest server.](images/StartRestServer.png)
 
-78. Verify the rest server process is running. `ps -ef|grep rest`
+79. Verify the rest server process is running. `ps -ef|grep rest`
 
     ![Verify the rest server is running.](images/VerifyRestServer.png)
 
-79. ​
+80. To see your API, go back to your browser and open a new tab or window. In the address bar, enter `http://xxx.xxx.x.x:3000/explorer` where the x's are the IP address for your Linux guest.
 
     ​
 

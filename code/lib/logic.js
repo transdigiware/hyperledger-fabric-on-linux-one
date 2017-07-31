@@ -16,7 +16,7 @@ function onSetSensorTemp(setSensorTemp) {
 
 function onChangeThermostatTemp(changeThermostat) {
   var diff = Math.abs(changeThermostat.thermostat.sensorTemp - changeThermostat.newThermostatValue);
-    if (diff < 3) {
+    if (diff <= 3) {
       changeThermostat.thermostat.thermostatTemp = changeThermostat.newThermostatValue;
       return getAssetRegistry('org.acme.sample.Sensor')
         .then(function (assetRegistry) {

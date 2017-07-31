@@ -59,6 +59,7 @@ mkdir /data/playground/
 nohup composer-playground >/data/playground/playground.stdout 2>/data/playground/playground.stderr & disown
 sudo iptables -I INPUT 1 -p tcp --dport 8080 -j ACCEPT
 sudo iptables -I INPUT 1 -p tcp --dport 3000 -j ACCEPT
+sudo iptables -I INPUT 1 -p tcp --dport 1880 -j ACCEPT
 sudo iptables-save > /etc/linuxone/iptables.save
 
 #Install NodeRed

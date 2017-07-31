@@ -122,7 +122,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
     ![Modify permissions.](images/SSHKeyPermissions.png)
 
-18. From the location where your *DJBlockchain.pem* SSH key pair is, enter the command `ssh -i DJBlockchain.pem linux1@148.100.5.9`
+18. From the location where your *DJBlockchain.pem* SSH key pair is, enter the command `ssh -i DJBlockchain.pem linux1@xxx.xxx.x.x` where the x's correspond to your Linux guest IP.
 
 19. **Type** `yes` to the continue connecting prompt and **hit** the *enter* key.
 
@@ -719,56 +719,207 @@ In this section of the journey you will request access to the LinuxONE Community
 
 
 
-## Part 3 — 
-
-Okay we are going to take the work from the prior 3 labs and connect them to communicate with Blockchain. To do this we are going to have you follow the simple steps.
-
-### Create Blockchain Flow
-1. Select the JSON below 
+###Part 3 — Utilizing blockchain API through NodeRED 
 
 
+
+#### Importing your flow into NodeRED
+1. Open NodeRED in your browser in a new tab or window. Enter `http://127.0.01:1880` in the address bar.
+
+   ![Open NodeRED.](images/OpenNodeRED.png)
+
+2. Copy the JSON below.
 ```JSON
 [
     {
-        "id": "88b235f8.e32de8",
+        "id": "f3ea0c80.1744b",
+        "type": "tab",
+        "label": "Flow 1"
+    },
+    {
+        "id": "72360b12.36f004",
+        "type": "ui_group",
+        "z": "",
+        "name": "Blockchain",
+        "tab": "2a876f19.0af568",
+        "order": 2,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "64c77f08.17e9c8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Thermostat",
+        "tab": "2a876f19.0af568",
+        "order": 4,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "2a876f19.0af568",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "f644913a.10cd98",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "94ef22f.e91a56",
+        "type": "ui_group",
+        "z": "",
+        "name": "Blockchain",
+        "tab": "5019005c.024db",
+        "order": 2,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "5329fc38.f9991c",
+        "type": "ui_group",
+        "z": "",
+        "name": "Thermostat",
+        "tab": "5019005c.024db",
+        "order": 4,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "5019005c.024db",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "1ee0cb15.d216fd",
         "type": "http request",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "Add Block",
         "method": "POST",
         "ret": "obj",
-        "url": "http://cap-sg-prd-5.integration.ibmcloud.com:16583/api/org.acme.sample.SetSensorTemp",
+        "url": "http://148.100.5.9:3000/api/org.acme.sample.SetSensorTemp",
         "tls": "",
-        "x": 620.0000267028809,
-        "y": 261.99999046325684,
+        "x": 1250,
+        "y": 440,
         "wires": [
             [
-                "70f9b5a5.690dfc"
+                "fdc93bd.b1faec8"
             ]
         ]
     },
     {
-        "id": "b6bb3ef4.0a6f",
+        "id": "e1dcc27a.7ea0c",
         "type": "function",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "Blockchain",
-        "func": "d = msg.payload.d.temperature;\ntid = global.get('teamName');\ntime = new Date().toISOString();\nmsg.payload = {\n \"$class\": \"org.acme.sample.SetSensorTemp\",\n  \"asset\": \"resource:org.acme.sample.Team#teamid:\"+tid,\n  \"newSensorValue\": d,\n  \"timestamp\": time\n};\nreturn msg;\n",
+        "func": "d = msg.payload.d.temperature;\ntid = global.get('teamName');\ntime = new Date().toISOString();\nmsg.payload = {\n \"$class\": \"org.acme.sample.SetSensorTemp\",\n  \"gauge\": \"resource:org.acme.sample.Sensor#teamid:\"+tid,\n  \"newSensorValue\": d,\n  \"timestamp\": time\n};\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
-        "x": 387.0000181198121,
-        "y": 261.0000057220459,
+        "x": 1016.9999914169312,
+        "y": 439.00001525878906,
         "wires": [
             [
-                "88b235f8.e32de8"
+                "1ee0cb15.d216fd"
             ]
         ]
     },
     {
-        "id": "ebac3cd0.e77cc",
+        "id": "3b2660c5.3445d8",
         "type": "ui_text_input",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "",
         "label": "TeamName",
-        "group": "d80e4b17.46bc",
+        "group": "94ef22f.e91a56",
         "order": 1,
         "width": "6",
         "height": "1",
@@ -776,67 +927,67 @@ Okay we are going to take the work from the prior 3 labs and connect them to com
         "mode": "text",
         "delay": "500",
         "topic": "",
-        "x": 473.6666793823242,
-        "y": 421.0000057220459,
+        "x": 1103.6666526794434,
+        "y": 599.0000152587891,
         "wires": [
             [
-                "596dd79f.f91808"
+                "dbdefdbf.3d12a"
             ]
         ]
     },
     {
-        "id": "f3f4172d.aafcf8",
+        "id": "b2f61a15.a3ddc",
         "type": "http request",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "Set Team Name",
         "method": "POST",
         "ret": "obj",
-        "url": "http://cap-sg-prd-5.integration.ibmcloud.com:16583/api/org.acme.sample.Team",
+        "url": "http://148.100.5.9:3000/api/org.acme.sample.Sensor",
         "tls": "",
-        "x": 772.0555839538574,
-        "y": 586.2222309112549,
+        "x": 1402.0555572509766,
+        "y": 764.222240447998,
         "wires": [
             [
-                "72c526e9.2ec738"
+                "8a6646ff.a445c"
             ]
         ]
     },
     {
-        "id": "596dd79f.f91808",
+        "id": "dbdefdbf.3d12a",
         "type": "function",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "setTeamname",
         "func": "n = msg.payload;\nglobal.set('teamName',n);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 690.6666793823242,
-        "y": 422.0000057220459,
+        "x": 1320.6666526794434,
+        "y": 600.0000152587891,
         "wires": [
             []
         ]
     },
     {
-        "id": "1e760194.996ede",
+        "id": "357f3aac.675316",
         "type": "weather_insights",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "Current Weather",
         "host": "twcservice.mybluemix.net",
         "service": "/observations.json",
         "geocode": "",
         "units": "m",
         "language": "",
-        "x": 561.6666793823242,
-        "y": 685.0000057220459,
+        "x": 1191.6666526794434,
+        "y": 863.0000152587891,
         "wires": [
             [
-                "8783cd77.a8a8d"
+                "b9afd5dd.013f4"
             ]
         ]
     },
     {
-        "id": "b593bba9.1887b8",
+        "id": "37d857f1.716798",
         "type": "inject",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "",
         "topic": "",
         "payload": "41.8585185,-88.372492",
@@ -844,20 +995,20 @@ Okay we are going to take the work from the prior 3 labs and connect them to com
         "repeat": "240",
         "crontab": "",
         "once": true,
-        "x": 273.7777862548828,
-        "y": 684.9999732971191,
+        "x": 903.777759552002,
+        "y": 862.9999828338623,
         "wires": [
             [
-                "1e760194.996ede"
+                "357f3aac.675316"
             ]
         ]
     },
     {
-        "id": "301ea710.563aa8",
+        "id": "bca4bf31.a7b478",
         "type": "ui_button",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "",
-        "group": "f379171f.517258",
+        "group": "5329fc38.f9991c",
         "order": 7,
         "width": 0,
         "height": 0,
@@ -869,53 +1020,53 @@ Okay we are going to take the work from the prior 3 labs and connect them to com
         "payload": "",
         "payloadType": "str",
         "topic": "",
-        "x": 250.66667938232422,
-        "y": 810.0000057220459,
+        "x": 880.6666526794434,
+        "y": 988.0000152587891,
         "wires": [
             [
-                "bf6bdf89.9b7ef"
+                "8c84f9d0.2f793"
             ]
         ]
     },
     {
-        "id": "bf6bdf89.9b7ef",
+        "id": "8c84f9d0.2f793",
         "type": "function",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "ChangeThermo",
-        "func": "tid = global.get('teamName');\ntime = new Date().toISOString();\nthermo = global.get('TempThermostat');\nasset = \"resource:org.acme.sample.Team#teamid:\"+tid,\n\nmsg.payload = {\n  \"$class\": \"org.acme.sample.ChangeThermostatTemp\",\n   \"asset\": asset,\n  \"newThermostatValue\": thermo,\n  \"timestamp\": time\n}\nreturn msg;",
+        "func": "tid = global.get('teamName');\ntime = new Date().toISOString();\nthermo = global.get('TempThermostat');\nasset = \"resource:org.acme.sample.Sensor#teamid:\"+tid,\n\nmsg.payload = {\n  \"$class\": \"org.acme.sample.ChangeThermostatTemp\",\n   \"thermostat\": asset,\n  \"newThermostatValue\": thermo,\n  \"timestamp\": time\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 568.6666793823242,
-        "y": 812.0000057220459,
+        "x": 1198.6666526794434,
+        "y": 990.0000152587891,
         "wires": [
             [
-                "95bfcff6.7c1f3"
+                "16e10f0c.cc5d21"
             ]
         ]
     },
     {
-        "id": "95bfcff6.7c1f3",
+        "id": "16e10f0c.cc5d21",
         "type": "http request",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "Change Thermostat",
         "method": "POST",
         "ret": "obj",
-        "url": "http://cap-sg-prd-5.integration.ibmcloud.com:16583/api/org.acme.sample.ChangeThermostatTemp",
+        "url": "http://148.100.5.9:3000/api/org.acme.sample.ChangeThermostatTemp",
         "tls": "",
-        "x": 896.5555877685547,
-        "y": 815.111123085022,
+        "x": 1526.5555610656738,
+        "y": 993.1111326217651,
         "wires": [
             [
-                "ddb4c7c0.9c1a08"
+                "9e89c128.5ce5e8"
             ]
         ]
     },
     {
-        "id": "e17c06c5.156cf8",
+        "id": "72072298.80512c",
         "type": "ui_button",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "",
-        "group": "d80e4b17.46bc",
+        "group": "94ef22f.e91a56",
         "order": 5,
         "width": "6",
         "height": "1",
@@ -927,85 +1078,85 @@ Okay we are going to take the work from the prior 3 labs and connect them to com
         "payload": "",
         "payloadType": "str",
         "topic": "",
-        "x": 325.44445419311523,
-        "y": 1004.5556011199951,
+        "x": 955.4444274902344,
+        "y": 1182.5556106567383,
         "wires": [
             [
-                "12161025.d27bc"
+                "cd4b47f0.68b88"
             ]
         ]
     },
     {
-        "id": "12161025.d27bc",
+        "id": "cd4b47f0.68b88",
         "type": "function",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "getRecommendation",
-        "func": "tid = global.get('teamName');\ntime = new Date().toISOString();\nweather = global.get('weather-observation');\nasset = \"resource:org.acme.sample.Team#teamid:\"+tid,\ntransid = global.get('lastTransID');\nmsg.payload = {\n  \"$class\": \"org.acme.sample.CompareWeather\",\n  \"transactionId\": transid,\n  \"asset\": asset,\n  \"outsideTemp\": weather.temp,\n  \"feelsLike\": weather.feels_like,\n  \"timestamp\": time\n}\nreturn msg;",
+        "func": "tid = global.get('teamName');\ntime = new Date().toISOString();\nweather = global.get('weather-observation');\nasset = \"resource:org.acme.sample.Sensor#teamid:\"+tid,\ntransid = global.get('lastTransID');\nmsg.payload = {\n  \"$class\": \"org.acme.sample.CompareWeather\",\n  \"transactionId\": transid,\n  \"recommend\": asset,\n  \"outsideTemp\": weather.temp,\n  \"feelsLike\": weather.feels_like,\n  \"timestamp\": time\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 569.4444541931152,
-        "y": 1004.5556011199951,
+        "x": 1199.4444274902344,
+        "y": 1182.5556106567383,
         "wires": [
             [
-                "8440aa21.e72a38"
+                "ac2491e2.1c61"
             ]
         ]
     },
     {
-        "id": "8440aa21.e72a38",
+        "id": "ac2491e2.1c61",
         "type": "http request",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "CompareWeather",
         "method": "POST",
         "ret": "obj",
-        "url": "http://cap-sg-prd-5.integration.ibmcloud.com:16583/api/org.acme.sample.CompareWeather",
+        "url": "http://148.100.5.9:3000/api/org.acme.sample.CompareWeather",
         "tls": "",
-        "x": 809.4444541931152,
-        "y": 1004.5556011199951,
+        "x": 1439.4444274902344,
+        "y": 1182.5556106567383,
         "wires": [
             [
-                "73180c15.bf0fb4",
-                "6a148c0a.fc5ec4"
+                "e4eedce1.caf208",
+                "96e13e95.d5eec"
             ]
         ]
     },
     {
-        "id": "73180c15.bf0fb4",
+        "id": "e4eedce1.caf208",
         "type": "function",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "getTeamID",
         "func": "team = global.get('teamName');\nmsg = {};\nmsg.topic = \"teamid%3A\"+team;\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 1028.4444541931152,
-        "y": 1004.5556011199951,
+        "x": 1658.4444274902344,
+        "y": 1182.5556106567383,
         "wires": [
             [
-                "29cf80c2.b69d1"
+                "875cf191.ec81c8"
             ]
         ]
     },
     {
-        "id": "29cf80c2.b69d1",
+        "id": "875cf191.ec81c8",
         "type": "http request",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "",
         "method": "GET",
         "ret": "obj",
-        "url": "http://cap-sg-prd-5.integration.ibmcloud.com:16583/api/org.acme.sample.Team/{{{topic}}}",
+        "url": "http://148.100.5.9:3000/api/org.acme.sample.Sensor/{{{topic}}}",
         "tls": "",
-        "x": 1222.4444541931152,
-        "y": 1004.5556011199951,
+        "x": 1852.4444274902344,
+        "y": 1182.5556106567383,
         "wires": [
             [
-                "886597fc.9204f8"
+                "8c856891.dc0958"
             ]
         ]
     },
     {
-        "id": "e318a794.455e58",
+        "id": "31763e62.54f792",
         "type": "ui_toast",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "position": "dialog",
         "displayTime": "3",
         "highlight": "",
@@ -1014,16 +1165,16 @@ Okay we are going to take the work from the prior 3 labs and connect them to com
         "cancel": "",
         "topic": "",
         "name": "",
-        "x": 778.6666793823242,
-        "y": 503.0000057220459,
+        "x": 1408.6666526794434,
+        "y": 681.0000152587891,
         "wires": [
             []
         ]
     },
     {
-        "id": "7d78ff7d.0a0f9",
+        "id": "8058ff8a.6deb38",
         "type": "inject",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "check team name",
         "topic": "Team Name is not set. Please add your team name and press the add team name button",
         "payload": "",
@@ -1031,37 +1182,37 @@ Okay we are going to take the work from the prior 3 labs and connect them to com
         "repeat": "",
         "crontab": "",
         "once": true,
-        "x": 205.66667938232422,
-        "y": 516.0000057220459,
+        "x": 835.6666526794434,
+        "y": 694.0000152587891,
         "wires": [
             [
-                "70aefc55.90b814",
-                "26c04f9c.e0f18"
+                "1f2a526e.47de7e",
+                "116a49b5.5ee9ee"
             ]
         ]
     },
     {
-        "id": "70aefc55.90b814",
+        "id": "1f2a526e.47de7e",
         "type": "function",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "locatedTeamName",
         "func": "team = global.get(\"teamName\");\nif (team){\n    msg.topic=\"Team Name is set\"\n    msg.payload = team;\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 560.6666793823242,
-        "y": 502.0000057220459,
+        "x": 1190.6666526794434,
+        "y": 680.0000152587891,
         "wires": [
             [
-                "e318a794.455e58"
+                "31763e62.54f792"
             ]
         ]
     },
     {
-        "id": "66bf218.1dc2ae",
+        "id": "dba6e20f.7a613",
         "type": "ui_button",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "",
-        "group": "d80e4b17.46bc",
+        "group": "94ef22f.e91a56",
         "order": 2,
         "width": "6",
         "height": "1",
@@ -1073,51 +1224,51 @@ Okay we are going to take the work from the prior 3 labs and connect them to com
         "payload": "",
         "payloadType": "str",
         "topic": "",
-        "x": 249.66667938232422,
-        "y": 586.0000057220459,
+        "x": 879.6666526794434,
+        "y": 764.0000152587891,
         "wires": [
             [
-                "fe51230e.02ef4"
+                "5335d93.10223a8"
             ]
         ]
     },
     {
-        "id": "fe51230e.02ef4",
+        "id": "5335d93.10223a8",
         "type": "function",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "getTeamName",
-        "func": "\nn = global.get('teamName');\nmsg.payload = {\n  \"$class\": \"org.acme.sample.Team\",\n  \"teamID\": \"teamid:\"+n,\n  \"teamName\": n,\n  \"sensorTemp\":0,\n  \"thermostatTemp\":0,\n  \"recommendation\":\"none\"\n};\nreturn msg;",
+        "func": "\nn = global.get('teamName');\nmsg.payload = {\n  \"$class\": \"org.acme.sample.Sensor\",\n  \"teamID\": \"teamid:\"+n,\n  \"teamName\": n,\n  \"sensorTemp\":0,\n  \"thermostatTemp\":0,\n  \"recommendation\":\"none\"\n};\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 506.1666717529297,
-        "y": 586.5555782318115,
+        "x": 1136.1666450500488,
+        "y": 764.5555877685547,
         "wires": [
             [
-                "f3f4172d.aafcf8"
+                "b2f61a15.a3ddc"
             ]
         ]
     },
     {
-        "id": "26c04f9c.e0f18",
+        "id": "116a49b5.5ee9ee",
         "type": "function",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "Find Team Name",
         "func": "n = global.get('teamName');\nif (n){\n    msg.payload = n;\n}else{\n    msg.payload=\"Please Add Team Name\";\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 248.66667938232422,
-        "y": 424.0000057220459,
+        "x": 878.6666526794434,
+        "y": 602.0000152587891,
         "wires": [
             [
-                "ebac3cd0.e77cc"
+                "3b2660c5.3445d8"
             ]
         ]
     },
     {
-        "id": "ad1a7b10.733ff8",
+        "id": "e2f25876.c3415",
         "type": "ui_text",
-        "z": "86c55bf8.b87818",
-        "group": "d80e4b17.46bc",
+        "z": "f3ea0c80.1744b",
+        "group": "94ef22f.e91a56",
         "order": 4,
         "width": "6",
         "height": "1",
@@ -1125,147 +1276,123 @@ Okay we are going to take the work from the prior 3 labs and connect them to com
         "label": "Ask Block Chain for Recommendation",
         "format": "{{msg.payload}}",
         "layout": "row-left",
-        "x": 298.6666793823242,
-        "y": 915.0000057220459,
+        "x": 928.6666526794434,
+        "y": 1093.000015258789,
         "wires": []
     },
     {
-        "id": "8783cd77.a8a8d",
+        "id": "b9afd5dd.013f4",
         "type": "link out",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "Weather",
         "links": [
             "1e684a8f.b97ac5",
             "30a06d42.4fc062"
         ],
-        "x": 732.7222900390625,
-        "y": 686.2222089767456,
+        "x": 1362.7222633361816,
+        "y": 864.2222185134888,
         "wires": []
     },
     {
-        "id": "70f9b5a5.690dfc",
+        "id": "fdc93bd.b1faec8",
         "type": "link out",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "Blockchain add block",
         "links": [
             "26579818.2a28c8"
         ],
-        "x": 819.2777233123779,
-        "y": 261.9999942779541,
+        "x": 1449.277696609497,
+        "y": 440.00000381469727,
         "wires": []
     },
     {
-        "id": "72c526e9.2ec738",
+        "id": "8a6646ff.a445c",
         "type": "link out",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "Blockchain - teamname",
         "links": [
             "26579818.2a28c8",
             "95f66de6.73289"
         ],
-        "x": 936.6111211776733,
-        "y": 585.1110534667969,
+        "x": 1566.6110944747925,
+        "y": 763.11106300354,
         "wires": []
     },
     {
-        "id": "ddb4c7c0.9c1a08",
+        "id": "9e89c128.5ce5e8",
         "type": "link out",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "Blockchain change thermo",
         "links": [
             "26579818.2a28c8",
             "691d8fae.cc6dd"
         ],
-        "x": 1064.388876914978,
-        "y": 816.2221736907959,
+        "x": 1694.3888502120972,
+        "y": 994.2221832275391,
         "wires": []
     },
     {
-        "id": "6a148c0a.fc5ec4",
+        "id": "96e13e95.d5eec",
         "type": "link out",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "Blockchain Compare",
         "links": [
             "26579818.2a28c8"
         ],
-        "x": 937.7222213745117,
-        "y": 1097.333257675171,
+        "x": 1567.7221946716309,
+        "y": 1275.333267211914,
         "wires": []
     },
     {
-        "id": "886597fc.9204f8",
+        "id": "8c856891.dc0958",
         "type": "link out",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "Blockchain recommendation",
         "links": [
             "26579818.2a28c8",
             "34c327fb.be62a8"
         ],
-        "x": 1351.0554733276367,
-        "y": 1086.222173690796,
+        "x": 1981.0554466247559,
+        "y": 1264.222183227539,
         "wires": []
     },
     {
-        "id": "29589c.35d02764",
+        "id": "9f49e55a.8ff408",
         "type": "link in",
-        "z": "86c55bf8.b87818",
+        "z": "f3ea0c80.1744b",
         "name": "IoT Event - Temperature",
         "links": [
             "2dcfad9.1e84952",
             "f8160c87.24af3"
         ],
-        "x": 174.33337783813477,
-        "y": 261.33332443237305,
+        "x": 804.3333511352539,
+        "y": 439.3333339691162,
         "wires": [
             [
-                "b6bb3ef4.0a6f"
+                "e1dcc27a.7ea0c"
             ]
         ]
-    },
-    {
-        "id": "d80e4b17.46bc",
-        "type": "ui_group",
-        "z": "",
-        "name": "Blockchain",
-        "tab": "7279f7c0.41084",
-        "order": 2,
-        "disp": true,
-        "width": "6"
-    },
-    {
-        "id": "f379171f.517258",
-        "type": "ui_group",
-        "z": "",
-        "name": "Thermostat",
-        "tab": "7279f7c0.41084",
-        "order": 4,
-        "disp": true,
-        "width": "6"
-    },
-    {
-        "id": "7279f7c0.41084",
-        "type": "ui_tab",
-        "z": "",
-        "name": "Home",
-        "icon": "dashboard",
-        "order": 2
     }
 ]
 ```
+3. Paste it into NodeRed, by **clicking** on the *menu icon* in the upper right corner.
 
-Paste it into NodeRed, by clicking on the menu icon in the upper right corner.
+   ![menu](images/node-red-menu.png)
 
-![menu](images/node-red-menu.png)
+4. **Select** *Import -> Clipboard*.
 
-Select Import -> Clipboard
+   ![menu](images/node-red-menu-import-clipboard.png)
 
-![menu](images/node-red-menu-import-clipboard.png)
+5. **Paste** the code in the editor. Make sure to **select** "current flow" button. **Select** *Import*.
 
-Paste then in the editor. Make sure to select "new flow" button. This will make sure a new flow is created.
+   ![import editor](images/node-red-menu-import-editor.png)
 
-![import editor](images/node-red-menu-import-editor.png)
+6. You should now have a new flow with the label of "Blockchain".
 
-You should now have a new flow with the label of "Blockchain"
+   #### Modifying your flow to call your API
+
+7. We now need to modify the API calls to call your Linux guest.
+
 
 2. Update Bluemix IoT Flow
 

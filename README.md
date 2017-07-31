@@ -2353,9 +2353,13 @@ In this section of the journey you will request access to the LinuxONE Community
 
 6. You should now have three flows in NodeRED — Blockchain, Dashboard and Gauge.
 
+   ![Three NodeRED flows.](images\ThreeFlows.png)
+
+7. *Start with adding dashboard & Raspberry Pi sense hat to pallete
+
    #### Modifying your flow to call your API
 
-7. We now need to modify the API calls to call your Linux guest.
+8. We now need to modify the API calls to call your Linux guest.
 
 
 2. Update Bluemix IoT Flow

@@ -724,11 +724,13 @@ In this section of the journey you will request access to the LinuxONE Community
 
 
 #### Importing your flow into NodeRED
-1. Open NodeRED in your browser in a new tab or window. Enter `http://127.0.01:1880` in the address bar.
+1. Open NodeRED in your browser in a new tab or window. Enter `http://xxx.xxx.x.x:1880` in the address bar where the x's correspond to your Linux guest IP address.
 
    ![Open NodeRED.](images/OpenNodeRED.png)
 
-2. Copy the JSON below.
+2. **Copy** the JSON below. 
+
+   * It can also be found in the GitHub repository as `node-red.json`. To view it in GitHub, click on node-red.json, select raw and then copy it. 
 ```JSON
 [
     {
@@ -2349,7 +2351,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
    ![import editor](images/node-red-menu-import-editor.png)
 
-6. You should now have a new flow with the label of "Blockchain".
+6. You should now have three flows in NodeRED — Blockchain, Dashboard and Gauge.
 
    #### Modifying your flow to call your API
 

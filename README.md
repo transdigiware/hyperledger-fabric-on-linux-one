@@ -136,7 +136,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
 21. Now it is time to setup your guest! Run the following command, to move the setup script from the Github Repository to your Linux guest.
 
-    `wget https://raw.githubusercontent.com/IBM/HyperledgerFabric-on-LinuxOne/master/Linux1BlockchainScript.shW`
+    `wget https://raw.githubusercontent.com/IBM/HyperledgerFabric-on-LinuxOne/master/Linux1BlockchainScript.sh`
 
     ![Import script.](images/WgetSetup.png)
 
@@ -388,7 +388,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
     * `o Double newThermostatValue` — This allows for a new, proposed value to be sent into the transaction. In the logic tab, we will use this value to compare to what the gauge says and decide if the thermostat value should be adjusted.
 
-    * *Click** *Deploy* to save changes.
+    * **Click** *Deploy* to save changes.
 
       ![Create ChangeThermostatTemp model](images/ChangeThermostatModel.png)
 
@@ -2355,11 +2355,27 @@ In this section of the journey you will request access to the LinuxONE Community
 
    ![Three NodeRED flows.](images\ThreeFlows.png)
 
-7. *Start with adding dashboard & Raspberry Pi sense hat to pallete
+7. You'll need to add a few more nodes to your NodeRED palette to have complete working flows. To do this, **select** the *menu* button in the upper right corner.
 
-   #### Modifying your flow to call your API
+   ![Select the menu icon.](images/node-red-menu.png)
 
-8. We now need to modify the API calls to call your Linux guest.
+8. **Select** *Manage Palette* from the drop down menu.
+
+   ![Select Manage Palette.](images/ManagePalette.png)
+
+9. In the *User Settings* window, **click** *Install*, **type** `dashboard` in the search bar and select *install* next to *node-red-dashboard*.
+
+   ![Install node-red-dashboard nodes.](images/install-node-red-dashboard.png)
+
+10. In the *Install nodes* pop-up, **click** *Install*.
+
+   ![Click install.](images/install.png)
+
+11. ​
+
+    #### Modifying your flow to call your API
+
+12. We now need to modify the API calls to call your Linux guest.
 
 
 2. Update Bluemix IoT Flow

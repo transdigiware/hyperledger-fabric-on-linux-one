@@ -462,7 +462,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
     * Make sure that the **Transaction Type** is set to `SetSensorTemp`.
 
-    * Modify the JSON data`"asset": "resource:org.acme.sample.Team#teamID:xxx"`  — enter your team's identifier in place of the value where **xxx** is in the sample JSON data.
+    * Modify the JSON data`"guage": "resource:org.acme.sample.Team#teamID:xxx"`  — enter your team's identifier in place of the value where **xxx** is in the sample JSON data.
 
     * Modify the JSON data`"newSensorValue": 0` — enter a value your sensor could have.
 

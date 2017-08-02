@@ -501,7 +501,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
    * If you select a temperature for the thermostat that is not within 3 degrees of the `sensorTemp` value, then you will get an error message like the one below. If you get this message, enter another value and click submit.
 
-     ![ChangeThermostatTemp Error Message](images/Errormsg.png)
+     ![ChangeThermostatTemp Error Message](images/ChangeThermostatError.png)
 
    * If you do have permission to adjust the thermostat, you will be returned back to the transaction registry where you can see the data you just submitted.
 

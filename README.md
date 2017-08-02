@@ -531,7 +531,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
 52. Complete the **CompareWeather** transaction.
 
-    * Modify the JSON, `"asset": "resource:org.acme.sample.Team#teamID:xxx"`— Replace **xxx** with your team ID.
+    * Modify the JSON, `"recommend": "resource:org.acme.sample.Team#teamID:xxx"`— Replace **xxx** with your team ID.
 
     * Modify the JSON for`"outsideTemp": 0`— Enter a value for an outside temperature.
 

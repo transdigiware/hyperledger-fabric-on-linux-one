@@ -1028,7 +1028,7 @@ In this section of the journey you will request access to the LinuxONE Community
             "name": "Set Team Name",
             "method": "POST",
             "ret": "obj",
-            "url": "http://148.100.5.9:3000/api/org.acme.sample.Sensor",
+            "url": "http://xxx.xxx.x.x:3000/api/org.acme.sample.Sensor",
             "tls": "",
             "x": 1402.0555572509766,
             "y": 764.222240447998,
@@ -1100,7 +1100,7 @@ In this section of the journey you will request access to the LinuxONE Community
             "name": "Change Thermostat",
             "method": "POST",
             "ret": "obj",
-            "url": "http://148.100.5.9:3000/api/org.acme.sample.ChangeThermostatTemp",
+            "url": "http://xxx.xxx.x.x:3000/api/org.acme.sample.ChangeThermostatTemp",
             "tls": "",
             "x": 1526.5555610656738,
             "y": 993.1111326217651,
@@ -1158,7 +1158,7 @@ In this section of the journey you will request access to the LinuxONE Community
             "name": "CompareWeather",
             "method": "POST",
             "ret": "obj",
-            "url": "http://148.100.5.9:3000/api/org.acme.sample.CompareWeather",
+            "url": "http://xxx.xxx.x.x:3000/api/org.acme.sample.CompareWeather",
             "tls": "",
             "x": 1439.4444274902344,
             "y": 1182.5556106567383,
@@ -1193,7 +1193,7 @@ In this section of the journey you will request access to the LinuxONE Community
             "name": "",
             "method": "GET",
             "ret": "obj",
-            "url": "http://148.100.5.9:3000/api/org.acme.sample.Sensor/{{{topic}}}",
+            "url": "http://xxx.xxx.x.x:3000/api/org.acme.sample.Sensor/{{{topic}}}",
             "tls": "",
             "x": 1852.4444274902344,
             "y": 1182.5556106567383,
@@ -2340,7 +2340,7 @@ In this section of the journey you will request access to the LinuxONE Community
             "name": "",
             "method": "POST",
             "ret": "obj",
-            "url": "http://148.100.5.9:3000/api/org.acme.sample.SetSensorTemp",
+            "url": "http://xxx.xxx.x.x:3000/api/org.acme.sample.SetSensorTemp",
             "tls": "",
             "x": 1245.625,
             "y": 437.1875,
@@ -2405,91 +2405,115 @@ In this section of the journey you will request access to the LinuxONE Community
 
     #### Modifying your flow to call your API
 
-13. We now need to modify the API calls to call your Linux guest.
+13. We now need to modify the API calls to call your Linux guest. **Click** on the tab named *Blockchain*.
 
-14. Update Bluemix IoT Flow
+    ![Click Blockchain.](images/ClickBlockchain.png)
 
-We are now going to update the link node on the "Bluemix IoT Flow" tab. Remember, previously we updated the link node to send updates to the dashboard. Now we are going to also have the "Iot Environment" events sent to the newly created "Blockchain" flow.
+14. **Double click** on the *http request* node.
 
-![link node](images/iot-flow-link-node.png)
+    ![Double click http request.](images/httprequest.png)
 
-We do this by double clicking on the **Link Node**. 
+15. In the *Edit http request node* window, edit the *URL* field to **enter your Linux guest IP Address** where the x's are. This will allow NodeRED to talk with your blockchain through API. **Click** *Done*.
 
-![link node](images/iot-flow-link-node-editor.png)
+    ![Edit the IP address in the URL box.](images/httpURL.png)
 
-Make sure all three check boxes are checked. "IoT Event - Temperature" is the new box that needs to be checked. This will send the IoT events to the Blockchain flow.
+16. **Double click** on *Set Team Name* node.
 
-3. Update Weather Insight node
+    ![Double click Set Team Name.](images/SetTeamName.png)
 
-Double click on the **Current weather** node.
+17. In the *Edit http request node* window, edit the *URL* field to **enter your Linux guest IP Address** where the x's are. This will allow NodeRED to talk with your blockchain through API. **Click** *Done*.
 
-![current weather node](images/blockchain-flow-currentweather-node.png)
+    ![Enter your Linux guest IP address.](images/SetTeamNameURL.png)
 
-You should now see the node editor for the weather insights node.
+18. **Double click** *Change Thermostat*.
 
-![current weather node editor](images/blockchain-flow-currentweather-node-editor.png)
+    ![Double click Change Thermostat.](images/ChangeThermostat.png)
 
-Similarly like with the hybrid lab, you need to paste your username and password in to the appropriate fields. Also make sure the **service** is "Current Observations".
-You can click **Done** when completed.
+19. In the *Edit http request node* window, edit the *URL* field to **enter your Linux guest IP Address** where the x's are. This will allow NodeRED to talk with your blockchain through API. **Click** *Done*.
 
-4. Deploy the changes by clicking ont the **Deploy** button.
-   ![deploy button](images/blockchain-flow-deploy-button.png)
+    ![Edit the IP Address in Change Thermostat.](images/ChangeTempURL.png)
 
-5. Go to the Dashboard page
+20. **Double click** on *Compare Weather*.
 
-You should see that data is now flowing to all of the widgets on the dashboard page. Though you will see some error messages. This is because we have to register with blockchain your team name. If you remember from the lab, you need to create a new "Team Asset". 
+    ![Double click on the Compare Weather node.](images/CompareWeather.png)
 
-We do this by typing our team name in the entry field and then clicking on **Add Team Name** button.
+21. In the *Edit http request node* window, edit the *URL* field to **enter your Linux guest IP Address** where the x's are. This will allow NodeRED to talk with your blockchain through API. **Click** *Done*.
 
-![add team button](images/dashboard-add-team-button.png)
+    ![Edit the IP address in Compare Weather.](images/CompareWeatherURL.png)
 
-You should see a status message indicate the team name was added successfully.
+22. **Double click** on the *http request* node to the right of *Compare Weather*.
 
-![deploy button](images/dashboard-status-team-added.png)
+    ![Double click on http request.](images/httpCompareWeather.png)
 
-Now your IoT events are will be added to blockchain under your asset name. You should see the counter for blocks increment as your IoT events are being sent.
-This is important, because, in the next steps we are going to validate try to make some changes and blockchain will help in the process.
+23. In the *Edit http request node* window, edit the *URL* field to **enter your Linux guest IP Address** where the x's are. This will allow NodeRED to talk with your blockchain through API. **Click** *Done*.
 
-6. Change the Thermostat
+    ![Edit the IP address in the http request node.](images/httpCompareWeatherURL.png)
 
-In this step we are going to change the value of the "Thermostat". The way you do this is by clicking on the **Thermostat Value** slider and move it. 
+24. On the right side of the Node-RED browser, **click** *Deploy* to save the work you've imported.
 
-![thermo slider](images/dashboard-thermo-slider.png)
+    ![Click Deploy.](images/ClickDeploy.png)
 
-You will notice as you change the slide, the "Thermostat" gauge underneath it also changes. 
-Move the slider to any value you choose. Once you are comfortable with your choice you can 
-send a request to blockchain, to determine if your choice is valid, based on the blockchain contract. 
-This is done by clicking the **Change Thermostat** button.
+    #### Interacting with blockchain through a dashboard
 
-![change thermo button](images/dashboard-changethermo-button.png)
+25. **Click** the *dashboard* tab in the upper right corner under *Deploy*.
 
-Now depending on the value you chose, your temperature my be allowed, or reset to its prior value.
-The logic within blockchain is to allow the thermostat to be within plus/minus three degrees of
-your last stored temperature block. So look at your "ense Hat Temperature" value on the screen 
-and then change your thermostat to be within the allowed value range.
+    ![Click dashboard.](images/ClickDashboard.png)
 
-**Invalid Change**
-![change thermo bad](images/dashboard-change-thermo-bad.png)
+26. **Click** the *pop out* button to open the dashboard in a browser.
 
+    ![Click the pop out button.](images/ClickPopOut.png)
 
-**Valid Change**
-![change thermo good](images/dashboard-change-thermo-good.png)
+27. A new tab should open. Your dashboard should look like the following image.
 
-7. Blockchain Recommendation
+    ![Dashboard image.](images/Dashboard.png)
 
-In this last step we are sending a request to blockchain to get a recommendation on the appropriate 
-setting for the Thermostat. The smart contract within blockchain will provide you with the 
-changes needed and execute the change on your behalf. Click on the **Get Recommendation** button.
+28. To interact with your simulated RaspberryPi, go back to your Node-RED tab and **select** the *Gauge Simulator* tab.
 
-![recommendation button](images/dashboard-recommendation-button.png)
+    ![Select the Gauge Simulator tab.](images/GaugeSimulator.png)
 
-Block chain uses the "Outside Temperature" values in addition to your latest Iot temperature to make a recommendation for you Thermostat.
+29. **Click** on the *Sensor Gauge Simulator* node.
 
-![recommendation result](images/dashboard-recommendation-result.png)
+    ![Click on the Sensor Gauge Simulator node.](images/GaugeNode.png)
 
-As you can see the "Thermostat" changed from **36 Degrees to 20 Degrees**.
+30. On the right side of the browser, **click** on the *Info* tab.
 
-This concludes the Blockchain Lab. We hope you had fun.
+    ![Click Info.](images/ClickInfo.png)
+
+31. In the third paragraph under Information there is a hyperlink for the word *here*.  That hyperlink opens the simulator in a new tab. **Click** *here*.
+
+    ![Click here.](images/ClickHere.png)
+
+32. **Adjust** the temperature of the sensor in the simulator from 20 C.
+
+    ![Adjust the sensor temperature.](images/sensor.png)
+
+33. Switch to the tab for your dashboard, notice the change to the sensor temperature and graph.
+
+    ![Notice the sensor differences in the dashboard.](images/SensorDashboard.png)
+
+34. Continue to play with your dashboard to interact with blockchain via API. You can try the following:
+
+    * Type in a team name & click *Add Team Name*. You should see a successful message afterward.
+
+      ![add team button](images/dashboard-add-team-button.png)
+
+      ![deploy button](images/dashboard-status-team-added.png)
+
+    * Change the thermostat by moving the slider next to *Thermostat Value*. Click *Change Thermostat*  to send the value to blockchain.'
+
+      ![thermo slider](images/dashboard-thermo-slider.png)'
+
+      ![change thermo button](images/dashboard-changethermo-button.png)
+
+    * Type in a City and State to find outside temperatures. Click *Get Current Temps* to get the values.
+
+      ![Enter a city and state. Select Get Current Temps.](images/OutsideTemps.png)
+
+    * After you have outside temperatures, you can click *Get Recommendation* to find the ideal temperatures for the thermostat. Notice that this will adjust your thermostat in the dashboard.
+
+    * ![recommendation result](images/dashboard-recommendation-result.png)
+
+35. Congratulations! You've completed this journey!
 
 
 

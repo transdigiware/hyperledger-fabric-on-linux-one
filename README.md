@@ -491,7 +491,7 @@ In this section of the journey you will request access to the LinuxONE Community
    * In the **Transaction Type** drop down, select `ChangeThermostatTemp`.
      ![Select ChangeThermostatTemp](images/SelectChangeThermostat.png)
 
-   * Edit the sample JSON for the transaction`"asset": "resource:org.acme.sample.Team#teamID:xxx"`— change **xxx** to your team ID value.
+   * Edit the sample JSON for the transaction`"thermostat": "resource:org.acme.sample.Team#teamID:xxx"`— change **xxx** to your team ID value.
 
    * Edit the sample JSON for the transaction`"newThermostatValue": 0` — Replace **0** with a value to which you would like to see if you can adjust the thermostat.
 

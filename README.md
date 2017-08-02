@@ -25,7 +25,7 @@ This lab will be broken into three parts:
 2. Writing chaincode and generating API.
 3. Using NodeRed to test API integration.
 
-
+  
 
 ## Workshop Instructions
 ### Scenario Overview

@@ -21,15 +21,7 @@ The blockchain workshop is intended to give you a basic understanding of how a d
 
 This lab will be broken into three parts: 
 
-1. Creating your guest and environment.
-2. Writing chaincode and generating API.
-3. Using NodeRed to test API integration.
-
-
-
-## Steps
-
-### [Part 1 \- Setting up your LinuxONE Community Cloud guest](#part-1---setting-up-your-linuxone-community-cloud-guest)
+### Part 1 \- Setting up your LinuxONE Community Cloud guest
 
 1. [Request access to LinuxONE Community Cloud\.](#request-access-to-linuxone-community-cloud)
 
@@ -39,7 +31,7 @@ This lab will be broken into three parts:
 
 4. [Verify the installation of Hyperledger Fabric and Hyperledger Composer](#verify-the-installation-of-hyperledger-fabric-and-hyperledger-composer)
 
-### [Part 2 — Creating a blockchain application and generating API](#part-2--creating-a-blockchain-application-and-generating-api)
+### Part 2 — Creating a blockchain application and generating API
 
 5. [Importing the components of your blockchain application](#importing-the-components-of-your-blockchain-application)
 
@@ -51,7 +43,7 @@ This lab will be broken into three parts:
 
 9. [Generating API from your blockchain application](#generating-api)
 
-### [Part 3 — Utilizing blockchain API through NodeRED](#part-3--utilizing-blockchain-api-through-nodered)
+### Part 3 — Utilizing blockchain API through NodeRED
 
 10. [Importing your flow into NodeRED](#importing-your-flow-into-nodered)
 11. [Modifying your flow to call your API](#modifying-your-flow-to-call-your-api)
@@ -327,67 +319,29 @@ In this section of the journey you will request access to the LinuxONE Community
 
     ![Select Replace & Import.](images/READMEReplace.png)
 
-16. Let's keep adding the files to the Composer Playground. **Select** *Add a file*.
+16. Let's keep adding the files to the Composer Playground.  **Repeat steps 11-15 to add the following files**:
 
-    ![Select Add a file.](images/AddAFileREADME.png)
+    * *org.acme.sample.cto* — This is located in the models folder. In this exercise you'll use this file to create a model for your asset and transactions. You could also create participants in this file. This is similar to creating a Java class and defining what you would need in the class.
+    * *permissions.acl* — This is where you would limit permissions for participants in a blockchain network.
+    * *logic.js* — This is located in the lib folder. This is a JavaScript file that becomes the brains of your application. In this file is code, your smart contract, that defines how a transaction can happen. This is similar to Java methods.
 
-17. From the *Add a file* pop-up dialog, select **browse**.
-
-    ![Select browse.](images/SelectBrowse.png)
-
-18. In the file explorer window, navigate to where you downloaded the files. Refer to step 5 if you need help finding this location. Go into the *models* folder.  **Select** *org.acme.sample.cto* and **Click** *Open*. This is your model file that defines the assets, participants and transactions you'll use your in blockchain application.
-
-    ![Select org.acme.sample.cto.](images/SelectModel.png)
-
-19. Click **Add**. 
-
-    ![Click Add.](images/AddModel.png)
-
-20. **Select** *Add a file*.
-
-    ![Select Add a file.](images/AddAFileREADME.png)
-
-21. From the *Add a file* pop-up dialog, select **browse**.
-
-    ![Select browse.](images/SelectBrowse.png)
-
-22. In the file explorer window, navigate to where you downloaded the files. Refer to step 5 if you need help finding this location. **Select** *permissions.acl* and **Click** *Open*.
-
-    ![Select permissions.acl.](images/SelectPermissions.png)
-
-23. **Select** *Add*.
-
-    ![Select Add.](images/AddPermissions.png)
-
-24. **Select** *Add a file*.
-
-    ![Select Add a file.](images/AddAFileREADME.png)
-
-25. In the file explorer window, navigate to where you downloaded the files. Refer to step 5 if you need help finding this location. Go into the *lib* folder.  **Select** *logic.js* and **Click** *Open*. This is your JavaScript file that contains the logic for your model.
-
-    ![Select logic.js.](images/SelectLogic.png)
-
-26. **Select** *Add*.
-
-    ![Select Add.](images/AddLogic.png)
-
-27. Your files are all now loaded into Composer Playground. **Click** *Deploy* on the left side of the browser. 
+17. Your files are all now loaded into Composer Playground. **Click** *Deploy* on the left side of the browser. 
 
     ![Click Deploy.](images/InitialDeploy.png)
 
     #### Creating your blockchain application
 
-28. Click on **Model File**.
+18. Click on **Model File**.
 
     ![Click Model File](images/SelectModelFile.png)
 
-29. Click in the **editor** on the right to begin writing your models. 
+19. Click in the **editor** on the right to begin writing your models. 
 
     * NOTE: **DO** **NOT** modify the namespace during the lab.
 
       ![Click in the editor](images/ClickEditor.png)
 
-30. On a new line, give your asset `Sensor` the following attributes.
+20. On a new line, give your asset `Sensor` the following attributes.
 
     * Note: a small "o" is used as a bullet in the model.
 
@@ -405,7 +359,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
       ![Sensor model](images/SensorModel.png)
 
-31. Now create your first transaction model for `SetSensorTemp`. Enter the following attributes:
+21. Now create your first transaction model for `SetSensorTemp`. Enter the following attributes:
 
     * `--> Sensor gauge` — The transaction will need to put data into the `Sensor` asset. This passes a reference to the asset so we can work with the asset in the logic for the transaction.
 
@@ -415,7 +369,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
       ![Create SetSensorTemp model](images/SetSensorTempModel.png)
 
-32. Build your `ChangeThermostatTemp` transaction model. Add the following:
+22. Build your `ChangeThermostatTemp` transaction model. Add the following:
 
     * `--> Sensor thermostat` — The transaction will need to put data into the `Sensor` asset for the thermostat. This passes a reference to the asset so we can work with the asset in the logic for the transaction.
 
@@ -425,7 +379,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
       ![Create ChangeThermostatTemp model](images/ChangeThermostatModel.png)
 
-33. Enter the following values to build your `CompareWeather` transaction model:
+23. Enter the following values to build your `CompareWeather` transaction model:
 
     * `--> Sensor recommend` — The transaction will need to put data into the `Sensor` asset. This passes a reference to the asset so we can work with the asset in the logic for the transaction.
     * `o Double outsideTemp` — Looking at the [Weather.com API](https://twcservice.eu-gb.mybluemix.net/rest-api/#!/Current_Conditions/v1locobscurrent) for Current Conditions, you can see all of the possible data that the call could return. Based on the data, it was decided to take the actual outside temperature and the feels like temperature to give a recommendation on thermostat settings. This variable stores the value passed into it via NodeRed from Weather.com for the outside temperature.  The model on the API page shows up whether the data is returned in Celsius or Fahrenheit and its variable type. In this exercise we will use Celsius.
@@ -438,7 +392,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
       ![create CompareWeather model](images/CompareWeatherModel.png)
 
-34. Click on the **Script File** tab.
+24. Click on the **Script File** tab.
 
 
 ![Click Script File](images/ClickScriptFile.png)

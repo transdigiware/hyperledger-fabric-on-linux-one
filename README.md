@@ -449,7 +449,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
     * Make sure that the **Transaction Type** is set to `SetSensorTemp`.
 
-    * Modify the JSON data`"asset": "resource:org.acme.sample.Team#teamID:xxx"`  — enter your team's identifier in place of the value where **xxx** is in the sample JSON data.
+    * Modify the JSON data`"guage": "resource:org.acme.sample.Team#teamID:xxx"`  — enter your team's identifier in place of the value where **xxx** is in the sample JSON data.
 
     * Modify the JSON data`"newSensorValue": 0` — enter a value your sensor could have.
 
@@ -478,7 +478,7 @@ In this section of the journey you will request access to the LinuxONE Community
    * In the **Transaction Type** drop down, select `ChangeThermostatTemp`.
      ![Select ChangeThermostatTemp](images/SelectChangeThermostat.png)
 
-   * Edit the sample JSON for the transaction`"asset": "resource:org.acme.sample.Team#teamID:xxx"`— change **xxx** to your team ID value.
+   * Edit the sample JSON for the transaction`"thermostat": "resource:org.acme.sample.Team#teamID:xxx"`— change **xxx** to your team ID value.
 
    * Edit the sample JSON for the transaction`"newThermostatValue": 0` — Replace **0** with a value to which you would like to see if you can adjust the thermostat.
 
@@ -488,7 +488,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
    * If you select a temperature for the thermostat that is not within 3 degrees of the `sensorTemp` value, then you will get an error message like the one below. If you get this message, enter another value and click submit.
 
-     ![ChangeThermostatTemp Error Message](images/Errormsg.png)
+     ![ChangeThermostatTemp Error Message](images/ChangeThermostatError.png)
 
    * If you do have permission to adjust the thermostat, you will be returned back to the transaction registry where you can see the data you just submitted.
 
@@ -518,7 +518,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
 52. Complete the **CompareWeather** transaction.
 
-    * Modify the JSON, `"asset": "resource:org.acme.sample.Team#teamID:xxx"`— Replace **xxx** with your team ID.
+    * Modify the JSON, `"recommend": "resource:org.acme.sample.Team#teamID:xxx"`— Replace **xxx** with your team ID.
 
     * Modify the JSON for`"outsideTemp": 0`— Enter a value for an outside temperature.
 

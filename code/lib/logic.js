@@ -24,7 +24,7 @@ function onChangeThermostatTemp(changeThermostat) {
       });
     } else {
       //reject transaction
-      throw new Error("You do not have permission to change the temperature.");
+      throw new Error("Too much difference! Current sensor reading " + changeThermostat.thermostat.sensorTemp);
     }
 }
 

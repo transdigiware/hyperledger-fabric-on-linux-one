@@ -51,7 +51,7 @@ This lab will be broken into three parts:
 
 9. [Generating API from your blockchain application](#generating-api)
 
-### [Part 3 — Utilizing blockchain API through NodeRED](#Part 3 — Utilizing blockchain API through NodeRED)
+### [Part 3 — Utilizing blockchain API through NodeRED](#part-3--utilizing-blockchain-api-through-nodered)
 
 10. [Importing your flow into NodeRED](#importing-your-flow-into-nodered)
 11. [Modifying your flow to call your API](#modifying-your-flow-to-call-your-api)

@@ -695,23 +695,15 @@ In this section of the journey you will request access to the LinuxONE Community
 
    ![Click install.](images/install.png)
 
-6. Now we will install a second set of nodes to get current weather conditions using WeatherUnderground.  In the *User Settings* window under *Install*, **type** `weather` in the search bar and select **install** next to *node-red-weather-underground*.
+6. Now it's time to install a RaspberryPi Sense Hat simulator. In the *User Settings* window under *Install*, **type** `sense` in the search bar and select **install** next to *node-red-pi-sense-hat-simulator*.
 
-   ![Install node-red-weather-underground nodes.](images/weathernodes.png)
+   ![Install Raspberry Pi Sense Hat Simulator nodes.](images/PiNodes.png)
 
 7. In the *Install nodes* pop-up, **click** *Install*.
 
    ![Click install.](images/install.png)
 
-8. Now it's time to install a RaspberryPi Sense Hat simulator. In the *User Settings* window under *Install*, **type** `sense` in the search bar and select **install** next to *node-red-pi-sense-hat-simulator*.
-
-   ![Install Raspberry Pi Sense Hat Simulator nodes.](images/PiNodes.png)
-
-9. In the *Install nodes* pop-up, **click** *Install*.
-
-   ![Click install.](images/install.png)
-
-10. **Click** *Close* to leave the User Settings dialog.
+8. **Click** *Close* to leave the User Settings dialog.
 
  ![Click Close.](images/closePalette.png)
 

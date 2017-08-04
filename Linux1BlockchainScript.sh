@@ -73,6 +73,6 @@ newgrp docker
 sudo usermod -aG docker linux1
 
 #Setup PATH dynamically
-export PATH=PATH=/data/npm/bin:$PATH
+export PATH=/data/npm/bin:$PATH
 # Persist PATH setting
 echo "export PATH=/data/npm/bin:$PATH" >> $HOME/.profile

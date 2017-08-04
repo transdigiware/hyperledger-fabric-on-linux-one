@@ -66,3 +66,13 @@ sudo iptables-save > /etc/linuxone/iptables.save
 echo -e "*** Installing NodeRed. ***\n"
 npm install -g node-red
 nohup node-red >/data/playground/nodered.stdout 2>/data/playground/nodered.stderr & disown
+
+# Add docker group dynamically
+newgrp docker
+# Persist docker group addition
+sudo usermod -aG docker linux1
+
+#Setup PATH dynamically
+export PATH=PATH=/data/npm/bin:$PATH
+# Persist PATH setting
+echo "export PATH=/data/npm/bin:$PATH" >> $HOME/.profile

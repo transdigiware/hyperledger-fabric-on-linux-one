@@ -175,27 +175,35 @@ In this section of the journey you will request access to the LinuxONE Community
 
 24. You're ready to run the setup script! Run the script using the following command, `./Linux1BlockchainScript.sh`. Be patient. It takes awhile!
 
-    ![Run setup script.](images/RunSetupScript.png)
+![Run setup script.](images/RunSetupScript.png)
 
 25. It's completed when the command line returns. It will look similar to the following image.
 
-    ![Setup script is finished.](images/SetupScriptDone.png)
+![Setup script is finished.](images/SetupScriptDone.png)
 
-    #### Verify the installation of Hyperledger Fabric and Hyperledger Composer
+26. For some of the changes made by the script to take effect, exit the ssh session by typing `exit`.
 
-26. To see if your blockchain network is up and running, use the command `docker ps -a`. You should see 4 containers with image names like the ones shown below.
+![Exit session.](images/ExitSession.png)
+
+27. Log back in to your guest. `ssh -i DJBlockchain.pem linux1@xxx.xxx.x.x`where x is the values for your guest's IP address. (Refer to step 15 if you need help finding it.)
+
+![Log back in to your guest.](images/ReLogin.png)
+
+#### Verify the installation of Hyperledger Fabric and Hyperledger Composer
+
+28. To see if your blockchain network is up and running, use the command `docker ps -a`. You should see 4 containers with image names like the ones shown below.
 
     ![Running fabric containers.](images/RunningFabricContainers.png)
 
-27. Verify that the composer command line interface and other tools were installed by entering `composer -v`.
+29. Verify that the composer command line interface and other tools were installed by entering `composer -v`.
 
     ![Verify Composer tools installation.](images/VerifyComposerCLI.png)
 
-28. Verify Composer Playground is running by looking for its process using the command, `ps -ef|grep playground`. 
+30. Verify Composer Playground is running by looking for its process using the command, `ps -ef|grep playground`. 
 
     ![Verify Composer Playground is running.](images/VerifyComposerPlaygroundRunning.png)
 
-29. Open a browser and enter `xxx.xxx.x.x:8080` into the address bar where the x's correspond to your Linux guest's IP address. 
+31. Open a browser and enter `xxx.xxx.x.x:8080` into the address bar where the x's correspond to your Linux guest's IP address. 
 
     * **Note:** It is recommended to use Chrome as your browser for Hyperledger Composer Playground. It is also recommended that you open the Playground in a Incognito Window. This allows you to quickly clear cache and history if you start noticing odd behaviors.
     * **Note:** If you use Firefox, you cannot use it in Private mode. 
@@ -205,7 +213,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
     ![Loaded Composer Playground.](images/ComposerPlaygroundUI2.png)
 
-30. Congratulations! Part 1 is now complete! Lets get to work on the fun part. :smiley:
+32. Congratulations! Part 1 is now complete! Lets get to work on the fun part. :smiley:
 
 
 ### Part 2 — Creating a blockchain application and generating API

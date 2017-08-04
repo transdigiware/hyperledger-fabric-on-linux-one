@@ -25,6 +25,7 @@ This lab will be broken into three parts:
 2. Writing chaincode and generating API.
 3. Using NodeRed to test API integration.
 
+<<<<<<< HEAD
 
 ## Steps
 
@@ -56,6 +57,9 @@ This lab will be broken into three parts:
 11. [Modifying your flow to call your API](#modifying-your-flow-to-call-your-api)
 12. [Interacting with blockchain through a dashboard](#interacting-with-blockchain-through-a-dashboard)
 
+=======
+  
+>>>>>>> 38d012aa9671efe10dede4cca8c1b6b7b0110183
 
 ## Workshop Instructions
 ### Scenario Overview

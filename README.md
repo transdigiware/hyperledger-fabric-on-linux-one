@@ -25,7 +25,7 @@ This lab will be broken into three parts:
 2. Writing chaincode and generating API.
 3. Using NodeRed to test API integration.
 
-<<<<<<< HEAD
+
 
 ## Steps
 
@@ -57,11 +57,10 @@ This lab will be broken into three parts:
 11. [Modifying your flow to call your API](#modifying-your-flow-to-call-your-api)
 12. [Interacting with blockchain through a dashboard](#interacting-with-blockchain-through-a-dashboard)
 
-=======
-  
->>>>>>> 38d012aa9671efe10dede4cca8c1b6b7b0110183
+
 
 ## Workshop Instructions
+
 ### Scenario Overview
 For this journey, we will simulate a thermostat and a temperature gauge to provide us temperature data. In a real world scenario, this could be a temperature sensor in your house or in an office building. The sensor could be connected to a real thermostat like Nest or other smart home devices via API. To keep family members, housemates, friends or children from excessively running air conditioning or heat, they must first find out if they have permission to adjust the thermostat by running a transaction defined in a smart contract running on Hyperledger Fabric. The contract will check the value recorded in the ledger for the temperature gauge to determine if their thermostat adjustment is environmentally friendly. Secondly, it will add integration to Weather.com to check current temperatures and adjust the thermostat to ideal settings based on the terms of the smart contract. 
 

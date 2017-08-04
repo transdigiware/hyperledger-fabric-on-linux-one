@@ -67,12 +67,11 @@ echo -e "*** Installing NodeRed. ***\n"
 npm install -g node-red
 nohup node-red >/data/playground/nodered.stdout 2>/data/playground/nodered.stderr & disown
 
-# Add docker group dynamically
-newgrp docker
+# Persist PATH setting
+echo "export PATH=/data/npm/bin:$PATH" >> $HOME/.profile
+
 # Persist docker group addition
 sudo usermod -aG docker linux1
 
-#Setup PATH dynamically
-export PATH=/data/npm/bin:$PATH
-# Persist PATH setting
-echo "export PATH=/data/npm/bin:$PATH" >> $HOME/.profile
+echo "Please log out of this system and log back in to pick up the group and PATH changes."
+

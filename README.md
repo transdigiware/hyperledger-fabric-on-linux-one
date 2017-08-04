@@ -26,6 +26,36 @@ This lab will be broken into three parts:
 3. Using NodeRed to test API integration.
 
 
+## Steps
+
+### [Part 1 \- Setting up your LinuxONE Community Cloud guest](#part-1---setting-up-your-linuxone-community-cloud-guest)
+
+1. [Request access to LinuxONE Community Cloud\.](#request-access-to-linuxone-community-cloud)
+
+2. [Create your LinuxONE guest](#create-your-linuxone-guest)
+
+3. [Setup your Linux guest for Hyperledger Fabric and Hyperledger Composer](#setup-your-linux-guest-for-hyperledger-fabric-and-hyperledger-composer)
+
+4. [Verify the installation of Hyperledger Fabric and Hyperledger Composer](#verify-the-installation-of-hyperledger-fabric-and-hyperledger-composer)
+
+### [Part 2 — Creating a blockchain application and generating API](#part-2--creating-a-blockchain-application-and-generating-api)
+
+5. [Importing the components of your blockchain application](#importing-the-components-of-your-blockchain-application)
+
+6. [Creating your blockchain application](#creating-your-blockchain-application)
+
+7. [Test application code](#test-application-code)
+
+8. [Deploy application to Hyperledger Fabric](#deploy-application-to-hyperledger-fabric)
+
+9. [Generating API from your blockchain application](#generating-api)
+
+###[Part 3 — Utilizing blockchain API through NodeRED](#Part 3 — Utilizing blockchain API through NodeRED)
+
+10. [Importing your flow into NodeRED](#importing-your-flow-into-nodered)
+11. [Modifying your flow to call your API](#modifying-your-flow-to-call-your-api)
+12. [Interacting with blockchain through a dashboard](#interacting-with-blockchain-through-a-dashboard)
+
 
 ## Workshop Instructions
 ### Scenario Overview
@@ -711,11 +741,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
 82. Congratulations! You now have a working blockchain application and have created APIs to call your blockchain application.
 
-    ​
 
-
-
-### End of Part 2
 
 
 
@@ -762,7 +788,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
 10. **Click** *Close* to leave the User Settings dialog.
 
-  ![Click Close.](images/closePalette.png)
+ ![Click Close.](images/closePalette.png)
 
 11. **Copy** the JSON below. 
 

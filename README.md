@@ -707,9 +707,11 @@ In this section of the journey you will request access to the LinuxONE Community
 
  ![Click Close.](images/closePalette.png)
 
-11. **Copy** the JSON from the [GitHub repository](https://raw.githubusercontent.com/IBM/HyperledgerFabric-on-LinuxOne/master/code/node-red.json) to import into the flow. 
+11. **Copy** all of the JSON from the [GitHub repository](https://raw.githubusercontent.com/IBM/HyperledgerFabric-on-LinuxOne/master/code/node-red.json) to import into the flow. 
 
-    - In the GitHub repository in the code folder as `node-red.json`. To view it in GitHub, **click** on *node-red.json*, **select** *raw* and then copy it. 
+    - **Note:** The easiest way to do this is clicking the hyperlink above. You can also find it in the GitHub repository in the code folder as `node-red.json`. To view it in GitHub, **click** on *node-red.json*, **select** *raw* and then copy it. 
+
+    ![Copy raw JSON.](images/RawJSON.png)
 
 12. Paste it into NodeRed, by **clicking** on the *menu icon* in the upper right corner.
 

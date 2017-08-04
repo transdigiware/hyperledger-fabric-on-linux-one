@@ -746,9 +746,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
 
 
-
-
-###Part 3 — Utilizing blockchain API through NodeRED 
+### Part 3 — Utilizing blockchain API through NodeRED 
 
 
 

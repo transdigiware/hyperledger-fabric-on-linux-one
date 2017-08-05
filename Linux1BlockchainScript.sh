@@ -1,5 +1,60 @@
 #!/bin/bash
 
+# Sanity checks
+relog=false
+# Check for docker group
+if ! $( id -Gn | grep -wq docker ); then
+  sudo usermod -aG docker linux1
+  echo "ID linux1 was not a member of the docker group. This has been corrected."
+  relog=true
+fi
+# Check PATH for /data/npm/bin
+if ! $( echo $PATH | grep -q /data/npm/bin ); then
+  echo "export PATH=/data/npm/bin:$PATH" >> $HOME/.profile
+  echo "PATH was missing '/data/npm/bin'. This has been corrected."
+  relog=true
+fi
+# Relog needed?
+if [[ "$relog" = true ]]; then
+  echo "Some changes have been made that require you to log out and log back in."
+  echo "Please do this now and then re-run this script."
+  exit 1
+fi
+# Ensure /data exists
+if [[ ! -d "/data" ]]; then
+  echo "/data disk is missing. Please wait a moment and try again!"
+  exit 2
+fi
+# END Sanity checks
+
+printf "
+
+IBM Master the Mainframe
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::''  ''::'      '::::::  ::::::::::::::'.:::::::::::::::
+:::::::::' :. :  :         :::: :  :::::::::::.:::':::::::::::::::
+::::::::::  :   :::.       ::: M :::::::..::::'     :::: : :::::::
+::::::::    :':  '::'     '' M   M :::::: :'           '' ':::::::
+:'        : '   :  ::    . M       M   '                        .:
+:               :  .:: . M           M                         :::
+:. .,.        :::  ':: M M M       M M M                 .:...::::
+:::::::.      '      M   M   M   M   M   M               :: :::::.
+::::::::           M     M     M     M     M   '    '   .:::::::::
+::::::::.        ::: M   M           M   M :         ''' :::::::::
+::::::::::      :::::: M M           M M             :::::::::::::
+: .::::::::.   .:''::::: M           M   ::   :   '::.::::::::::::
+:::::::::::::::. '  '::::: M       M   :::::.:.:.:.:.:::::::::::::
+:::::::::::::::: :     ':::: M   M  ' ,:::::::::: : :.:'::::::::::
+::::::::::::::::: '     :::::: M    . :'::::::::::::::' ':::::::::
+::::::::::::::::::''   :::::::: : :' : ,:::vem:::::'      ':::::::
+:::::::::::::::::'   .::::::::::::  ::::::::::::::::       :::::::
+:::::::::::::::::. .::::::::::::::::::::::::::::::::::::.'::::::::
+
+IBM Master the Mainframe
+
+"
+
 
 #Install NodeJS
 echo -e “*** install_nodejs ***”

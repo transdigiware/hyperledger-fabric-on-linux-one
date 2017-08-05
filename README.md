@@ -177,7 +177,22 @@ In this section of the journey you will request access to the LinuxONE Community
 
 ![Run setup script.](images/RunSetupScript.png)
 
-25. It's completed when the command line returns. It will look similar to the following image.
+25. The first time you run the script, it will set some permissions and environment variables that require you to exit and log in again. 
+
+    * Exit the session by **typing** `exit`. 
+
+    * **Log in** again —  `ssh -i DJBlockchain.pem linux1@xxx.xxx.x.x` where the x's correspond to your Linux guest IP.
+
+    * **Run** the script again — `./Linux1BlockchainScript.sh`
+
+```
+      linux1@djblockchain:~> ./Linux1BlockchainScript.sh 
+      ID linux1 was not a member of the docker group. This has been corrected.
+      PATH was missing '/data/npm/bin'. This has been corrected.
+      Some changes have been made that require you to log out and log back in.
+      Please do this now and then re-run this script.
+```
+26. It's completed when the command line returns. It will look similar to the following image.
 
 ![Setup script is finished.](images/SetupScriptDone.png)
 

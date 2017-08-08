@@ -1,4 +1,3 @@
- **Work in progress!**
 # Hyperledger Fabric and Hyperledger Composer on LinuxONE
 
 ## Architecture
@@ -6,18 +5,15 @@
 
 This journey will guide you through the following process.
 
-1. Requesting access to the LinuxONE Community Cloud.
-2. Creating your Linux guest on the LinuxONE Community Cloud.
-3. Setup and verification of your blockchain environment.
-4. Creating a blockchain project in Hyperledger Composer.
-5. Interacting with blockchain and third party APIs through Composer Rest Server and NodeRed.
-
-
-
+1. Request access to the LinuxONE Community Cloud.
+2. Create your Linux guest on the LinuxONE Community Cloud.
+3. Setup and verify of your blockchain environment.
+4. Create a blockchain project in Hyperledger Composer.
+5. Interact with blockchain and third party APIs through Composer Rest Server and NodeRed.
 
 
 ## Application Overview
-The blockchain workshop is intended to give you a basic understanding of how a developer would interact with Hyperledger Fabric using Hyperledger Composer. In this workshop you will use a browser based UI to modify chaincode, test your code and deploy your changes. You will also learn how tooling can take the code and generate API to allow for application integration through a REST-ful interface. 
+This blockchain journey is intended to give you a basic understanding of how a developer would interact with Hyperledger Fabric using Hyperledger Composer. In this workshop you will use a browser based UI to modify chaincode, test your code and deploy your changes. You will also learn how tooling can take the code and generate API to allow for application integration through a REST-ful interface. 
 
 This lab will be broken into three parts: 
 

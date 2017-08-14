@@ -568,7 +568,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
     ![Select Hyperledger Fabric v1.0.](images/SelectHFv1.png)
 
-55. Complete the following fields according to the information in your connection.json on the Linux guest. This is in your terminal as found in step 58.**Information for Orderer, Channel, MSP ID, CA, Peers and Key Value Store must be exact.**
+55. Complete the following fields according to the information in your connection.json on the Linux guest. This is in your terminal as found in step 49. **Information for Orderer, Channel, MSP ID, CA, Peers and Key Value Store must be exact.**
 
     * Connection Profile — LinuxONECC
 

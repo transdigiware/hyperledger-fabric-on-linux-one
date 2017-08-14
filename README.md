@@ -102,7 +102,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
    * Enter an instance name — `DJBlockchain`
 
-   * Enter an insance description — `Blockchain guest for Developers Journey.`
+   * Enter an instance description — `Blockchain guest for Developers Journey.`
 
    * Select *SLES12 SP2* for the image.
 
@@ -276,7 +276,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
 10. Name your blockchain application. Select the **pencil** to edit the name and version. 
 
-   ![Click the pencil icon.](images/ClickPencil.png)
+  ![Click the pencil icon.](images/ClickPencil.png)
 
 11. Change the name and version to `blockchain-journey` and `1.0`.
 
@@ -431,7 +431,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
     * Make sure that the **Transaction Type** is set to `SetSensorTemp`.
 
-    * Modify the JSON data`"gauge": "resource:org.acme.sample.Team#teamID:xxx"`  — enter your team's identifier in place of the value where **xxx** is in the sample JSON data.
+    * Modify the JSON data`"gauge": "resource:org.acme.sample.Sensor#teamID:xxx"`  — enter your team's identifier in place of the value where **xxx** is in the sample JSON data.
 
     * Modify the JSON data`"newSensorValue": 0` — enter a value your sensor could have.
 
@@ -460,7 +460,7 @@ In this section of the journey you will request access to the LinuxONE Community
    * In the **Transaction Type** drop down, select `ChangeThermostatTemp`.
      ![Select ChangeThermostatTemp](images/SelectChangeThermostat.png)
 
-   * Edit the sample JSON for the transaction`"thermostat": "resource:org.acme.sample.Team#teamID:xxx"`— change **xxx** to your team ID value.
+   * Edit the sample JSON for the transaction`"thermostat": "resource:org.acme.sample.Sensor#teamID:xxx"`— change **xxx** to your team ID value.
 
    * Edit the sample JSON for the transaction`"newThermostatValue": 0` — Replace **0** with a value to which you would like to see if you can adjust the thermostat.
 
@@ -500,7 +500,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
 43. Complete the **CompareWeather** transaction.
 
-    * Modify the JSON, `"recommend": "resource:org.acme.sample.Team#teamID:xxx"`— Replace **xxx** with your team ID.
+    * Modify the JSON, `"recommend": "resource:org.acme.sample.Sensor#teamID:xxx"`— Replace **xxx** with your team ID.
 
     * Modify the JSON for`"outsideTemp": 0`— Enter a value for an outside temperature.
 

@@ -634,7 +634,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
 67. You should see your blockchain-journey in the Hyperledger Composer Playground when it is successfully deployed. Congratulations! You've deployed your first blockchain application to Hyperledger Fabric.
 
-    * **Note:** As a safety measure, check the Model File and Script File to make sure your code is there. It is also good practice to run some transaction in the test tab.
+    * **Note:** As a safety measure, check the Model File and Script File to make sure your code is there. It is also good practice to run some transactions in the test tab.
     * **Note:** At this point, if you need to close Composer Playground OR leave it open idle, it is a good idea to switch your connection profile back to *Web browser*.
 
     ![Successful deployment.](images/SuccessfulDeployBNA.png)

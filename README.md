@@ -651,7 +651,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
     * Press `Enter` to start a new line.
 
-    * On the new line, type in `xxx.xxx.x.x     djblockchain` where the x's is the IP address for your Linux guest.
+    * On the new line, type in `0.0.0.0     djblockchain` .
 
     * Press `Esc` to leave insert mode.
 

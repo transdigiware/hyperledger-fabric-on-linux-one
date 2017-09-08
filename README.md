@@ -43,9 +43,7 @@ This lab will be broken into three parts:
 
 10. [Importing your flow into NodeRED](#importing-your-flow-into-nodered)
 
-11. [Modifying your flow to call your API](#modifying-your-flow-to-call-your-api)
-
-12. [Interacting with blockchain through a dashboard](#interacting-with-blockchain-through-a-dashboard)
+11. [Interacting with blockchain through a dashboard](#interacting-with-blockchain-through-a-dashboard)
 
 
 
@@ -748,95 +746,45 @@ In this section of the journey you will request access to the LinuxONE Community
 
 
 
-#### Modifying your flow to call your API
+#### Interacting with blockchain through a dashboard
 
-15. We now need to modify the API calls to call your Linux guest. **Click** on the tab named *Blockchain*.
-
-    ![Click Blockchain.](images/ClickBlockchain.png)
-
-16. **Double click** on the *http request* node.
-
-    ![Double click http request.](images/httprequest.png)
-
-17. In the *Edit http request node* window, edit the *URL* field to **enter your Linux guest IP Address** where the x's are. This will allow NodeRED to talk with your blockchain through API. **Click** *Done*.
-
-    ![Edit the IP address in the URL box.](images/httpURL.png)
-
-18. **Double click** on *Set Team Name* node.
-
-    ![Double click Set Team Name.](images/SetTeamName.png)
-
-19. In the *Edit http request node* window, edit the *URL* field to **enter your Linux guest IP Address** where the x's are. This will allow NodeRED to talk with your blockchain through API. **Click** *Done*.
-
-    ![Enter your Linux guest IP address.](images/SetTeamNameURL.png)
-
-20. **Double click** *Change Thermostat*.
-
-    ![Double click Change Thermostat.](images/ChangeThermostat.png)
-
-21. In the *Edit http request node* window, edit the *URL* field to **enter your Linux guest IP Address** where the x's are. This will allow NodeRED to talk with your blockchain through API. **Click** *Done*.
-
-    ![Edit the IP Address in Change Thermostat.](images/ChangeTempURL.png)
-
-22. **Double click** on *Compare Weather*.
-
-    ![Double click on the Compare Weather node.](images/CompareWeather.png)
-
-23. In the *Edit http request node* window, edit the *URL* field to **enter your Linux guest IP Address** where the x's are. This will allow NodeRED to talk with your blockchain through API. **Click** *Done*.
-
-    ![Edit the IP address in Compare Weather.](images/CompareWeatherURL.png)
-
-24. **Double click** on the *http request* node to the right of *Compare Weather*.
-
-    ![Double click on http request.](images/httpCompareWeather.png)
-
-25. In the *Edit http request node* window, edit the *URL* field to **enter your Linux guest IP Address** where the x's are. This will allow NodeRED to talk with your blockchain through API. **Click** *Done*.
-
-    ![Edit the IP address in the http request node.](images/httpCompareWeatherURL.png)
-
-26. On the right side of the Node-RED browser, **click** *Deploy* to save the work you've imported.
-
-    ![Click Deploy.](images/ClickDeploy.png)
-
-    #### Interacting with blockchain through a dashboard
-
-27. **Click** the *dashboard* tab in the upper right corner under *Deploy*.
+15. **Click** the *dashboard* tab in the upper right corner under *Deploy*.
 
     ![Click dashboard.](images/ClickDashboard.png)
 
-28. **Click** the *pop out* button to open the dashboard in a browser.
+16. **Click** the *pop out* button to open the dashboard in a browser.
 
     ![Click the pop out button.](images/ClickPopOut.png)
 
-29. A new tab should open. Your dashboard should look like the following image.
+17. A new tab should open. Your dashboard should look like the following image.
 
     ![Dashboard image.](images/Dashboard.png)
 
-30. To interact with your simulated RaspberryPi, go back to your Node-RED tab and **select** the *Gauge Simulator* tab.
+18. To interact with your simulated RaspberryPi, go back to your Node-RED tab and **select** the *Gauge Simulator* tab.
 
     ![Select the Gauge Simulator tab.](images/GaugeSimulator.png)
 
-31. **Click** on the *Sensor Gauge Simulator* node.
+19. **Click** on the *Sensor Gauge Simulator* node.
 
     ![Click on the Sensor Gauge Simulator node.](images/GaugeNode.png)
 
-32. On the right side of the browser, **click** on the *Info* tab.
+20. On the right side of the browser, **click** on the *Info* tab.
 
     ![Click Info.](images/ClickInfo.png)
 
-33. In the third paragraph under Information there is a hyperlink for the word *here*.  That hyperlink opens the simulator in a new tab. **Click** *here*.
+21. In the third paragraph under Information there is a hyperlink for the word *here*.  That hyperlink opens the simulator in a new tab. **Click** *here*.
 
     ![Click here.](images/ClickHere.png)
 
-34. **Adjust** the temperature of the sensor in the simulator from 20 C.
+22. **Adjust** the temperature of the sensor in the simulator from 20 C.
 
     ![Adjust the sensor temperature.](images/Sensor.png)
 
-35. Switch to the tab for your dashboard, notice the change to the sensor temperature and graph.
+23. Switch to the tab for your dashboard, notice the change to the sensor temperature and graph.
 
     ![Notice the sensor differences in the dashboard.](images/SensorDashboard.png)
 
-36. Continue to play with your dashboard to interact with blockchain via API. You can try the following:
+24. Continue to play with your dashboard to interact with blockchain via API. You can try the following:
 
     * Type in a team name & click *Add Team Name*. You should see a successful message afterward.
 
@@ -858,8 +806,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
     * ![recommendation result](images/dashboard-recommendation-result.png)
 
-37. Congratulations! You've completed this journey!
-
+25. Congratulations! You've completed this journey!
 
 
 

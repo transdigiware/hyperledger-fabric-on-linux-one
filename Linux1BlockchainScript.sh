@@ -102,7 +102,8 @@ npm install
 cd packages/fabric-dev-servers/
 npm install
 cd fabric-scripts/hlfv1/composer/
-sed -i s/x86_64/s390x/g docker-compose.yml 
+sed -i s/\$ARCH/s390x/g docker-compose.yml
+#sed -i s/x86_64/s390x/g docker-compose.yml 
 cd /data/linux1/composer-tools/packages/fabric-dev-servers/fabric-scripts/hlfv1
 mv startFabric.sh originalStartFabric.sh
 wget https://raw.githubusercontent.com/IBM/HyperledgerFabric-on-LinuxOne/master/startFabric.sh

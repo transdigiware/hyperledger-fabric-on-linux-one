@@ -10,7 +10,7 @@ if ! $( id -Gn | grep -wq docker ); then
 fi
 # Check PATH for /data/npm/bin
 if ! $( echo $PATH | grep -q /data/npm/bin ); then
-  echo "export PATH=/data/npm/bin:$PATH" >> $HOME/.profile
+  echo "export PATH=/data/npm/bin:\$PATH" >> $HOME/.profile
   echo "PATH was missing '/data/npm/bin'. This has been corrected."
   relog=true
 fi
@@ -109,7 +109,7 @@ npm install -g node-red
 nohup node-red >/data/playground/nodered.stdout 2>/data/playground/nodered.stderr & disown
 
 # Persist PATH setting
-echo "export PATH=/data/npm/bin:$PATH" >> $HOME/.profile
+echo "export PATH=/data/npm/bin:\$PATH" >> $HOME/.profile
 
 # Persist docker group addition
 sudo usermod -aG docker linux1

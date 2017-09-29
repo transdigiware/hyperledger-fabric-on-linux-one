@@ -22,7 +22,7 @@ if [[ "$relog" = true ]]; then
 fi
 # Ensure /data exists
 if [[ ! -d "/data" ]]; then
-  echo "/data disk is missing. Please wait a moment and try again! Newly created VMs may take up to 5 minutes before this partition is available."
+  echo "/data disk is missing. Please wait a moment and try again! Newly created VMs may take up to 10 minutes before this partition is available."
   exit 2
 fi
 # END Sanity checks
@@ -86,7 +86,7 @@ npm install -g composer-rest-server@0.9.2
 echo -e “*** Installing Hyperledger Composer playground. ***\n”
 npm install -g composer-playground@0.9.2
 
-echo -e "*** Clone and install the Coposer Tools repository.***\n"
+echo -e "*** Clone and install the Composer Tools repository.***\n"
 git clone https://github.com/hyperledger/composer-tools
 cd composer-tools/
 npm install

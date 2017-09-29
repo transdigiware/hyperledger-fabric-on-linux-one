@@ -22,7 +22,7 @@ if [[ "$relog" = true ]]; then
 fi
 # Ensure /data exists
 if [[ ! -d "/data" ]]; then
-  echo "/data disk is missing. Please wait a moment and try again!"
+  echo "/data disk is missing. Please wait a moment and try again! Newly created VMs may take up to 5 minutes before this partition is available."
   exit 2
 fi
 # END Sanity checks
@@ -73,7 +73,7 @@ echo -e “*** Done with docker-compose. ***\n”
 
 #Install Hyperledger Composer Components
 echo -e “*** Installing Hyperledger Composer command line tools. ***\n”
-mkdir /data/linux1/ 
+mkdir /data/linux1/
 npm config set prefix '/data/npm'
 npm config set cache /data/linux1/.npm
 export PATH=/data/npm/bin:$PATH
@@ -115,4 +115,3 @@ echo "export PATH=/data/npm/bin:\$PATH" >> $HOME/.profile
 sudo usermod -aG docker linux1
 
 echo "Please log out of this system and log back in to pick up the group and PATH changes."
-

@@ -22,7 +22,7 @@ if [[ "$relog" = true ]]; then
 fi
 # Ensure /data exists
 if [[ ! -d "/data" ]]; then
-  echo "/data disk is missing. Please wait a moment and try again!"
+  echo "/data disk is missing. Please wait a moment and try again! Newly created VMs may take up to 10 minutes before this partition is available."
   exit 2
 fi
 # END Sanity checks
@@ -73,7 +73,7 @@ echo -e “*** Done with docker-compose. ***\n”
 
 #Install Hyperledger Composer Components
 echo -e “*** Installing Hyperledger Composer command line tools. ***\n”
-mkdir /data/linux1/ 
+mkdir /data/linux1/
 npm config set prefix '/data/npm'
 npm config set cache /data/linux1/.npm
 export PATH=/data/npm/bin:$PATH
@@ -86,7 +86,7 @@ npm install -g composer-rest-server@0.9.2
 echo -e “*** Installing Hyperledger Composer playground. ***\n”
 npm install -g composer-playground@0.9.2
 
-echo -e "*** Clone and install the Coposer Tools repository.***\n"
+echo -e "*** Clone and install the Composer Tools repository.***\n"
 git clone https://github.com/hyperledger/composer-tools
 cd composer-tools/
 npm install
@@ -101,7 +101,7 @@ nohup composer-playground >/data/playground/playground.stdout 2>/data/playground
 sudo iptables -I INPUT 1 -p tcp --dport 8080 -j ACCEPT
 sudo iptables -I INPUT 1 -p tcp --dport 3000 -j ACCEPT
 sudo iptables -I INPUT 1 -p tcp --dport 1880 -j ACCEPT
-sudo iptables-save > /etc/linuxone/iptables.save
+sudo bash -c "iptables-save > /etc/linuxone/iptables.save"
 
 #Install NodeRed
 echo -e "*** Installing NodeRed. ***\n"
@@ -115,4 +115,3 @@ echo "export PATH=/data/npm/bin:\$PATH" >> $HOME/.profile
 sudo usermod -aG docker linux1
 
 echo "Please log out of this system and log back in to pick up the group and PATH changes."
-

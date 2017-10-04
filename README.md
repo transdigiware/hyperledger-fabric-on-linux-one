@@ -204,15 +204,15 @@ In this section of the journey you will request access to the LinuxONE Community
 
 29. To see if your blockchain network is up and running, use the command `docker ps -a`. You should see 4 containers with image names like the ones shown below.
 
-    ![Running fabric containers.](images/RunningFabricContainers.png)
+![Running fabric containers.](images/RunningFabricContainers.png)
 
 30. Verify that the composer command line interface and other tools were installed by entering `composer -v`.
 
-    ![Verify Composer tools installation.](images/VerifyComposerCLI.png)
+![Verify Composer tools installation.](images/VerifyComposerCLI.png)
 
 31. Verify Composer Playground is running by looking for its process using the command, `ps -ef|grep playground`. 
 
-    ![Verify Composer Playground is running.](images/VerifyComposerPlaygroundRunning.png)
+![Verify Composer Playground is running.](images/VerifyComposerPlaygroundRunning.png)
 
 32. Open a browser and enter `xxx.xxx.x.x:8080` into the address bar where the x's correspond to your Linux guest's IP address. 
 
@@ -220,9 +220,9 @@ In this section of the journey you will request access to the LinuxONE Community
     * **Note:** If you use Firefox, you cannot use it in Private mode. 
     * You should see the following:
 
-    ![Loading Composer Playground.](images/ComposerPlaygroundUI1.png)
+![Loading Composer Playground.](images/ComposerPlaygroundUI1.png)
 
-    ![Loaded Composer Playground.](images/ComposerPlaygroundUI2.png)
+![Loaded Composer Playground.](images/ComposerPlaygroundUI2.png)
 
 33. Congratulations! Part 1 is now complete! Lets get to work on the fun part. :smiley:
 
@@ -237,7 +237,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
 3. Once Git is installed, run the following command to clone the needed materials for this exercise. `git clone https://github.com/IBM/HyperledgerFabric-on-LinuxOne.git`
 
-   ![Clone GitHub repository](images/CloneGitHubRepo.png)
+![Clone GitHub repository](images/CloneGitHubRepo.png)
 
 4. To find the files you'll need for this, `cd HyperledgerFabric-on-LinuxOne/code/` and then run `ls` to see what is in the directory.
 
@@ -253,76 +253,66 @@ In this section of the journey you will request access to the LinuxONE Community
 
    ![View Composer Playground.](images/ComposerPlaygroundUI2.png)
 
-7. Scroll down on the left side of the Composer Playground to select **Import/Replace**.
+7. Select **Deploy a new business network**.
+  ![Select Deploy a new business network.](images/SelectImportReplace.png)
 
+8. Complete the *BASIC INFORMATION*.
 
-![Select Import/Replace](images/SelectImportReplace.png)
+   * Give your new Business Network a name: **blockchain-journery**
 
+   * Describe what your Business Network will be used for: **Creating my first blockchain network.**
 
+     ![Complete the Basic Information](images/basicinfo.png)
 
+9. Scroll until you can see *Choose a Business Network Definition to start with:* and select **empty-business-network** and **Deploy**.
+   ![Click empty-business-network and Deploy.](images/EmptyBusinessNetwork.png)
 
-8. Select **Empty Business Network** and click **Deploy**.
-   ![Click browse](images/EmptyBusinessNetwork.png)
-9. From the _Import/Replace dialog window_, select **Replace & Import**.
-   * **Note for Hyperledger Composer V0.7 - 0.9:** When you deploy your business network to Hyperledger Fabric, the business network name is used as the chaincode ID. If the business network name is changed then a new chaincode ID will be issued and used on deploy. All existing data in blockchain will be lost due to the change. We don't have to worry about that right now.
+10. * From *My Wallet* select **Connect now** to go into your business network.
 
+![Select Connect now.](images/ConnectNow.png)
 
-![Deploy bna file.](images/ReplaceImport.png)
-
-
-
-
-10. Name your blockchain application. Select the **pencil** to edit the name and version. 
-
-  ![Click the pencil icon.](images/ClickPencil.png)
-
-11. Change the name and version to `blockchain-journey` and `1.0`.
-
- ![Name your blockchain application.](images/EditName.png)
-
-12. Select **Add a File**.
+11. Select **Add a File**.
 
     ![Select Add a File.](images/AddFile.png)
 
-13. From the *Add a file* pop-up dialog, select **browse**.
+
+12. From the *Add a file* pop-up dialog, select **browse**.
 
     ![Select browse.](images/SelectBrowse.png)
 
-14. In the file explorer window, navigate to where you downloaded the files. Refer to step 5 if you need help finding this location. **Select** *README.md* and **Click** *Open*.
+13. In the file explorer window, navigate to where you downloaded the files. Refer to step 5 if you need help finding this location. **Select** *README.md* and **Click** *Open*.
+   ![Select README.md](images/SelectREADME.png)
 
-    ![Select README.md](images/SelectREADME.png)
+14. **Select** *Add*.
+   ![Select Add.](images/AddREADME.png)
 
-15. **Select** *Add*.
+15. On the *Current file will be replaced* dialog, **select** *Replace*.
 
-    ![Select Add.](images/AddREADME.png)
+![Select Add.](images/READMEReplace.png)
 
-16. On the *Current definition will be replaced* dialog, **select** *Replace & Import*.
+16. Let's keep adding the files to the Composer Playground.  **Repeat steps 11-15 to add the following files**:
 
-    ![Select Replace & Import.](images/READMEReplace.png)
+* *org.acme.sample.cto* — This is located in the models folder. In this exercise you'll use this file to create a model for your asset and transactions. You could also create participants in this file. This is similar to creating a Java class and defining what you would need in the class.
+* *logic.js* — This is located in the lib folder. This is a JavaScript file that becomes the brains of your application. In this file is code, your smart contract, that defines how a transaction can happen. This is similar to Java methods.
+* **Add last:** *permissions.acl* — This is where you would limit permissions for participants in a blockchain network.
 
-17. Let's keep adding the files to the Composer Playground.  **Repeat steps 11-15 to add the following files**:
+17. Your files are all now loaded into Composer Playground. **Click** *Update* on the left side of the browser. 
 
-    * *org.acme.sample.cto* — This is located in the models folder. In this exercise you'll use this file to create a model for your asset and transactions. You could also create participants in this file. This is similar to creating a Java class and defining what you would need in the class.
-    * *permissions.acl* — This is where you would limit permissions for participants in a blockchain network.
-    * *logic.js* — This is located in the lib folder. This is a JavaScript file that becomes the brains of your application. In this file is code, your smart contract, that defines how a transaction can happen. This is similar to Java methods.
+   ![Click Deploy.](images/InitialDeploy.png)
 
-18. Your files are all now loaded into Composer Playground. **Click** *Deploy* on the left side of the browser. 
+   #### Creating your blockchain application
 
-    ![Click Deploy.](images/InitialDeploy.png)
-
-    #### Creating your blockchain application
-
-19. Click on **Model File**.
+18. Click on **Model File**.
 
     ![Click Model File](images/SelectModelFile.png)
 
-20. Click in the **editor** on the right to begin writing your models. 
+19. Click in the **editor** on the right to begin writing your models. 
 
     * NOTE: **DO** **NOT** modify the namespace during the lab.
 
       ![Click in the editor](images/ClickEditor.png)
 
-21. On a new line, give your asset `Sensor` the following attributes.
+20. On a new line, give your asset `Sensor` the following attributes.
 
     * Note: a small "o" is used as a bullet in the model.
 
@@ -336,11 +326,11 @@ In this section of the journey you will request access to the LinuxONE Community
 
     * `o String recommendation`— this will be populated based on the `CompareWeather` transaction.
 
-    * **Click** *Deploy* to save changes.
+    * **Click** *Update* to save changes.
 
       ![Sensor model](images/SensorModel.png)
 
-22. Now create your first transaction model for `SetSensorTemp`. Enter the following attributes:
+21. Now create your first transaction model for `SetSensorTemp`. Enter the following attributes:
 
     * `--> Sensor gauge` — The transaction will need to put data into the `Sensor` asset. This passes a reference to the asset so we can work with the asset in the logic for the transaction.
 
@@ -350,29 +340,28 @@ In this section of the journey you will request access to the LinuxONE Community
 
       ![Create SetSensorTemp model](images/SetSensorTempModel.png)
 
-23. Build your `ChangeThermostatTemp` transaction model. Add the following:
+22. Build your `ChangeThermostatTemp` transaction model. Add the following:
 
     * `--> Sensor thermostat` — The transaction will need to put data into the `Sensor` asset for the thermostat. This passes a reference to the asset so we can work with the asset in the logic for the transaction.
 
     * `o Double newThermostatValue` — This allows for a new, proposed value to be sent into the transaction. In the logic tab, we will use this value to compare to what the gauge says and decide if the thermostat value should be adjusted.
 
-    * **Click** *Deploy* to save changes.
+    * **Click** *Update* to save changes.
 
       ![Create ChangeThermostatTemp model](images/ChangeThermostatModel.png)
 
-24. Enter the following values to build your `CompareWeather` transaction model:
+23. Enter the following values to build your `CompareWeather` transaction model:
 
     * `--> Sensor recommend` — The transaction will need to put data into the `Sensor` asset. This passes a reference to the asset so we can work with the asset in the logic for the transaction.
     * `o Double outsideTemp` — Looking at the [WeatherUnderground.com API](https://www.wunderground.com/weather/api/d/docs?d=data/conditions) for Conditions, you can see all of the possible data that the call could return. Based on the data, it was decided to take the actual outside temperature and the feels like temperature to give a recommendation on thermostat settings. This variable stores the value passed into it via NodeRed from Weather.com for the outside temperature.  The model on the API page shows up whether the data is returned in Celsius or Fahrenheit and its variable type. In this exercise we will use Celsius.
 
-
     * `o Double feelsLike`— the variable to store the feels_like value from Weather.com.
 
-    * **Click** *Deploy* to save changes.
+    * **Click** *Update* to save changes.
 
       ![create CompareWeather model](images/CompareWeatherModel.png)
 
-25. Click on the **Script File** tab.
+24. Click on the **Script File** tab.
 
 
 ![Click Script File](images/ClickScriptFile.png)
@@ -554,17 +543,17 @@ In this section of the journey you will request access to the LinuxONE Community
 
     ![Click Save File.](images/SaveFile2.png)
 
-52. In the upper right corner of your browser, **select** the *globe icon*.
+52. In the upper right corner of your browser, **select**  *admin* and **click** *logout*.
 
-    ![Select the globe icon.](images/globe.png)
+    ![Select admin and logout.](images/ClickLogout.png)
 
-53. **Select** *Import or Create a Profile*.
+53. In the right corner, **Select** *Create ID card*.
 
-    ![Select Import or Create a Profile.](images/ImportProfile.png)
+    ![Select Create ID card.](images/CreateID.png)
 
-54. On the *Import/Create a Connection Profile* dialog, **select** *Hyperledger Fabric v1.0* and **click** *Add*.
+54. On the *Create ID Card* dialog, **select** *Hyperledger Fabric v1.0* and **click** *Next*.
 
-    ![Select Hyperledger Fabric v1.0.](images/SelectHFv1.png)
+    ![Select Hyperledger Fabric v1.0.](images/SelectHLFv1.png)
 
 55. Complete the following fields according to the information in your connection.json on the Linux guest. This is in your terminal as found in step 49. **Information for Orderer, Channel, MSP ID, CA, Peers and Key Value Store must be exact.**
 
@@ -582,102 +571,78 @@ In this section of the journey you will request access to the LinuxONE Community
 
     * Key Value Store — `/home/linux1/.composer-credentials`
 
-    * **Click** *Save*.
+    * **Click** *Next*.
 
       ![Enter the information in the Composer Playground Profile.](images/PlaygroundConnectionProfile.png)
 
-56. **Click** *Use this profile*.
+56. In the *Create ID Card* dialog, complete the following: 
 
-    ![Click Use this profile.](images/UseThisProfile.png)
+    * **Select** *ID and Secret*.
+    * **Create** an *Enrollment ID* of `PeerAdmin`.
+    * **Create** an *Enrollment Secret* of `linux`.
+    * **Select** *Admin Card* for the Card Type.
+    * **Select** *Peer Admin* and *Channel Admin* for the Role.
+    * **Click** *Create*.
 
-57. In the *Connect with an identity* window, **click** *Add identity*.
+    ![Create the credentials for the ID card.](images/IDCardCreds.png)
 
-    ![Click Add identity.](images/AddIdentity.png)
+57. Under the *Identity cards for LinuxONECC*, **click** *Deploy a new business network*.
 
-58. Create a User ID of `PeerAdmin` and a User Secret of `linux`. The User ID must be PeerAdmin but the User Secret could be anything.**Click** *Connect*.
+    ![Click Deploy a new business network.](images/LinuxONEDeploy.png)
 
-    ![Fill in the identity values.](images/PeerAdmin.png)
+58. Under *Basic Information*, **enter** a business network name of `journey-deploy`.
 
-59. When the Composer Playground has successfully connected to your Hyperledger Fabric, you will see the following in your browser.
+    ![Fill in the values.](images/journeydeploy.png)
 
-    ![Connected to Hyperledger Fabric.](images/ConnectedToFabric.png)
+59. Navigate to wherever you saved your `blockchain-journey.bna` in step 51, **select** `blockchain-journey.bna` and **click** *Open*.
 
-60. Back in your terminal, enter `docker ps -a` . You can see there is now a new container running where Composer Playground has deployed code to the Hyperledger Fabric.
+    ![Deploy bna.](images/DeployBlockchainJourney.png)
+
+60. Review the summary of your selections and **click** *Deploy*.
+
+    ![Click Deploy.](images/ClickDeploy1.png)
+
+61. In your wallet, you should now see a new identity card for `journey-deploy` under *Identity cards for LinuxONECC*.
+
+    ![Deployed journey-deploy.](images/DeployedJourney.png)
+
+62. Back in your terminal, enter `docker ps -a` . You can see there is now a new container running where Composer Playground has deployed code to the Hyperledger Fabric.
 
     ![View Hyperledger Composer Playground container.](images/PlaygroundContainer.png)
 
-61. Switch back to your Hyperledger Composer Playground browser, **click** *Define* and then **select** *About*.
+63. Switch back to your Hyperledger Composer Playground browser, **click** *Connect now*.
 
-    ![Click Define and About.](images/DefineConnectedPlayground.png)
+    ![Click Connect now.](images/ConnectNow1.png)
 
-62. Notice that there is now a basic-sample-network application showing and not your blockchain-journey. We will need to import it to deploy it to the Hyperledger Fabric. **Select** *Import/Replace*.
-
-    ![Select Import/Replace.](images/SelectImport.png)
-
-63. In the *Import/Replace Business Network* window, **select** *browse.*
-
-    ![Select browse.](images/SelectBrowse2.png)
-
-64. In the file explorer window, **navigate** to where you downloaded `blockchain-journey.bna`. **Select** *blockchain-journey.bna* and **click** *Open*.
-
-    ![Select your bna file and click open.](images/ImportBNA.png)
-
-65. **Click** *Deploy* in the *Import/Replace Business Network* dialog to deploy your blockchain application to Hyperledger Fabric.
-
-    ![Click Deploy.](images/DeployBNA.png)
-
-66. In the warning window, *Current definition will be replaced*, **click** *Replace & Import*.
-
-    ![Click Replace & Import.](images/ReplaceImportBNA.png)
-
-67. You should see your blockchain-journey in the Hyperledger Composer Playground when it is successfully deployed. Congratulations! You've deployed your first blockchain application to Hyperledger Fabric.
+64. You should see your journey-deploy in the Hyperledger Composer Playground when it is successfully deployed. Congratulations! You've deployed your first blockchain application to Hyperledger Fabric.
 
     * **Note:** As a safety measure, check the Model File and Script File to make sure your code is there. It is also good practice to run some transactions in the test tab.
-    * **Note:** At this point, if you need to close Composer Playground OR leave it open idle, it is a good idea to switch your connection profile back to *Web browser*.
 
     ![Successful deployment.](images/SuccessfulDeployBNA.png)
 
     #### Generating API
 
-68. In your terminal, you'll need to edit your hosts file. 
-
-    * `sudo vi /etc/hosts`
-
-    * Enter `i` to begin insert mode.
-
-    * Use your arrow keys to move to the end of the line that has `127.0.0.1       localhost`
-
-    * Press `Enter` to start a new line.
-
-    * On the new line, type in `0.0.0.0     djblockchain` .
-
-    * Press `Esc` to leave insert mode.
-
-    * Enter `:wq` to save your changes.
-
-      ![Edit your hosts file.](images/Hosts.png)
-
-69. In your terminal, issue the following commands to start the API rest server:
+65. In your terminal, issue the following commands to start the API rest server:
 
     *  `mkdir /data/linux1/playground`
 
-    * `nohup composer-rest-server -p hlfv1 -n org-acme-biznet -i PeerAdmin -s linux -N always >/data/linux1/playground/rest.stdout 2>/data/linux1/playground/rest.stderr & disown`
+    * `nohup composer-rest-server -p hlfv1 -n journey-deploy -i PeerAdmin -s linux -N always >/data/linux1/playground/rest.stdout 2>/data/linux1/playground/rest.stderr & disown`
 
       ![Start your API rest server.](images/StartRestServer.png)
 
-70. Verify the rest server process is running. `ps -ef|grep rest`
+66. Verify the rest server process is running. `ps -ef|grep rest`
 
     ![Verify the rest server is running.](images/VerifyRestServer.png)
 
-71. To see your API, go back to your browser and open a new tab or window. In the address bar, enter `http://xxx.xxx.x.x:3000/explorer` where the x's are the IP address for your Linux guest. You should see a page like the one shown.
+67. To see your API, go back to your browser and open a new tab or window. In the address bar, enter `http://xxx.xxx.x.x:3000/explorer` where the x's are the IP address for your Linux guest. You should see a page like the one shown.
 
     ![View your REST APIs.](images/RestAPI.png)
 
-72. Expand the different methods to see the various calls and parameters you can make through REST API. You can also test the API in this browser to learn how to form the API and see the responses.
+68. Expand the different methods to see the various calls and parameters you can make through REST API. You can also test the API in this browser to learn how to form the API and see the responses.
 
     ![Test your API.](images/TestAPI.png)
 
-73. Congratulations! You now have a working blockchain application and have created APIs to call your blockchain application.
+69. Congratulations! You now have a working blockchain application and have created APIs to call your blockchain application.
 
 
 

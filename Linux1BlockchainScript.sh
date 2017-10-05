@@ -101,7 +101,7 @@ nohup composer-playground >/data/playground/playground.stdout 2>/data/playground
 sudo iptables -I INPUT 1 -p tcp --dport 8080 -j ACCEPT
 sudo iptables -I INPUT 1 -p tcp --dport 3000 -j ACCEPT
 sudo iptables -I INPUT 1 -p tcp --dport 1880 -j ACCEPT
-sudo iptables-save > /etc/linuxone/iptables.save
+sudo bash -c "iptables-save > /etc/linuxone/iptables.save"
 
 #Install NodeRed
 echo -e "*** Installing NodeRed. ***\n"

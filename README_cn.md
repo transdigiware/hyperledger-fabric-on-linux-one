@@ -116,19 +116,17 @@
 
 ![输入密钥名称并选择 create。](images/KeyPairName.png)
 
-    ![输入密钥名称并选择 create。](images/KeyPairName.png)
-
 12.根据您的计算机，您可能会收到提示，询问您是否希望保存新的密钥对。如果希望保存，则选择 **Save File**。
 
-    ![单击 Save File。](images/SaveFile.png)
+   ![单击 Save File。](images/SaveFile.png)
 
 13.在 *Select a SSH Key Pair* 框中，**选择**新创建的密钥对 *DJBlockchain*。
 
-    ![选择 DJBlockchain。](images/SelectDJBlockchain.png)
+   ![选择 DJBlockchain。](images/SelectDJBlockchain.png)
 
 14.检查 Current Selection 信息的准确性，然后**单击**屏幕底部的 *create* 创建您的 SLES 12 LinuxONE 来宾系统。
 
-    ![单击 create。](images/CreateGuest.png)
+   ![单击 create。](images/CreateGuest.png)
 
 15. 观看新创建的来宾系统的状态，完成以下启动阶段：networking :arrow_right: spawning :arrow_right: Active。当来宾系统显示 active 时，表明它已准备好使用。
 
@@ -138,22 +136,22 @@
 
 16.从您计算机上的终端，导航到保存 SSH 密钥对 *DJBlockchain* 的目录。下面给出了一个示例位置。
 
-    ![下载位置示例。](images/DownloadDirectory.png)
+   ![下载位置示例。](images/DownloadDirectory.png)
 
 
 17.通过输入 `chmod 600 DJBlockchain.pem` 来修改您的私钥的权限。
 
-    ![修改权限。](images/SSHKeyPermissions.png)
+   ![修改权限。](images/SSHKeyPermissions.png)
 
 18.从您的 *DJBlockchain.pem SSH* 密钥对所在的位置，输入命令 `ssh -i DJBlockchain.pem linux1@xxx.xxx.x.x`，其中 x 对应于您的 Linux 来宾系统 IP。
 
 19.**键入** `yes` 来继续完成连接提示，然后**按下** *Enter* 键。
 
-    ![键入 yes。](images/ContinueConnecting.png)
+   ![键入 yes。](images/ContinueConnecting.png)
 
 20.您现在已连接到您的 IBM LinuxONE Community Cloud 来宾系统！
 
-    ![大功告成！](images/CommunityCloudWelcome.png)
+   ![大功告成！](images/CommunityCloudWelcome.png)
 
     #### 针对 Hyperledger Fabric 和 Hyperledger Composer 设置您的 Linux 来宾系统
 
@@ -161,15 +159,15 @@
 
     `wget https://raw.githubusercontent.com/IBM/HyperledgerFabric-on-LinuxOne/master/Linux1BlockchainScript.sh`
 
-    ![导入脚本。](images/WgetSetup.png)
+   ![导入脚本。](images/WgetSetup.png)
 
 22.输入 `ls` 来确认该文件位于您的目录中。 
 
-    ![查看脚本。](images/Linux1Script.png)
+   ![查看脚本。](images/Linux1Script.png)
 
 23.要让该文件可执行，请运行 `chmod u+x Linux1BlockchainScript.sh`，然后运行 `ls` 确保它显示为可执行文件。
 
-    ![让该文件可执行。](images/Linux1ScriptExecutable.png)
+   ![让该文件可执行。](images/Linux1ScriptExecutable.png)
 
 24.您已准备好运行设置脚本！使用以下命令运行该脚本：`./Linux1BlockchainScript.sh`。请耐心等待。这会花点时间！
 
@@ -275,12 +273,12 @@
 
 11.选择 **Add a File**。
 
-    ![选择 Add a File。](images/AddFile.png)
+   ![选择 Add a File。](images/AddFile.png)
 
 
 12.从弹出的 *Add a file* 对话框中选择 **browse**。
 
-    ![选择 browse。](images/SelectBrowse.png)
+   ![选择 browse。](images/SelectBrowse.png)
 
 13.在文件资源管理器窗口中，导航到保存下载的这些文件的位置。如果需要帮助查找此位置，请参阅第 5 步。**选择** *README.md* 并**单击** *Open*。
    ![选择 README.md](images/SelectREADME.png)
@@ -306,13 +304,13 @@
 
 18.单击 **Model File**。
 
-    ![单击 Model File](images/SelectModelFile.png)
+   ![单击 Model File](images/SelectModelFile.png)
 
 19.在右侧的 **editor** 中单击，以便开始编写您的模型。 
 
     * 备注：在实验期间**不要**修改名称空间。
 
-      ![在 editor 中单击](images/ClickEditor.png)
+   ![在 editor 中单击](images/ClickEditor.png)
 
 20.在一个新行上，为您的资产 `Sensor` 设置以下属性。
 
@@ -330,7 +328,7 @@
 
     * **单击** *Update* 保存更改。
 
-      ![传感器模型](images/SensorModel.png)
+   ![传感器模型](images/SensorModel.png)
 
 21.现在为 `SetSensorTemp` 创建您的第一个事务模型。输入以下属性：
 
@@ -340,7 +338,7 @@
 
     * **单击** *Deploy* 保存更改。
 
-      ![创建 SetSensorTemp 模型](images/SetSensorTempModel.png)
+   ![创建 SetSensorTemp 模型](images/SetSensorTempModel.png)
 
 22.构建您的 `ChangeThermostatTemp` 事务模型。添加以下属性：
 
@@ -350,7 +348,7 @@
 
     * **单击** *Update* 保存更改。
 
-      ![创建 ChangeThermostatTemp 模型](images/ChangeThermostatModel.png)
+   ![创建 ChangeThermostatTemp 模型](images/ChangeThermostatModel.png)
 
 23.输入以下值来构建您的 `CompareWeather` 事务模型：
 
@@ -361,7 +359,7 @@
 
     * **单击** *Update* 保存更改。
 
-      ![创建 CompareWeather 模型](images/CompareWeatherModel.png)
+   ![创建 CompareWeather 模型](images/CompareWeatherModel.png)
 
 24.单击 **Script File** 选项卡。
 
@@ -386,7 +384,7 @@
 
     * 单击 **Create New Asset**。
 
-      ![单击 Create New Asset](images/CreateNewAsset.png)
+   ![单击 Create New Asset](images/CreateNewAsset.png)
 
 29.填写以下信息，创建一个示例资产来测试您的代码：
 
@@ -410,39 +408,39 @@
 
 31.创建您的 **Team** 资产后，它应该显示在注册表中，如下图所示。
 
-    ![资产注册表](images/Team01Asset.png)
+   ![资产注册表](images/Team01Asset.png)
 
 32.您已准备好执行您的第一个事务。**单击** *Submit Transaction*。
 
-    ![单击 Submit Transaction](images/ClickSubmitTransaction.png)
+   ![单击 Submit Transaction](images/ClickSubmitTransaction.png)
 
 33.**Submit Transaction** 对话框将打开一个新窗口。 
 
-    * 确保将 **Transaction Type** 设置为 `SetSensorTemp`。
+   * 确保将 **Transaction Type** 设置为 `SetSensorTemp`。
 
-    * 修改 JSON 数据 `"gauge": "resource:org.acme.sample.Sensor#teamID:xxx"` - 输入您的团队的标识符代替样本 JSON 数据中的 **xxx**。
+   * 修改 JSON 数据 `"gauge": "resource:org.acme.sample.Sensor#teamID:xxx"` - 输入您的团队的标识符代替样本 JSON 数据中的 **xxx**。
 
-    * 修改 JSON 数据 `"newSensorValue": 0` - 输入您的传感器可能产生的值。
+   * 修改 JSON 数据 `"newSensorValue": 0` - 输入您的传感器可能产生的值。
 
-    * 单击 **Submit**。
+   * 单击 **Submit**。
 
-      ![提交 SetSensorTemp](images/SetSensorTempTran.png)
+   ![提交 SetSensorTemp](images/SetSensorTempTran.png)
 
 34.如果提交了该事务和正确的团队 ID，您的注册表中会显示一个事务和您在上一步中输入的数据。恭喜您！您现在已完成一个事务。:thumbsup:
 
-    ![事务注册表](images/TransactionRegistry.png)
+   ![事务注册表](images/TransactionRegistry.png)
 
 35.验证 `SetSensorTemp` 更新了您的资产中的 `sensorTemp` 值。单击 **Sensor**。
 
-    ![单击 Team](images/ClickSensor.png)
+   ![单击 Team](images/ClickSensor.png)
 
 36.检查 `sensorTemp` 值。它是否拥有来自 `SetSensorTemp` 事务的新值？
 
-    ![检查 sensorTemp 值](images/VerifySensorTemp.png)
+   ![检查 sensorTemp 值](images/VerifySensorTemp.png)
 
 37.让我们执行另一次事务。选择 **Submit Transaction**。
 
-    ![选择 Submit Transaction](images/SubmitTransaction2.png)
+   ![选择 Submit Transaction](images/SubmitTransaction2.png)
 
 38.这一次让我们运行 `ChangeThermostatTemp`。 
 
@@ -471,58 +469,58 @@
 
 39.验证上一次事务更新了您的资产。单击 **Sensor**。
 
-    ![单击 Sensor](images/ClickSensor2.png)
+   ![单击 Sensor](images/ClickSensor2.png)
 
 40.验证您的团队的 `thermostatTemp` 属性已更新为您在 `ChangeThermostatTemp` 事务中成功提供的值。
 
     * **备注：**在第 40 步，可以验证恒温器最初设置为 20，现在设置为 16。
 
-      ![验证 thermostatTemp 值](images/VerifyThermostatTemp.png)
+   ![验证 thermostatTemp 值](images/VerifyThermostatTemp.png)
 
 41.是处理 `CompareWeather` 事务的时候了。单击 **Submit Transaction**。
 
-    ![单击 Submit Transaction](images/SubmitTransaction3.png)
+   ![单击 Submit Transaction](images/SubmitTransaction3.png)
 
 42.从 *Transaction Type* 下拉列表中选择 **CompareWeather**。
 
-    ![选择 CompareWeather](images/Part1_Step36.png)
+   ![选择 CompareWeather](images/Part1_Step36.png)
 
 43.完成 **CompareWeather** 事务。
 
-    * 修改 JSON 数据 `"recommend": "resource:org.acme.sample.Sensor#teamID:xxx"` - 将 **xxx** 替换为您的团队 ID。
+   * 修改 JSON 数据 `"recommend": "resource:org.acme.sample.Sensor#teamID:xxx"` - 将 **xxx** 替换为您的团队 ID。
 
-    * 修改 JSON 数据 `"outsideTemp": 0` - 输入一个值作为室外温度。
+   * 修改 JSON 数据 `"outsideTemp": 0` - 输入一个值作为室外温度。
 
-    * 编辑 JSON 数据 `"feelsLike": 0` - 输入一个值作为可以在室外感受到的温度。
+   * 编辑 JSON 数据 `"feelsLike": 0` - 输入一个值作为可以在室外感受到的温度。
 
-    * 单击 **Submit**。
+   * 单击 **Submit**。
 
       ![完成 CompareWeather](images/CompareWeatherTran.png)
 
 44.验证您的事务已显示在事务注册表中。
 
-    ![事务注册表](images/TransactionRegistry3.png)
+   ![事务注册表](images/TransactionRegistry3.png)
 
 45.单击 **Sensor**。 
 
-    ![单击 Sensor](images/ClickSensor3.png)
+   ![单击 Sensor](images/ClickSensor3.png)
 
 46.验证您的团队资产中的 `recommendation` 变量中现在有一条消息，而且 `thermostatValue` 已更新为推荐的值。
 
-    ![团队资产推荐值](images/VerifyRecommendation.png)
+   ![团队资产推荐值](images/VerifyRecommendation.png)
 
 47.继续针对所有场景测试您的代码，了解您的合约能做什么。下面给出了针对剩余场景的提示：（您需要查看 Define 选项卡下的 Script File 来确定条件。）
 
-    * ChangeThemostatTemp：
-      - [ ] 一次成功事务，在该事务中，已在 Sensor 资产中更新了 `thermostatValue`。
-      - [ ] *Submit Transaction* 窗口中的一条错误消息表明，您没有调节恒温器的权限。
-    * CompareWeather：
-      - [ ] 一个基于 `outsideTemp` 值的事务，其中的温度很高。
-      - [ ] 一个基于 `outsideTemp` 值的事务，其中的温度适中。
-      - [ ] 一个基于 `outsideTemp` 值的事务，其中的温度很低。
-      - [ ] 一个基于 `feelsLike` 值的事务，其中的温度很高。
-      - [ ] 一个基于 `feelsLike` 值的事务，其中的温度适中。
-      - [ ] 一个基于 `feelsLike` 值的事务，其中的温度很低。
+   * ChangeThemostatTemp：
+     - [ ] 一次成功事务，在该事务中，已在 Sensor 资产中更新了 `thermostatValue`。
+     - [ ] *Submit Transaction* 窗口中的一条错误消息表明，您没有调节恒温器的权限。
+   * CompareWeather：
+     - [ ] 一个基于 `outsideTemp` 值的事务，其中的温度很高。
+     - [ ] 一个基于 `outsideTemp` 值的事务，其中的温度适中。
+     - [ ] 一个基于 `outsideTemp` 值的事务，其中的温度很低。
+     - [ ] 一个基于 `feelsLike` 值的事务，其中的温度很高。
+     - [ ] 一个基于 `feelsLike` 值的事务，其中的温度适中。
+     - [ ] 一个基于 `feelsLike` 值的事务，其中的温度很低。
 
     * **备注：**像之前的步骤中所做的一样，您应该验证您的资产值在每次事务后已适当更新。
 
@@ -531,118 +529,118 @@
 
 48.在连接到您的 Linux 来宾系统的终端中，输入命令 `cd ~/.composer-connection-profiles/`。输入 `ls` 来查看该目录中的配置文件。该配置文件是在设置脚本期间创建的。您需要使用其中的信息来将 Hyperledger Composer 连接到 Hyperledger Fabric。
 
-    ![查看您的连接配置文件。](images/ComposerConnectionProfile.png)
+   ![查看您的连接配置文件。](images/ComposerConnectionProfile.png)
 
 49.转到配置文件目录，键入 `cd hlfv1` 中，运行 `cat connection.json` 来查看该文件。让终端保持运行，稍后您需要查看此信息。
 
-    ![查看 connection.json](images/ConnectionJSON.png)
+   ![查看 connection.json](images/ConnectionJSON.png)
 
 50.返回到运行 Hyperledger Composer Playground 的浏览器中，**单击** *Define* 选项卡，然后**单击** *Export* 将代码保存到桌面。这是一种安全措施。导出我们在第 2 部分开头部分导入的所有文件，将它们保存到一个称为业务网络归档文件 (.bna) 的压缩文件中。
 
-    ![单击 Export](images/ClickExport.png)
+   ![单击 Export](images/ClickExport.png)
 
 51.在弹出的对话框中，**单击** *Save File*。
 
-    ![单击 Save File。](images/SaveFile2.png)
+   ![单击 Save File。](images/SaveFile2.png)
 
 52.在浏览器的右上角，**选择** *admin* 并**单击** *logout*。
 
-    ![选择 admin 和 logout。](images/ClickLogout.png)
+   ![选择 admin 和 logout。](images/ClickLogout.png)
 
 53.在右下角，**选择** *Create ID card*。
 
-    ![选择 Create ID card。](images/CreateID.png)
+   ![选择 Create ID card。](images/CreateID.png)
 
 54.在 *Create ID Card* 对话框中，**选择** *Hyperledger Fabric v1.0* 并**单击** *Next*。
 
-    ![选择 Hyperledger Fabric v1.0。](images/SelectHLFv1.png)
+   ![选择 Hyperledger Fabric v1.0。](images/SelectHLFv1.png)
 
 55.根据 Linux 来宾系统上的 connection.json 中的信息，完成以下字段。这是在第 49 步中找到的终端中的信息。**Orderer、Channel、MSP ID、CA、Peers 和 Key Value Store 的信息必须准确。**
 
-    * Connection Profile - LinuxONECC
+   * Connection Profile - LinuxONECC
 
-    * Orderer(s) - `grpc://localhost:7050`
+   * Orderer(s) - `grpc://localhost:7050`
 
-    * Channel - `composerchannel`
+   * Channel - `composerchannel`
 
-    * MSP ID - `Org1MSP`
+   * MSP ID - `Org1MSP`
 
-    * CA - `http://localhost:7054`
+   * CA - `http://localhost:7054`
 
-    * Peer(s) - `grpc://localhost:7051`、`grpc://localhost:7053`
+   * Peer(s) - `grpc://localhost:7051`、`grpc://localhost:7053`
 
-    * Key Value Store - `/home/linux1/.composer-credentials`
+   * Key Value Store - `/home/linux1/.composer-credentials`
 
-    * **单击** *Next*。
+   * **单击** *Next*。
 
       ![将这些信息输入到 Composer Playground 配置文件中。](images/PlaygroundConnectionProfile.png)
 
 56.在 *Create ID Card* 对话框中，完成以下步骤： 
 
-    * **选择** *ID and Secret*。
-    * **创建** *Enrollment ID* `PeerAdmin`。
-    * **创建** *Enrollment Secret* `linux`。
-    * **选择** *Admin Card* 作为卡类型。
-    * **选择** *Peer Admin* 和 *Channel Admin* 作为角色。
-    * **单击** *Create*。
+   * **选择** *ID and Secret*。
+   * **创建** *Enrollment ID* `PeerAdmin`。
+   * **创建** *Enrollment Secret* `linux`。
+   * **选择** *Admin Card* 作为卡类型。
+   * **选择** *Peer Admin* 和 *Channel Admin* 作为角色。
+   * **单击** *Create*。
 
-    ![创建 ID 卡的凭证。](images/IDCardCreds.png)
+   ![创建 ID 卡的凭证。](images/IDCardCreds.png)
 
 57.在 *Identity cards for LinuxONECC* 下，**单击** *Deploy a new business network*。
 
-    ![单击 Deploy a new business network。](images/LinuxONEDeploy.png)
+   ![单击 Deploy a new business network。](images/LinuxONEDeploy.png)
 
 58.在 *Basic Information* 下，**输入**业务网络名称 `journey-deploy`。
 
-    ![填入值。](images/journeydeploy.png)
+   ![填入值。](images/journeydeploy.png)
 
 59.导航到第 51 步中保存 `blockchain-journey.bna` 的位置，**选择** `blockchain-journey.bna` 并**单击** *Open*。
 
-    ![部署 bna。](images/DeployBlockchainJourney.png)
+   ![部署 bna。](images/DeployBlockchainJourney.png)
 
 60.检查您的选择的摘要并**单击** *Deploy*。
 
-    ![单击 Deploy。](images/ClickDeploy1.png)
+   ![单击 Deploy。](images/ClickDeploy1.png)
 
 61.在您的钱包中，您现在应在 *Identity cards for LinuxONECC* 下看到 `journey-deploy` 的新身份卡。
 
-    ![已部署的 journey-deploy。](images/DeployedJourney.png)
+   ![已部署的 journey-deploy。](images/DeployedJourney.png)
 
 62.返回到终端，输入 `docker ps -a`。可以看到现在有一个新容器正在运行，其中 Composer Playground 已将代码部署到 Hyperledger Fabric.
 
-    ![查看 Hyperledger Composer Playground 容器。](images/PlaygroundContainer.png)
+   ![查看 Hyperledger Composer Playground 容器。](images/PlaygroundContainer.png)
 
 63.切换回您的 Hyperledger Composer Playground 浏览器，**单击** *Connect now*。
 
-    ![单击 Connect now。](images/ConnectNow1.png)
+   ![单击 Connect now。](images/ConnectNow1.png)
 
 64.成功部署后，您会在 Hyperledger Composer Playground 中看到您的 journey-deploy。恭喜您！您已将第一个区块链应用程序部署到 Hyperledger Fabric。
 
-    * **备注：**作为一种安全措施，请检查 Model File 和 Script File 来确保您的代码已存在。在 test 选项卡中运行一些事务也是一种不错的做法。
+   * **备注：**作为一种安全措施，请检查 Model File 和 Script File 来确保您的代码已存在。在 test 选项卡中运行一些事务也是一种不错的做法。
 
-    ![成功部署。](images/SuccessfulDeployBNA.png)
+   ![成功部署。](images/SuccessfulDeployBNA.png)
 
     #### 生成 API
 
 65.在终端中，发出以下命令来启动 API Rest 服务器：
 
-    * `mkdir /data/linux1/playground`
+   * `mkdir /data/linux1/playground`
 
-    * `nohup composer-rest-server -p hlfv1 -n journey-deploy -i PeerAdmin -s linux -N always >/data/linux1/playground/rest.stdout 2>/data/linux1/playground/rest.stderr & disown`
+   * `nohup composer-rest-server -p hlfv1 -n journey-deploy -i PeerAdmin -s linux -N always >/data/linux1/playground/rest.stdout 2>/data/linux1/playground/rest.stderr & disown`
 
       ![启动您的 API Rest 服务器。](images/StartRestServer.png)
 
 66.验证 Rest 服务器进程正在运行。`ps -ef|grep rest`
 
-    ![验证 Rest 服务器正在运行。](images/VerifyRestServer.png)
+   ![验证 Rest 服务器正在运行。](images/VerifyRestServer.png)
 
 67.要查看您的 API，请返回到浏览器，打开一个新的选项卡或窗口。在地址栏，输入 `http://xxx.xxx.x.x:3000/explorer`，其中 x 是您的 Linux 来宾系统的 IP 地址。您会看到一个类似下图的页面。
 
-    ![查看您的 REST API。](images/RestAPI.png)
+   ![查看您的 REST API。](images/RestAPI.png)
 
 68.展开不同的方法，以查看可通过 REST API 执行的各种调用和参数。也可以在此浏览器中测试该 API，了解如何生成该 API 并查看响应。
 
-    ![测试您的 API。](images/TestAPI.png)
+   ![测试您的 API。](images/TestAPI.png)
 
 69.恭喜您！您现在已有一个工作正常的区块链应用程序，并且创建了 API 来调用您的区块链应用程序。
 
@@ -717,49 +715,49 @@
 
 15.**单击**右上角的 *Deploy* 下的 *dashboard* 选项卡。
 
-    ![单击 dashboard。](images/ClickDashboard.png)
+   ![单击 dashboard。](images/ClickDashboard.png)
 
 16.**单击** *pop out* 按钮在浏览器中打开仪表板。
 
-    ![单击 pop out 按钮。](images/ClickPopOut.png)
+   ![单击 pop out 按钮。](images/ClickPopOut.png)
 
 17.这会打开一个新的选项卡。您的仪表板应该类似于下图。
 
-    ![仪表板图。](images/Dashboard.png)
+   ![仪表板图。](images/Dashboard.png)
 
 18.要与模拟的 RaspberryPi 进行交互，返回到您的 Node-RED 选项卡并**选择** *Gauge Simulator* 选项卡。
 
-    ![选择 Gauge Simulator 选项卡。](images/GaugeSimulator.png)
+   ![选择 Gauge Simulator 选项卡。](images/GaugeSimulator.png)
 
 19.**单击** *Sensor Gauge Simulator* 节点。
 
-    ![单击 Sensor Gauge Simulator 节点。](images/GaugeNode.png)
+   ![单击 Sensor Gauge Simulator 节点。](images/GaugeNode.png)
 
 20.在浏览器的右侧，**单击** *Info* 选项卡。
 
-    ![单击 Info。](images/ClickInfo.png)
+   ![单击 Info。](images/ClickInfo.png)
 
 21.在 Information 下的第 3 段中，单词 *here* 包含一个超链接。该超链接会在一个新的选项卡中打开模拟器。**单击** *here*。
 
-    ![单击 here。](images/ClickHere.png)
+   ![单击 here。](images/ClickHere.png)
 
 22.在模拟器中将传感器的温度从 20 C **调节**为其他值。
 
-    ![调节传感器温度。](images/Sensor.png)
+   ![调节传感器温度。](images/Sensor.png)
 
 23.切换回您的仪表板的选项卡，注意传感器温度和图表的变化。
 
-    ![注意仪表板中的传感器差异。](images/SensorDashboard.png)
+   ![注意仪表板中的传感器差异。](images/SensorDashboard.png)
 
 24.继续使用仪表板通过 API 与区块链进行交互。可以尝试以下操作：
 
-    * 键入一个团队名称并单击 *Add Team Name*。您随后会看到一条成功消息。
+   * 键入一个团队名称并单击 *Add Team Name*。您随后会看到一条成功消息。
 
-      ![add team 按钮](images/dashboard-add-team-button.png)
+     ![add team 按钮](images/dashboard-add-team-button.png)
 
-      ![deploy 按钮](images/dashboard-status-team-added.png)
+     ![deploy 按钮](images/dashboard-status-team-added.png)
 
-    * 通过滑动 *Thermostat Value* 旁边的滑块来更改恒温器温度。单击 *Change Thermostat* 将该值发送到区块链。’
+   * 通过滑动 *Thermostat Value* 旁边的滑块来更改恒温器温度。单击 *Change Thermostat* 将该值发送到区块链。’
 
       ![thermo 滑块](images/dashboard-thermo-slider.png)’
 

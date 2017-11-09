@@ -114,6 +114,8 @@
 
 11.在弹出的对话框中，**输入**密钥名称 `DJBlockchain` 并**选择** *Create a new key pair*。
 
+![输入密钥名称并选择 create。](images/KeyPairName.png)
+
     ![输入密钥名称并选择 create。](images/KeyPairName.png)
 
 12.根据您的计算机，您可能会收到提示，询问您是否希望保存新的密钥对。如果希望保存，则选择 **Save File**。

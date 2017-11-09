@@ -771,7 +771,7 @@
 
     * ![推荐结果](images/dashboard-recommendation-result.png)
 
-25.恭喜您！您已完成这个 Code Pattern！
+25.恭喜您！您已完成这个 Code Pattern！ 
 
 
 

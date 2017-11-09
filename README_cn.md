@@ -19,31 +19,31 @@
 
 ### 第 1 部分 \- 设置您的 LinuxONE Community Cloud 来宾系统
 
-1.[请求访问 LinuxONE Community Cloud。](#request-access-to-linuxone-community-cloud)
+1. [请求访问 LinuxONE Community Cloud。](#request-access-to-linuxone-community-cloud)
 
-2.[创建您的 LinuxONE 来宾系统](#create-your-linuxone-guest)
+2. [创建您的 LinuxONE 来宾系统](#create-your-linuxone-guest)
 
-3.[针对 Hyperledger Fabric 和 Hyperledger Composer 设置您的 Linux 来宾系统](#setup-your-linux-guest-for-hyperledger-fabric-and-hyperledger-composer)
+3. [针对 Hyperledger Fabric 和 Hyperledger Composer 设置您的 Linux 来宾系统](#setup-your-linux-guest-for-hyperledger-fabric-and-hyperledger-composer)
 
-4.[验证 Hyperledger Fabric 和 Hyperledger Composer 的安装](#verify-the-installation-of-hyperledger-fabric-and-hyperledger-composer)
+4. [验证 Hyperledger Fabric 和 Hyperledger Composer 的安装](#verify-the-installation-of-hyperledger-fabric-and-hyperledger-composer)
 
 ### 第 2 部分 - 创建一个区块链应用程序并生成 API
 
-5.[导入您的区块链应用程序的组件](#importing-the-components-of-your-blockchain-application)
+5. [导入您的区块链应用程序的组件](#importing-the-components-of-your-blockchain-application)
 
-6.[创建您的区块链应用程序](#creating-your-blockchain-application)
+6. [创建您的区块链应用程序](#creating-your-blockchain-application)
 
-7.[测试应用程序代码](#test-application-code)
+7. [测试应用程序代码](#test-application-code)
 
-8.[将应用程序部署到 Hyperledger Fabric](#deploy-application-to-hyperledger-fabric)
+8. [将应用程序部署到 Hyperledger Fabric](#deploy-application-to-hyperledger-fabric)
 
-9.[利用您的区块链应用程序生成 API](#generating-api)
+9. [利用您的区块链应用程序生成 API](#generating-api)
 
 ### 第 3 部分 - 通过 NodeRED 利用区块链 API
 
-10.[将您的流导入 NodeRED 中](#importing-your-flow-into-nodered)
+10. [将您的流导入 NodeRED 中](#importing-your-flow-into-nodered)
 
-11.[通过仪表板与区块链进行交互](#interacting-with-blockchain-through-a-dashboard)
+11. [通过仪表板与区块链进行交互](#interacting-with-blockchain-through-a-dashboard)
 
 
 

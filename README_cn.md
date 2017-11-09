@@ -3,7 +3,7 @@
 ## 架构
 ![流程图](images/FlowDiagram.png)
 
-此次学习之旅将指导您完成以下流程。
+本 Code Pattern 将指导您完成以下流程。
 
 1.请求访问 LinuxONE Community Cloud。
 2.在 LinuxONE Community Cloud 上创建您的 Linux 来宾系统。
@@ -13,7 +13,7 @@
 
 
 ## 应用程序概述
-此次区块链学习之旅的目标是，让您基本了解开发人员如何使用 Hyperledger Composer 与 Hyperledger Fabric 进行交互。在此次网络研讨会中，您将使用一个基于浏览器的 UI 来修改链代码，测试您的代码并部署更改。您还将了解如何使用工具获取代码并生成 API，以便通过 REST-ful 接口实现应用程序集成。 
+这个 Code Pattern 的目标是，让您基本了解开发人员如何使用 Hyperledger Composer 与 Hyperledger Fabric 进行交互。在此次网络研讨会中，您将使用一个基于浏览器的 UI 来修改链代码，测试您的代码并部署更改。您还将了解如何使用工具获取代码并生成 API，以便通过 REST-ful 接口实现应用程序集成。 
 
 本实验将分为 3 个部分： 
 
@@ -50,11 +50,11 @@
 ## 网络研讨会操作说明
 
 ### 场景概述
-在本次学习之旅中，我们将模拟一个恒温器和温度计来为我们提供温度数据。在真实场景中，这可能是家里或办公建筑中的温度传感器。该传感器可以通过 API 连接到 Nest 等真实恒温器或其他智能家庭设备。要避免家庭成员、室友、朋友或孩子们过度运行空调或取暖器，首先必须确定他们是否有权运行 Hyperledger Fabric 上的智能合约所定义的事务来调节恒温器。该合约会检查账本中记录的温度计的值，以确定他们的恒温器调节是否环保。其次，它会集成 Weather.com 来检查当前温度，并根据智能合约的条款将恒温器调节到理想设置。 
+在这个 Code Pattern 中，我们将模拟一个恒温器和温度计来为我们提供温度数据。在真实场景中，这可能是家里或办公建筑中的温度传感器。该传感器可以通过 API 连接到 Nest 等真实恒温器或其他智能家庭设备。要避免家庭成员、室友、朋友或孩子们过度运行空调或取暖器，首先必须确定他们是否有权运行 Hyperledger Fabric 上的智能合约所定义的事务来调节恒温器。该合约会检查账本中记录的温度计的值，以确定他们的恒温器调节是否环保。其次，它会集成 Weather.com 来检查当前温度，并根据智能合约的条款将恒温器调节到理想设置。 
 
 ### 第 1 部分 - 设置您的 LinuxONE Community Cloud 来宾系统
 
-在学习之旅的这一部分，将请求访问 LinuxONE Community Cloud，建立一个 SLES 来宾系统，运行一个设置脚本并验证安装。
+在本 Code Pattern 这一部分，将请求访问 LinuxONE Community Cloud，建立一个 SLES 来宾系统，运行一个设置脚本并验证安装。
 
 #### 请求访问 LinuxONE Community Cloud。
 
@@ -771,7 +771,7 @@
 
     * ![推荐结果](images/dashboard-recommendation-result.png)
 
-25.恭喜您！您已完成本次学习之旅！
+25.恭喜您！您已完成这个 Code Pattern！
 
 
 

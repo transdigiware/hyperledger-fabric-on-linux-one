@@ -224,7 +224,7 @@
 
 ![已加载 Composer Playground。](images/ComposerPlaygroundUI2.png)
 
-33.恭喜您！第 1 部分现在已完成！现在进入有趣的部分。:smiley:
+33.恭喜您！第 1 部分现在已完成！现在进入有趣的部分。:smiley: 
 
 
 ### 第 2 部分 - 创建一个区块链应用程序并生成 API

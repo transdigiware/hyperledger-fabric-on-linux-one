@@ -1,9 +1,10 @@
+*Read this in other languages: [中国](README-cn.md).*
 # Hyperledger Fabric and Hyperledger Composer on LinuxONE
 
 ## Architecture
 ![Flow Diagram](images/FlowDiagram.png)
 
-*Read this in other languages: [中国](README-cn.md).*
+
 
 This journey will guide you through the following process.
 

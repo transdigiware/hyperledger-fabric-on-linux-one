@@ -1,3 +1,4 @@
+*阅读本文的其他语言版本：[English](README.md)。*
 # LinuxONE 上的 Hyperledger Fabric 和 Hyperledger Composer
 
 ## 架构

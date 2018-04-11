@@ -217,7 +217,11 @@ In this section of the journey you will request access to the LinuxONE Community
 
 ![Verify Composer Playground is running.](images/VerifyComposerPlaygroundRunning.png)
 
-32. Open a browser and enter `xxx.xxx.x.x:8080` into the address bar where the x's correspond to your Linux guest's IP address. 
+32. Create the first network (hlfv1) of your hyperledger fabric, which contains a piece of information `Card Name:PeerAdmin@hlfv1  UserId:PeerAdmin  Business Network:(None)`
+
+![Create the network hlfv1.](images/Createhlfv1.png)
+
+33. Open a browser and enter `xxx.xxx.x.x:8080` into the address bar where the x's correspond to your Linux guest's IP address. 
 
     * **Note:** It is recommended to use Chrome as your browser for Hyperledger Composer Playground. It is also recommended that you open the Playground in a Incognito Window. This allows you to quickly clear cache and history if you start noticing odd behaviors.
     * **Note:** If you use Firefox, you cannot use it in Private mode. 
@@ -227,7 +231,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
 ![Loaded Composer Playground.](images/ComposerPlaygroundUI2.png)
 
-33. Congratulations! Part 1 is now complete! Lets get to work on the fun part. :smiley:
+34. Congratulations! Part 1 is now complete! Lets get to work on the fun part. :smiley:
 
 
 ### Part 2 — Creating a blockchain application and generating API

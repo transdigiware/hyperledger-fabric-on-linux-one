@@ -217,9 +217,11 @@ In this section of the journey you will request access to the LinuxONE Community
 
 ![Verify Composer Playground is running.](images/VerifyComposerPlaygroundRunning.png)
 
-32. Create the first network (hlfv1) of your hyperledger fabric, which contains a piece of information `Card Name:PeerAdmin@hlfv1  UserId:PeerAdmin  Business Network:(None)`
+32. Create the first network (hlfv1) of your hyperledger fabric and then add the Peeradmin in the network, which contains a piece of information `Card Name:PeerAdmin@hlfv1  UserId:PeerAdmin  Business Network:(None)`
 
 ![Create the network hlfv1.](images/Createhlfv1.png)
+
+![Add the peer admin.](images/Createpeeradmin.png)
 
 33. Open a browser and enter `xxx.xxx.x.x:8080` into the address bar where the x's correspond to your Linux guest's IP address. 
 

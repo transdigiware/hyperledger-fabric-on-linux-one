@@ -78,20 +78,20 @@ npm config set prefix '/data/npm'
 npm config set cache /data/linux1/.npm
 export PATH=/data/npm/bin:$PATH
 cd /data/linux1/
-npm install -g composer-cli@0.17.4
+npm install -g composer-cli
 
 echo -e “*** Installing Hyperledger Composer rest server. ***\n”
-npm install -g composer-rest-server@0.17.4
+npm install -g composer-rest-server
 
 echo -e “*** Installing Hyperledger Composer playground. ***\n”
-npm install -g composer-playground@0.17.4
+npm install -g composer-playground
 
 echo -e "*** Clone and install the Coposer Tools repository.***\n"
 mkdir ~/fabric-tools && cd ~/fabric-tools
 curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.tar.gz
 tar -xvf fabric-dev-servers.tar.gz
-export FABRIC_VERSION=hlfv11
-echo "export FABRIC_VERSION=hlfv11" >> $HOME/.profile
+export FABRIC_VERSION=hlfv12
+echo "export FABRIC_VERSION=hlfv12" >> $HOME/.profile
 ./downloadFabric.sh
 ./startFabric.sh
 ./createPeerAdminCard.sh

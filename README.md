@@ -1,4 +1,3 @@
-*Read this in other languages: [中国](README-cn.md).*
 # Hyperledger Fabric and Hyperledger Composer on LinuxONE
 
 ## Architecture
@@ -8,8 +7,7 @@
 
 This journey will guide you through the following process.
 
-1. Request access to the LinuxONE Community Cloud.
-2. Create your Linux guest on the LinuxONE Community Cloud.
+1. Access your LinuxONE guest.
 3. Setup and verify of your blockchain environment.
 4. Create a blockchain project in Hyperledger Composer.
 5. Interact with blockchain and third party APIs through Composer Rest Server and NodeRed.
@@ -296,10 +294,20 @@ In this section of the journey you will request access to the LinuxONE Community
 16. Let's keep adding the files to the Composer Playground.  **Repeat steps 11-15 to add the following files**:
 
 * *org.acme.sample.cto* — This is located in the models folder. In this exercise you'll use this file to create a model for your asset and transactions. You could also create participants in this file. This is similar to creating a Java class and defining what you would need in the class.
+
 * *logic.js* — This is located in the lib folder. This is a JavaScript file that becomes the brains of your application. In this file is code, your smart contract, that defines how a transaction can happen. This is similar to Java methods.
+
 * **Add last:** *permissions.acl* — This is where you would limit permissions for participants in a blockchain network.
 
-17. Your files are all now loaded into Composer Playground. **Click** *Update* on the left side of the browser. 
+* **Remove model.cto:** -- This is the empty model file that came with the sample. We will delete it to avoid any potential problems.
+
+  * **Click** on model.cto
+
+  * **Click** on the trash can icon to remove it.
+
+    ![Remove model.cto](images/RemoveModelCTO.png)
+
+17. Your files are all now loaded into Composer Playground. **Click** *DeployChanges* on the left side of the browser. 
 
    ![Click Deploy.](images/InitialDeploy.png)
 
@@ -329,7 +337,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
     * `o String recommendation`— this will be populated based on the `CompareWeather` transaction.
 
-    * **Click** *Update* to save changes.
+    * **Click** *Deploy Changes* to save changes.
 
       ![Sensor model](images/SensorModel.png)
 
@@ -339,7 +347,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
     * `o Double newSensorValue` — This is the variable that will be set by the temperature passed into the transaction from the NodeRed Sensor for picking up temperature.
 
-    * *Click** *Deploy* to save changes.
+    * **Click** *Deploy Changes* to save changes.
 
       ![Create SetSensorTemp model](images/SetSensorTempModel.png)
 
@@ -349,7 +357,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
     * `o Double newThermostatValue` — This allows for a new, proposed value to be sent into the transaction. In the logic tab, we will use this value to compare to what the gauge says and decide if the thermostat value should be adjusted.
 
-    * **Click** *Update* to save changes.
+    * **Click** *Deploy Changes* to save changes.
 
       ![Create ChangeThermostatTemp model](images/ChangeThermostatModel.png)
 
@@ -360,7 +368,7 @@ In this section of the journey you will request access to the LinuxONE Community
 
     * `o Double feelsLike`— the variable to store the feels_like value from Weather.com.
 
-    * **Click** *Update* to save changes.
+    * **Click** *Deploy Changes* to save changes.
 
       ![create CompareWeather model](images/CompareWeatherModel.png)
 

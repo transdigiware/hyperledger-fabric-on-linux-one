@@ -87,7 +87,8 @@ echo -e “*** Installing Hyperledger Composer playground. ***\n”
 npm install -g composer-playground
 
 echo -e "*** Clone and install the Coposer Tools repository.***\n"
-mkdir ~/fabric-tools && cd ~/fabric-tools
+mkdir ~/fabric-tools
+cd ~/fabric-tools
 curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.tar.gz
 tar -xvf fabric-dev-servers.tar.gz
 export FABRIC_VERSION=hlfv12
